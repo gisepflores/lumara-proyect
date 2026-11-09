@@ -1,3 +1,5 @@
+import HeroCarousel from "./hero-carousel";
+
 type Props = {
   locale: "es";
 };
@@ -76,46 +78,7 @@ export default function LumaraHome({ locale }: Props) {
         </a>
       </header>
 
-      <section className="hero-section">
-        <div className="hero-copy">
-          <p className="eyebrow"><span className="eyebrow-line" /> UN VIAJE HACIA ADENTRO</p>
-          <h1>Volvé a conectar<br />con tu <em>esencia.</em></h1>
-          <p className="hero-intro">
-            Un espacio para explorar, aprender y acompañar tu camino de
-            autoconocimiento. A tu ritmo, desde tu propia búsqueda.
-          </p>
-          <div className="hero-actions">
-            <a className="button button-primary" href="#experiencias">
-              Explorar experiencias <span aria-hidden="true">↗</span>
-            </a>
-            <a className="text-link" href="#universo">
-              Conocer Lumara <span aria-hidden="true">→</span>
-            </a>
-          </div>
-          <div className="hero-footnote">
-            <span className="tiny-star" aria-hidden="true">✳</span>
-            <span>Un lugar para descubrir nuevas perspectivas.</span>
-          </div>
-        </div>
-
-        <div className="hero-art" aria-label="Composición abstracta en tonos lavanda">
-          <div className="art-orbit orbit-one" />
-          <div className="art-orbit orbit-two" />
-          <div className="art-halo" />
-          <div className="art-moon" />
-          <div className="art-sun" />
-          <div className="art-card art-card-top">
-            <span className="art-card-symbol">✧</span>
-            <span>Conectar</span>
-          </div>
-          <div className="art-card art-card-bottom">
-            <span className="art-card-symbol">☾</span>
-            <span>Explorar</span>
-          </div>
-          <p className="art-caption">HACIA TU PROPIA LUZ</p>
-        </div>
-        <div className="hero-scroll"><span /> DESLIZÁ PARA EXPLORAR</div>
-      </section>
+      <HeroCarousel />
 
       <section className="manifesto section-wrap" id="universo">
         <div className="section-kicker">01 — EL UNIVERSO LUMARA</div>
