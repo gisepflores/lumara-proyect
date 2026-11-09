@@ -270,12 +270,13 @@ h1 em, h2 em { color: var(--violet); font-weight: 400; }
 /* Lumara hero: luminous lotus cover */
 .hero-section {
   grid-template-columns: minmax(0, 1fr);
-  min-height: 680px;
+  min-height: 562px;
+  padding: 62px clamp(24px, 5.6vw, 115px) 62px;
   background-image:
-    linear-gradient(90deg, rgba(250,247,252,.18) 0%, rgba(250,247,252,.04) 58%, rgba(85,65,104,.02) 100%),
+    linear-gradient(90deg, rgba(250,247,252,.10) 0%, rgba(250,247,252,.025) 58%, rgba(85,65,104,.015) 100%),
     var(--hero-image);
   background-size: cover;
-  background-position: center right;
+  background-position: right top;
   background-repeat: no-repeat;
 }
 .hero-copy { max-width: 600px; }
@@ -283,12 +284,18 @@ h1 em, h2 em { color: var(--violet); font-weight: 400; }
 .hero-section h1 { text-shadow: 0 1px 18px rgba(255,255,255,.15); }
 
 @media (max-width: 900px) {
-  .hero-section { min-height: 620px; background-position: center right; }
+  .hero-section {
+    min-height: 620px;
+    background-position: right top;
+    padding-top: 64px;
+    padding-bottom: 68px;
+  }
 }
 
 @media (max-width: 640px) {
   .hero-section {
     min-height: 760px;
+    padding: 62px 25px 74px;
     background-color: #f4edf8;
     background-image:
       linear-gradient(180deg, rgba(250,247,252,.98) 0%, rgba(250,247,252,.92) 42%, rgba(250,247,252,.06) 76%),

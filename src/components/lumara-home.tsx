@@ -1,5 +1,3 @@
-const heroImageBasePath = process.env.GITHUB_PAGES === "true" ? "/lumara-proyect" : "";
-
 type Props = {
   locale: "es";
 };
@@ -78,7 +76,7 @@ export default function LumaraHome({ locale }: Props) {
         </a>
       </header>
 
-      <section className="hero-section" style={{ "--hero-image": `url("${heroImageBasePath}/images/lumara-lotus-hero.webp")` } as React.CSSProperties}>
+      <section className="hero-section">
         <div className="hero-copy">
           <p className="eyebrow"><span className="eyebrow-line" /> UN VIAJE HACIA ADENTRO</p>
           <h1>Volvé a conectar<br />con tu <em>esencia.</em></h1>
