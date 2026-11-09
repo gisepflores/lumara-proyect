@@ -265,3 +265,37 @@ h1 em, h2 em { color: var(--violet); font-weight: 400; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+
+/* Lumara hero: luminous lotus cover */
+.hero-section {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 680px;
+  background-image:
+    linear-gradient(90deg, rgba(250,247,252,.18) 0%, rgba(250,247,252,.04) 58%, rgba(85,65,104,.02) 100%),
+    var(--hero-image);
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+.hero-copy { max-width: 600px; }
+.hero-art { display: none; }
+.hero-section h1 { text-shadow: 0 1px 18px rgba(255,255,255,.15); }
+
+@media (max-width: 900px) {
+  .hero-section { min-height: 620px; background-position: center right; }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: 760px;
+    background-color: #f4edf8;
+    background-image:
+      linear-gradient(180deg, rgba(250,247,252,.98) 0%, rgba(250,247,252,.92) 42%, rgba(250,247,252,.06) 76%),
+      var(--hero-image);
+    background-size: auto 58%;
+    background-position: right bottom;
+  }
+  .hero-copy { max-width: 100%; }
+  .hero-footnote { max-width: 270px; }
+}
