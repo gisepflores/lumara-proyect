@@ -1,46 +1,61 @@
-# Lumara — Starter técnico
+# Lumara — plataforma y preview web
 
 Base inicial de arquitectura para **Lumara | Espiritualidad Consciente**.
 
 Repositorio privado: https://github.com/gisepflores/lumara-proyect
 
-## Estado
-Este starter contiene la especificación de producto, arquitectura, contratos API, modelo inicial de datos, migración SQL y una página inicial de Next.js. **No es todavía una aplicación desplegada ni contiene conexiones activas** con Whop, Mux, Supabase, Zoom o Google Calendar.
+## Preview web
 
-## Stack objetivo
-- Node.js 24 LTS y pnpm
-- Next.js App Router + React + TypeScript
-- Supabase Auth + PostgreSQL + RLS
-- Payload CMS para contenido editorial y catálogo
-- Whop para checkout y cobros en USD
-- Mux para streaming firmado y DRM compatible
-- Google Calendar como calendario central sincronizado
-- Zoom para reuniones
-- Vercel (hosting propuesto, pendiente de configuración)
+Este proyecto está preparado para generar una exportación estática de Next.js y publicarla en GitHub Pages mediante GitHub Actions.
 
-Ver `docs/` antes de implementar integraciones.
+URL prevista: https://gisepflores.github.io/lumara-proyect/
 
-## Primeros pasos
-1. Instalar Node.js 24 LTS y pnpm.
-2. Clonar este repositorio.
-3. Configurar variables de entorno a partir de `.env.example`; no subir nunca un archivo `.env`.
-4. Crear proyectos Supabase separados para desarrollo, staging y producción.
-5. Completar y probar las políticas RLS antes de conectar la aplicación.
-6. Implementar autenticación, modelo de usuario y roles.
-7. Ejecutar la migración SQL en un proyecto Supabase de desarrollo.
-8. Construir el piloto de una compra Whop + habilitación de curso + reproducción Mux antes de cargar el catálogo real.
+Para activar la publicación, en GitHub ir a **Settings → Pages → Build and deployment → Source → GitHub Actions**. Luego, cada push a `main` ejecutará el workflow de publicación.
 
-## Convenciones
-- Idioma de código: inglés.
-- Idioma inicial de interfaz y contenidos: español (`es`).
-- Locales previstos: `es`, `en`, `pt`; ampliables.
-- Moneda de catálogo inicial: USD.
-- Importes monetarios: almacenar en unidades menores (centavos) y con código ISO 4217.
-- Timestamps: UTC en base de datos; mostrar según zona horaria del usuario.
-- Toda operación de proveedor debe ser server-side, validada, idempotente y auditable.
+> GitHub Pages es público aunque el repositorio sea privado. La cuenta debe disponer de un plan compatible con Pages para repositorios privados. El artefacto publicado contiene únicamente el sitio estático generado desde `out/`, no la documentación ni el código fuente.
+
+## Preview vs. plataforma completa
+
+La web de preview permite revisar estructura, estilo, jerarquía, textos y comportamiento responsive. Por ser estática, no incluye autenticación, Mi Lumara funcional, pagos Whop, aula privada, streaming Mux, reservas, Zoom, Calendar ni panel administrativo.
+
+La arquitectura de producción está documentada en `docs/`. Las integraciones se implementarán en un hosting con runtime de servidor cuando corresponda.
+
+## Stack previsto
+- Next.js App Router + React + TypeScript.
+- Supabase: Auth, PostgreSQL y RLS.
+- Payload CMS: páginas, artículos, catálogo y FAQs.
+- Whop: checkout y cobros USD.
+- Mux: streaming firmado y DRM compatible.
+- Google Calendar: agenda central sincronizada.
+- Zoom: videollamadas.
+- Vercel propuesto para producción; dominio pendiente.
+
+## Desarrollo local
+Requiere Node.js 24.
+
+```bash
+npm install
+npm run dev
+```
+
+Abrir http://localhost:3000.
+
+Para validar tipos:
+
+```bash
+npm run typecheck
+```
+
+Para generar export estático local:
+
+```bash
+GITHUB_PAGES=true GITHUB_REPOSITORY=gisepflores/lumara-proyect npm run build
+```
+
+La exportación queda en `out/`.
 
 ## Seguridad
-No introducir secretos, tokens privados, claves de firma, credenciales OAuth ni API keys en Git, en el navegador o en mensajes de chat. El archivo `.env.example` contiene únicamente nombres de variables sin valores sensibles.
+No introducir secretos, tokens, claves privadas ni credenciales OAuth en Git, en el navegador o en mensajes. Usar variables de entorno server-side y los secretos del entorno de hosting. El archivo `.env.example` contiene nombres de variables sin valores sensibles.
 
-## Advertencia técnica
-La migración inicial habilita RLS deliberadamente sin políticas permisivas. Antes de conectar clientes o datos reales, crear políticas específicas por tabla/rol y probarlas con usuarios de prueba.
+## Base de datos
+La migración inicial habilita RLS sin políticas permisivas. Es intencional: crear y probar políticas específicas por tabla y rol antes de conectar la aplicación a datos reales.
