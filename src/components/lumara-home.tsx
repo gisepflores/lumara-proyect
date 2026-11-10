@@ -128,6 +128,53 @@ export default function LumaraHome({ locale }: Props) {
 
       <HeroCarousel />
 
+      <section className="commitment-section" aria-labelledby="commitment-title" data-reveal>
+        <div className="commitment-inner">
+          <span className="section-kicker">UN MOMENTO PARA VOS</span>
+          <h2 id="commitment-title">Comprométete <em>contigo mismo</em></h2>
+          <p className="commitment-mantra">
+            Hoy me elijo, me transformo y florezco.<br className="desktop-break" />
+            Mi cambio comienza aquí y ahora.<br className="desktop-break" />
+            Desde mi esencia, creo una vida plena, guiada por el amor, la abundancia y la prosperidad.
+          </p>
+          <img className="commitment-lotus" src="/lumara-proyect/assets/img/lotus/lumara-lotus.gif" alt="Flor de loto, símbolo de transformación y florecimiento" width="320" height="394" />
+        </div>
+      </section>
+
+      <section className="service-gateway section-wrap" aria-label="Explorá Lumara" data-reveal>
+        <div className="service-gateway-heading">
+          <span className="section-kicker">TU CAMINO COMIENZA ACÁ</span>
+          <h2>Un espacio para <em>florecer.</em></h2>
+          <p>Elegí por dónde querés empezar. Cada experiencia es una invitación a conectar con vos.</p>
+        </div>
+        <div className="service-gateway-grid">
+          <article className="service-gateway-card">
+            <span className="service-gateway-icon" aria-hidden="true">✧</span>
+            <h3>Método Lumara</h3>
+            <p>Un recorrido de autoconocimiento para volver a tu esencia y construir cambios conscientes.</p>
+            <a className="service-gateway-cta" href="#universo">Conocer el método <span aria-hidden="true">↗</span></a>
+          </article>
+          <article className="service-gateway-card">
+            <span className="service-gateway-icon" aria-hidden="true">❋</span>
+            <h3>Talleres</h3>
+            <p>Experiencias vivenciales para explorar, compartir y llevar nuevas herramientas a tu vida.</p>
+            <a className="service-gateway-cta" href="#eventos">Explorar talleres <span aria-hidden="true">↗</span></a>
+          </article>
+          <article className="service-gateway-card">
+            <span className="service-gateway-icon" aria-hidden="true">☾</span>
+            <h3>Astrología</h3>
+            <p>Un lenguaje simbólico para descubrir ciclos, reconocer patrones y ampliar tu mirada.</p>
+            <a className="service-gateway-cta" href="#experiencias">Descubrir astrología <span aria-hidden="true">↗</span></a>
+          </article>
+          <article className="service-gateway-card">
+            <span className="service-gateway-icon" aria-hidden="true">⌘</span>
+            <h3>Aprendizaje</h3>
+            <p>Cursos y formaciones para aprender a tu ritmo y transformar el conocimiento en práctica.</p>
+            <a className="service-gateway-cta" href="#aprender">Ir a aprendizaje <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </section>
+
       <section className="manifesto section-wrap" id="universo" data-reveal>
         <div className="section-kicker">01 — EL UNIVERSO LUMARA</div>
         <div className="manifesto-content">
