@@ -433,3 +433,25 @@ h1 em, h2 em { color: var(--violet); font-weight: 400; }
  .brand-lockup, .brand-wordmark { width:100px; }
  .header-action { padding:8px 9px; }
 }
+
+/* Logo principal: isotipo lunar + logotipo, sin descriptor */
+.brand, .footer-brand { display:flex; flex-direction:row; align-items:center; gap:10px; min-width:0; }
+.brand-mark { display:inline-flex; align-items:center; gap:10px; height:auto; white-space:nowrap; }
+.brand-moon { display:block; width:50px; height:54px; object-fit:contain; flex:0 0 auto; }
+.brand-lockup { display:flex; align-items:center; justify-content:center; width:198px; }
+.brand-wordmark { display:block; width:100%; height:auto; aspect-ratio:2021 / 554; object-fit:contain; object-position:left center; }
+.brand-caption { display:none !important; }
+@media (max-width:640px) {
+ .site-header { height:76px; padding-left:16px; padding-right:16px; gap:10px; }
+ .brand, .footer-brand { min-width:0; gap:7px; }
+ .brand-mark { gap:7px; }
+ .brand-moon { width:32px; height:35px; }
+ .brand-lockup { width:132px; }
+ .brand-wordmark { width:100%; height:auto; }
+ .brand-caption { display:none !important; }
+ .header-action { padding:9px 11px; }
+}
+@media (max-width:380px) {
+ .brand-moon { width:28px; height:31px; }
+ .brand-lockup { width:116px; }
+}
