@@ -52,7 +52,7 @@ export default function LumaraResources() {
         <div className={styles.orbit} aria-hidden="true"><span /><span /><span /></div>
         <div className={styles.lotus} aria-hidden="true">
           <div className={styles.lotusGlow} />
-          <img src="/lumara-proyect/assets/img/lumara-lotus-hero.webp" alt="" />
+          <img src="/lumara-proyect/assets/img/logo/loto-recursos.png" alt="" />
           <span>UN MOMENTO PARA VOS</span>
         </div>
         <div className={styles.deck}>
