@@ -2109,7 +2109,7 @@ html { scroll-padding-top: 102px; }
 .training-rails {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: clamp(34px, 3.2vw, 52px);
 }
 .training-rail {
   width: 100%;
@@ -2120,12 +2120,15 @@ html { scroll-padding-top: 102px; }
 .training-track {
   display: flex;
   width: max-content;
-  gap: 18px;
+  gap: clamp(18px, 1.2vw, 24px);
   padding: 0 9px;
   will-change: transform;
 }
 .training-rail-left .training-track {
   animation: lumara-marquee-left 78s linear infinite;
+}
+.training-rail-right {
+  padding-left: clamp(48px, 6vw, 112px);
 }
 .training-rail-right .training-track {
   animation: lumara-marquee-right 88s linear infinite;
@@ -2137,15 +2140,15 @@ html { scroll-padding-top: 102px; }
 .training-card {
   position: relative;
   display: flex;
-  flex: 0 0 clamp(260px, 25vw, 390px);
+  flex: 0 0 clamp(340px, 24vw, 480px);
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  min-height: clamp(174px, 17vw, 248px);
-  padding: clamp(20px, 2.1vw, 30px);
+  min-height: clamp(230px, 16vw, 300px);
+  padding: clamp(26px, 2.4vw, 38px);
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.54);
-  border-radius: 18px;
+  border-radius: 22px;
   background-color: #80679f;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2171,7 +2174,7 @@ html { scroll-padding-top: 102px; }
 .training-card-kicker {
   margin-bottom: 10px;
   color: rgba(255,255,255,.86);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: .16em;
   line-height: 1.5;
@@ -2180,10 +2183,11 @@ html { scroll-padding-top: 102px; }
 .training-card-title {
   max-width: 88%;
   color: #fff;
-  font: 400 clamp(25px, 2.3vw, 34px)/1.02 var(--serif);
+  font: 400 clamp(30px, 2.45vw, 40px)/1.02 var(--serif);
   text-shadow: 0 2px 14px rgba(35,25,43,.38);
 }
 .training-card-arrow {
+  display: none !important;
   position: absolute;
   right: 19px;
   bottom: 18px;
@@ -2218,11 +2222,12 @@ html { scroll-padding-top: 102px; }
   .training-gallery-heading { margin-bottom: 34px; }
   .training-gallery-heading h2 { font-size: clamp(36px, 9vw, 48px); }
   .training-gallery-heading p { font-size: 14px; }
-  .training-rails { gap: 14px; }
+  .training-rails { gap: 26px; }
+  .training-rail-right { padding-left: 28px; }
   .training-track { gap: 12px; }
   .training-card {
-    flex-basis: 76vw;
-    min-height: 190px;
+    flex-basis: 82vw;
+    min-height: 230px;
     border-radius: 15px;
     padding: 21px;
   }
