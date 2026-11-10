@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import HeroCarousel from "./hero-carousel";
+import TrainingGallery from "./training-gallery";
 
 type Props = {
   locale: "es";
@@ -263,6 +264,8 @@ export default function LumaraHome({ locale }: Props) {
           ))}
         </div>
       </section>
+
+      <TrainingGallery />
 
       <section className="learning-section section-wrap" id="aprender" data-reveal>
         <div className="learning-intro">
