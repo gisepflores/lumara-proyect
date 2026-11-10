@@ -137,7 +137,7 @@ export default function LumaraHome({ locale }: Props) {
             Mi cambio comienza aquí y ahora.<br className="desktop-break" />
             Desde mi esencia, creo una vida plena, guiada por el amor, la abundancia y la prosperidad.
           </p>
-          <img className="commitment-lotus" src="/lumara-proyect/assets/img/lumara-lotus-hero.webp" alt="Flor de loto, símbolo de transformación y florecimiento" width="320" height="394" loading="lazy" />
+          <img className="commitment-lotus" src="/lumara-proyect/assets/img/loto.gif" alt="Flor de loto, símbolo de transformación y florecimiento" width="320" height="394" loading="lazy" />
         </div>
       </section>
 
