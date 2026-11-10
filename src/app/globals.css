@@ -671,7 +671,7 @@ html { scroll-padding-top: 102px; }
 }
 .commitment-lotus {
   display:block;
-  width:clamp(116px,14vw,164px);
+  width:clamp(112px,10vw,128px);
   height:auto;
   object-fit:contain;
   margin:22px auto 0;
@@ -736,7 +736,7 @@ html { scroll-padding-top: 102px; }
  .commitment-section h2 { max-width:340px; }
  .commitment-mantra { font-size:16px; line-height:1.75; margin-top:18px; }
  .desktop-break { display:none; }
- .commitment-lotus { width:116px; margin-top:18px; }
+ .commitment-lotus { width:112px; margin-top:18px; }
  .service-gateway { padding-top:22px; padding-bottom:70px; }
  .service-gateway-grid { grid-template-columns:1fr; gap:12px; margin-top:28px; }
  .service-gateway-card { min-height:0; padding:23px; }
