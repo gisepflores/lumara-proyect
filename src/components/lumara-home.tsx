@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import HeroCarousel from "./hero-carousel";
 
 type Props = {
@@ -67,14 +70,34 @@ export default function LumaraHome({ locale }: Props) {
           <span className="brand-mark"><img className="brand-moon" src="/lumara-proyect/isotipo-luna.webp" alt="" /><span className="brand-lockup"><img className="brand-wordmark" src="/lumara-proyect/isologotipo.webp" alt="Lumara" /><span className="brand-wordmark-fallback" aria-hidden="true">LUMARA</span></span></span>
         </a>
         <nav className="desktop-nav" aria-label="Navegación principal">
-          <a href="#universo">Universo</a>
+          <a href="#universo">Nosotros</a>
           <a href="#experiencias">Experiencias</a>
-          <a href="#aprender">Aprender</a>
-          <a href="#biblioteca">Biblioteca</a>
+          <a href="#aprender">Aprendizaje</a>
+          <a href="#eventos">Eventos</a>
+          <a href="#biblioteca">Recursos</a>
+          <a href="#contactos">Contactos</a>
         </nav>
-        <a className="header-action" href="#mi-lumara">
-          Mi Lumara <span aria-hidden="true">↗</span>
-        </a>
+        <div className="header-tools">
+          <div className="social-links" aria-label="Redes sociales">
+            <a href="https://www.instagram.com/espacio.lumara/" target="_blank" rel="noreferrer" aria-label="Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle className="social-dot" cx="17.6" cy="6.7" r="1" /></svg>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 21v-8h2.7l.4-3.2h-3.1V7.7c0-.9.3-1.5 1.6-1.5h1.7V3.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H8v3.2h2.8v8z" /></svg>
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noreferrer" aria-label="TikTok" title="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.1a3.2 3.2 0 1 1-2.7-3.1V8.2a6.2 6.2 0 1 0 5.8 6.2V9.1c1.3 1 2.8 1.5 4.4 1.6V7.4c-3-.2-5.2-2-5.6-4.4z" /></svg>
+            </a>
+          </div>
+          <button className="theme-toggle" type="button" onClick={() => setDarkMode((current) => !current)} aria-label={darkMode ? "Activar modo claro" : "Activar modo oscuro"} title={darkMode ? "Modo claro" : "Modo oscuro"}>
+            {darkMode ? (
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></svg>
+            ) : (
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 15.4A8.7 8.7 0 0 1 8.6 3.2 8.8 8.8 0 1 0 20.8 15.4Z" /></svg>
+            )}
+          </button>
+          <a className="header-action" href="#mi-lumara">Mi Lumara</a>
+        </div>
       </header>
 
       <HeroCarousel />
@@ -99,7 +122,7 @@ export default function LumaraHome({ locale }: Props) {
         </div>
       </section>
 
-      <section className="experiences-section section-wrap" id="experiencias">
+      <section className="experiences-section section-wrap" id="experiencias"><span id="eventos" className="anchor-target" aria-hidden="true" />
         <div className="section-heading">
           <div>
             <div className="section-kicker">02 — EXPERIENCIAS</div>
@@ -196,7 +219,7 @@ export default function LumaraHome({ locale }: Props) {
         <span className="closing-note">LUMARA · ESPIRITUALIDAD CONSCIENTE</span>
       </section>
 
-      <footer className="site-footer">
+      <footer className="site-footer" id="contactos">
         <a className="footer-brand" href="#inicio">
           <span className="brand-mark" aria-hidden="true"><img className="brand-moon" src="/lumara-proyect/isotipo-luna.webp" alt="" /><img className="brand-wordmark" src="/lumara-proyect/isologotipo.webp" alt="Lumara" /></span>
           <span className="brand-caption">ESPIRITUALIDAD CONSCIENTE</span>
