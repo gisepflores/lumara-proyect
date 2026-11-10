@@ -987,3 +987,13 @@ html { scroll-padding-top: 102px; }
     margin-top: 5px;
   }
 }
+
+
+/* Preserve the lotus end frame as a still image after playback */
+#compromiso .commitment-lotus[hidden] {
+  display: none !important;
+}
+#compromiso .commitment-lotus-frame {
+  object-fit: contain;
+  object-position: center;
+}
