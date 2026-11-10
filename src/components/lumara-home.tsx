@@ -211,7 +211,14 @@ export default function LumaraHome({ locale }: Props) {
 
       <section className="manifesto section-wrap" id="universo" data-reveal>
         <div className="section-kicker">01 — EL UNIVERSO LUMARA</div>
-        <div className="manifesto-content">
+        <div className="manifesto-content manifesto-layout">
+          <div className="manifesto-portrait">
+            <img
+              src="/lumara-proyect/assets/img/metodolumara/chica-lumara.png"
+              alt="Mujer en un momento de calma y conexión interior"
+              loading="lazy"
+            />
+          </div>
           <div className="manifesto-aside manifesto-method">
             <span className="manifesto-eyebrow">UN CAMINO HACIA TU BIENESTAR</span>
             <h2 className="manifesto-title">Método <em>Lumara</em></h2>
