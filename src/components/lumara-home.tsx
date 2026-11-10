@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import HeroCarousel from "./hero-carousel";
 import TrainingGallery from "./training-gallery";
+import LumaraResources from "./lumara-resources";
 
 type Props = {
   locale: "es";
@@ -37,14 +38,6 @@ const experiences = [
       "Experiencias compartidas para aprender, conversar y descubrir nuevas formas de conectar.",
     tag: "Comunidad"
   }
-];
-
-const freeResources = [
-  { title: "Mantras", subtitle: "Sonido, equilibrio y enfoque", description: "Prácticas sonoras y afirmaciones para elevar tu energía, calmar la mente y conectar con tu interior.", detail: "Encontrá pequeñas pausas para comenzar el día con intención, recuperar el foco y acompañar tus momentos de quietud.", icon: "✧", visual: "mantras", cta: "Explorar mantras", href: "/es/recursos/mantras/" },
-  { title: "Agendas holísticas", subtitle: "Organización con propósito", description: "Plantillas para planificar tu vida integrando metas, hábitos, descanso y bienestar.", detail: "Organizá tus semanas desde una mirada consciente: intención del mes, hábitos, gratitud y espacios para escucharte.", icon: "▤", visual: "agendas", cta: "Ver agendas", href: "/es/recursos/agendas-holisticas/" },
-  { title: "Calendarios lunares", subtitle: "Ciclos, energía y reflexión", description: "Conocé las fases lunares y encontrá inspiración para acompañar tus propios ritmos.", detail: "Una guía visual para reconocer luna nueva, cuartos y luna llena, con preguntas y propuestas de reflexión para cada ciclo.", icon: "☾", visual: "lunares", cta: "Ver calendario", href: "/es/recursos/calendarios-lunares/" },
-  { title: "Wallpapers", subtitle: "Inspiración en tu espacio digital", description: "Fondos para PC y celular que llevan calma, belleza e intención a tus pantallas.", detail: "Descubrí fondos en la paleta Lumara con frases y composiciones inspiradoras para renovar tus espacios digitales.", icon: "◇", visual: "wallpapers", cta: "Ver wallpapers", href: "/es/recursos/wallpapers/" },
-  { title: "Recursos de audio", subtitle: "Spotify, YouTube y más", description: "Meditaciones, visualizaciones y contenidos guiados para acompañarte donde estés.", detail: "Accedé a selecciones de audio para meditar, respirar, descansar y sumar momentos conscientes a tu rutina.", icon: "♫", visual: "audios", cta: "Escuchar ahora", href: "/es/recursos/audios/" }
 ];
 
 const learning = [
@@ -94,8 +87,6 @@ export default function LumaraHome({ locale }: Props) {
   const [darkMode, setDarkMode] = useState(false);
   const [lotusFinished, setLotusFinished] = useState(false);
   const [learningActiveIndex, setLearningActiveIndex] = useState(2);
-  const [resourcesOpen, setResourcesOpen] = useState(false);
-  const [activeResource, setActiveResource] = useState<string | null>(null);
   const lotusFrameRef = useRef<HTMLCanvasElement>(null);
   const visibleLearning = [-2, -1, 0, 1, 2].map((offset) => ({
     item: learning[(learningActiveIndex + offset + learning.length) % learning.length],
@@ -105,19 +96,6 @@ export default function LumaraHome({ locale }: Props) {
   useEffect(() => {
     document.documentElement.dataset.theme = darkMode ? "dark" : "light";
   }, [darkMode]);
-
-  useEffect(() => {
-    const section = document.getElementById("biblioteca");
-    if (!section || !("IntersectionObserver" in window)) return;
-    const observer = new IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting)) {
-        setResourcesOpen(true);
-        observer.disconnect();
-      }
-    }, { threshold: 0.18 });
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>("[data-reveal]");
@@ -351,64 +329,7 @@ export default function LumaraHome({ locale }: Props) {
         </div>
       </section>
 
-      <section
-        className={`free-resources-section ${resourcesOpen ? "resources-open" : ""}`}
-        id="biblioteca"
-        data-reveal
-        aria-labelledby="resources-title"
-        onMouseEnter={() => setResourcesOpen(true)}
-        onFocusCapture={() => setResourcesOpen(true)}
-      >
-        <div className="free-resources-heading">
-          <span className="section-kicker">RECURSOS GRATUITOS · UNIVERSO LUMARA</span>
-          <h2 id="resources-title">Tu espacio para <em>nutrirte e inspirarte.</em></h2>
-          <p>Explorá herramientas y materiales gratuitos para acompañar tu bienestar cada día.</p>
-        </div>
-        <div className="resources-stage" onTouchStart={() => setResourcesOpen(true)}>
-          <div className="resources-aura" aria-hidden="true" />
-          <div className="resources-lotus" aria-hidden="true">
-            <span className="resources-lotus-halo" />
-            <img src="/lumara-proyect/assets/img/lumara-lotus-hero.webp" alt="" />
-            <span className="resources-lotus-caption">UN MOMENTO PARA VOS</span>
-          </div>
-          <div className="resources-cards" aria-label="Explorá los recursos gratuitos">
-            {freeResources.map((item, index) => (
-              <article
-                className={`resource-orbit-card resource-${item.visual} ${activeResource === item.title ? "is-flipped" : ""}`}
-                key={item.title}
-                style={{ "--resource-index": index } as React.CSSProperties}
-              >
-                <button
-                  type="button"
-                  className="resource-card-inner"
-                  aria-label={activeResource === item.title ? `Cerrar detalle de ${item.title}` : `Descubrir ${item.title}`}
-                  aria-pressed={activeResource === item.title}
-                  onClick={() => {
-                    setResourcesOpen(true);
-                    setActiveResource((current) => current === item.title ? null : item.title);
-                  }}
-                >
-                  <span className="resource-card-face resource-card-front">
-                    <span className="resource-card-symbol" aria-hidden="true">{item.icon}</span>
-                    <span className="resource-card-label">RECURSO LUMARA</span>
-                    <strong>{item.title}</strong>
-                    <span className="resource-card-hint">Tocá para descubrir <span aria-hidden="true">↗</span></span>
-                  </span>
-                  <span className="resource-card-face resource-card-back">
-                    <span className="resource-card-symbol" aria-hidden="true">{item.icon}</span>
-                    <strong>{item.title}</strong>
-                    <span className="resource-card-subtitle">{item.subtitle}</span>
-                    <span className="resource-card-detail">{item.detail}</span>
-                    <span className="resource-card-link">{item.cta} <span aria-hidden="true">→</span></span>
-                  </span>
-                </button>
-                <a className="resource-card-access" href={item.href}>{item.cta} <span aria-hidden="true">→</span></a>
-              </article>
-            ))}
-          </div>
-          <p className="resources-scroll-hint">{resourcesOpen ? "Elegí una carta para conocer el recurso" : "Pasá por aquí o desplazate para descubrir los recursos"}</p>
-        </div>
-      </section>
+      <LumaraResources />
 
       <section className="closing-section" id="mi-lumara" data-reveal><span id="comunidad" className="anchor-target" aria-hidden="true" />
         <div className="closing-orb parallax-soft" aria-hidden="true" />
