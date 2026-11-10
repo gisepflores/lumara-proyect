@@ -139,7 +139,7 @@ export default function LumaraHome({ locale }: Props) {
             Desde mi esencia, creo una vida plena, guiada por el amor, la abundancia y la prosperidad.
             <span className="mantra-quote" aria-hidden="true">”</span>
           </p>
-          <video className="commitment-lotus" autoPlay muted loop playsInline preload="metadata" aria-label="Animación de una flor de loto que simboliza transformación y florecimiento">
+          <video className="commitment-lotus" autoPlay muted playsInline preload="auto" aria-label="Animación de una flor de loto que simboliza transformación y florecimiento">
             <source src="/lumara-proyect/assets/img/logo/loto.mp4" type="video/mp4" />
           </video>
         </div>
