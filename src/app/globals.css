@@ -370,3 +370,19 @@ h1 em, h2 em { color: var(--violet); font-weight: 400; }
   .hero-slide { animation: none; }
   .hero-indicator, .hero-arrow { transition: none; }
 }
+
+/* Official Lumara logo lockup */
+.brand, .footer-brand { align-items: flex-start; gap: 5px; min-width: 0; }
+.brand-mark { display: inline-flex; align-items: center; gap: 7px; height: 31px; white-space: nowrap; }
+.brand-moon { display: block; width: 22px; height: 23px; object-fit: contain; flex: 0 0 auto; }
+.brand-wordmark { display: block; width: 102px; height: 30px; object-fit: contain; object-position: left center; }
+.brand-caption { display: block; margin-left: 29px; line-height: 1.2; }
+@media (max-width: 640px) {
+  .site-header { height: 76px; padding-left: 18px; padding-right: 18px; gap: 12px; }
+  .brand, .footer-brand { min-width: 0; }
+  .brand-mark { height: 29px; gap: 5px; }
+  .brand-moon { width: 20px; height: 21px; }
+  .brand-wordmark { width: 88px; height: 26px; }
+  .brand-caption { display: none; }
+  .header-action { padding: 10px 12px; font-size: 10px; }
+}
