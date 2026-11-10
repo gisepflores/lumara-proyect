@@ -57,6 +57,12 @@ const learning = [
 ];
 
 export default function LumaraHome({ locale }: Props) {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = darkMode ? "dark" : "light";
+  }, [darkMode]);
+
   return (
     <main id="inicio">
       <div className="announcement">
