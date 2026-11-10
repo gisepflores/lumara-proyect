@@ -791,20 +791,28 @@ html { scroll-padding-top: 102px; }
 }
 #compromiso h2 em { color:#80679f; font-style:italic; }
 #compromiso .commitment-mantra {
-  max-width:790px;
+  position:relative;
+  max-width:820px;
   margin:25px auto 0;
+  padding:0 18px;
   color:#665c6d;
-  font:400 clamp(17px,1.65vw,21px)/1.85 var(--sans);
+  font:italic 500 clamp(20px,2vw,25px)/1.75 var(--serif);
   letter-spacing:.005em;
   text-wrap:balance;
 }
+#compromiso .mantra-quote {
+  display:inline-block;
+  color:#a58dbb;
+  font:700 clamp(38px,4vw,52px)/.5 var(--sans);
+  vertical-align:-.2em;
+  padding:0 5px;
+}
 #compromiso .commitment-lotus {
   display:block;
-  width:clamp(104px,10vw,136px);
-  max-height:150px;
-  height:auto;
+  width:clamp(112px,11vw,148px);
+  height:clamp(138px,13vw,176px);
   object-fit:contain;
-  margin:27px auto 0;
+  margin:25px auto 0;
   filter:drop-shadow(0 12px 18px rgba(85,65,104,.13));
 }
 #servicios-iniciales.service-gateway {
