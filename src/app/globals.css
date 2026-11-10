@@ -1788,3 +1788,88 @@ html { scroll-padding-top: 102px; }
       url("/lumara-proyect/assets/img/logo/chica2-relax.jpg");
   }
 }
+
+
+/* Final refinement: match the open, editorial text treatment of reference image 2 */
+#universo.manifesto {
+  min-height: clamp(620px, 46vw, 760px);
+  padding-top: clamp(48px, 5vw, 76px);
+  padding-bottom: clamp(48px, 5vw, 76px);
+  background-position: center 43% !important;
+}
+#universo.manifesto .manifesto-content {
+  min-height: clamp(450px, 34vw, 560px);
+  justify-content: flex-end;
+  align-items: center;
+}
+#universo.manifesto .manifesto-method {
+  width: min(43%, 590px);
+  max-width: 590px;
+  padding: 28px 0 28px 24px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+#universo.manifesto .manifesto-title {
+  font-size: clamp(48px, 5.1vw, 70px) !important;
+  line-height: 1.02;
+}
+#universo.manifesto .manifesto-subtitle {
+  font-size: clamp(17px, 1.55vw, 21px) !important;
+  margin-top: 16px;
+}
+#universo.manifesto .manifesto-method p {
+  max-width: 510px;
+  font-size: 13px;
+  line-height: 1.95;
+}
+:root[data-theme="dark"] #universo.manifesto .manifesto-method {
+  background: transparent !important;
+}
+@media (max-width: 900px) {
+  #universo.manifesto {
+    min-height: 650px;
+  }
+  #universo.manifesto .manifesto-content {
+    min-height: 490px;
+  }
+  #universo.manifesto .manifesto-method {
+    width: min(52%, 540px);
+    padding: 24px 0 24px 18px !important;
+  }
+}
+@media (max-width: 760px) {
+  #universo.manifesto {
+    min-height: 700px;
+    padding: 34px 24px 42px;
+    background-position: 44% top !important;
+    background-image:
+      linear-gradient(180deg, rgba(252,250,253,.04) 0%, rgba(252,250,253,.12) 38%, rgba(252,250,253,.92) 100%),
+      url("/lumara-proyect/assets/img/logo/chica2-relax.jpg") !important;
+  }
+  #universo.manifesto .manifesto-content {
+    min-height: 0;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: clamp(260px, 72vw, 370px);
+  }
+  #universo.manifesto .manifesto-method {
+    width: 100%;
+    max-width: 620px;
+    padding: 22px 0 8px !important;
+  }
+  #universo.manifesto .manifesto-title {
+    font-size: clamp(43px, 10vw, 58px) !important;
+  }
+  #universo.manifesto .manifesto-method p {
+    font-size: 13px;
+  }
+  :root[data-theme="dark"] #universo.manifesto {
+    background-image:
+      linear-gradient(180deg, rgba(33,28,39,.08) 0%, rgba(33,28,39,.22) 38%, rgba(33,28,39,.94) 100%),
+      url("/lumara-proyect/assets/img/logo/chica2-relax.jpg") !important;
+  }
+}
