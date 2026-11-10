@@ -128,27 +128,27 @@ export default function LumaraHome({ locale }: Props) {
 
       <HeroCarousel />
 
-      <section className="commitment-section" aria-labelledby="commitment-title" data-reveal>
+      <section className="commitment-section" id="compromiso" aria-labelledby="commitment-title" data-reveal>
         <div className="commitment-inner">
-          <span className="section-kicker">UN MOMENTO PARA VOS</span>
-          <h2 id="commitment-title">Comprométete <em>contigo mismo</em></h2>
+          <span className="section-kicker commitment-kicker">UN MOMENTO PARA VOS</span>
+          <h2 id="commitment-title">Comprométete <em>contigo mismo.</em></h2>
           <p className="commitment-mantra">
             Hoy me elijo, me transformo y florezco.<br className="desktop-break" />
             Mi cambio comienza aquí y ahora.<br className="desktop-break" />
             Desde mi esencia, creo una vida plena, guiada por el amor, la abundancia y la prosperidad.
           </p>
-          <img className="commitment-lotus" src="/lumara-proyect/assets/img/lotus/lumara-lotus.gif" alt="Flor de loto, símbolo de transformación y florecimiento" width="320" height="394" />
+          <img className="commitment-lotus" src="/lumara-proyect/assets/img/lumara-lotus-hero.webp" alt="Flor de loto, símbolo de transformación y florecimiento" width="320" height="394" loading="lazy" />
         </div>
       </section>
 
-      <section className="service-gateway section-wrap" aria-label="Explorá Lumara" data-reveal>
+      <section className="service-gateway section-wrap" id="servicios-iniciales" aria-label="Explorá Lumara" data-reveal>
         <div className="service-gateway-heading">
-          <span className="section-kicker">TU CAMINO COMIENZA ACÁ</span>
+          <span className="section-kicker service-gateway-kicker">TU CAMINO COMIENZA ACÁ</span>
           <h2>Un espacio para <em>florecer.</em></h2>
           <p>Elegí por dónde querés empezar. Cada experiencia es una invitación a conectar con vos.</p>
         </div>
         <div className="service-gateway-grid">
-          <article className="service-gateway-card">
+          <article className="service-gateway-card" data-reveal>
             <span className="service-gateway-icon" aria-hidden="true">✧</span>
             <h3>Método Lumara</h3>
             <p>Un recorrido de autoconocimiento para volver a tu esencia y construir cambios conscientes.</p>
