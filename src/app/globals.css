@@ -3060,3 +3060,199 @@ html { scroll-padding-top: 102px; }
 :root[data-theme="dark"] .free-resources-section { background:radial-gradient(ellipse at 50% 70%,rgba(105,76,125,.28),transparent 48%),#211b28; }
 :root[data-theme="dark"] .free-resources-heading h2 { color:#eee4f4; }
 :root[data-theme="dark"] .free-resources-heading p { color:#c9b9d4; }
+
+
+/* Approved header and hero refinement — Lumara */
+.site-header .desktop-nav {
+  gap: clamp(16px, 1.8vw, 30px);
+}
+.site-header .desktop-nav a {
+  font-size: clamp(13px, .82vw, 15px);
+  font-weight: 500;
+  color: #554168;
+}
+.site-header .header-tools {
+  gap: clamp(10px, 1vw, 17px);
+}
+.site-header .theme-toggle {
+  order: 0;
+  width: 27px;
+  height: 30px;
+}
+.site-header .header-tools-divider {
+  display: block;
+  width: 1px;
+  height: 27px;
+  margin: 0 4px;
+  background: rgba(85,65,104,.42);
+}
+.site-header .social-links { order: 2; }
+.site-header .header-action {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 24px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: #554168;
+  color: #fff !important;
+}
+.site-header .header-action:hover { background: #80679f; }
+.site-header .theme-toggle svg { width: 21px; height: 21px; }
+.site-header .social-links svg { width: 19px; height: 19px; }
+
+/* Keep action labels comfortably readable throughout the site */
+a.button,
+a.header-action,
+a.manifesto-cta,
+a.learning-card-cta,
+a.service-gateway-cta,
+a.resource-card-access {
+  font-size: 14px;
+  font-weight: 600;
+}
+a.button { min-height: 52px; padding-inline: 27px; }
+
+/* Carousel slides share one stable height; only the visual changes */
+.hero-carousel,
+.hero-carousel-track,
+.hero-slide {
+  height: 610px;
+  min-height: 610px;
+}
+.hero-slide {
+  padding: 72px clamp(38px, 10vw, 190px) 100px;
+}
+.hero-slide--one {
+  background-image:
+    linear-gradient(90deg,
+      rgba(249,244,250,.94) 0%,
+      rgba(236,224,241,.83) 34%,
+      rgba(192,165,208,.35) 58%,
+      rgba(70,48,91,.08) 100%),
+    url("/lumara-proyect/assets/img/Carrucel/carrucel1.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.hero-slide .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+  letter-spacing: .2em;
+  margin-bottom: 26px;
+}
+.hero-slide .eyebrow-line {
+  order: 2;
+  display: inline-block;
+  width: clamp(58px, 7vw, 130px);
+  height: 1px;
+  background: linear-gradient(90deg, #b79b72, rgba(183,155,114,.25));
+}
+.hero-slide-content {
+  width: min(100%, 760px);
+  margin-left: clamp(8px, 0.8vw, 18px);
+}
+.hero-slide h1 {
+  font-size: clamp(58px, 5.2vw, 88px);
+  line-height: .96;
+}
+.hero-slide .hero-intro {
+  max-width: 720px;
+  margin-top: 27px;
+  font-size: clamp(15px, 1vw, 19px);
+  line-height: 1.75;
+}
+.hero-slide .hero-actions { margin-top: 32px; }
+.hero-slide .button-primary {
+  min-width: 300px;
+  min-height: 58px;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(48,31,64,.18);
+}
+.hero-arrow {
+  width: 30px;
+  height: 104px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(255,255,255,.9);
+  font-size: 64px;
+  font-weight: 200;
+  line-height: .8;
+  opacity: .78;
+  box-shadow: none;
+}
+.hero-arrow:hover {
+  background: transparent;
+  opacity: 1;
+  transform: translateY(-50%) scaleX(1.08);
+}
+.hero-arrow--prev { left: 28px; }
+.hero-arrow--next { right: 28px; }
+.hero-indicators { bottom: 27px; gap: 12px; }
+.hero-indicator { width: 13px; height: 13px; opacity: .65; }
+.hero-indicator.is-active { background: #fff; opacity: 1; box-shadow: 0 0 0 2px rgba(255,255,255,.2); transform: scale(1.12); }
+.hero-slide-count { display: none !important; }
+:root[data-theme="dark"] .hero-slide--one {
+  background-image:
+    linear-gradient(90deg, rgba(34,27,42,.88) 0%, rgba(48,37,59,.72) 40%, rgba(48,37,59,.22) 100%),
+    url("/lumara-proyect/assets/img/Carrucel/carrucel1.png");
+  background-size: cover;
+  background-position: center center;
+}
+:root[data-theme="dark"] .hero-slide--one .eyebrow,
+:root[data-theme="dark"] .hero-slide--one h1,
+:root[data-theme="dark"] .hero-slide--one .hero-intro { color: #f5eff8; }
+:root[data-theme="dark"] .hero-slide--one h1 em { color: #d3bde3; }
+
+@media (max-width: 1100px) {
+  .site-header .desktop-nav { gap: 12px; }
+  .site-header .desktop-nav a { font-size: 12px; }
+  .site-header .header-action { font-size: 14px; padding-inline: 18px; }
+}
+@media (max-width: 820px) {
+  .site-header .header-tools-divider { margin-inline: 2px; }
+}
+@media (max-width: 640px) {
+  .site-header { min-height: 104px; }
+  .site-header .header-tools { gap: 8px; }
+  .site-header .header-tools-divider { height: 23px; margin-inline: 1px; }
+  .site-header .theme-toggle { width: 24px; }
+  .site-header .social-links { gap: 5px; }
+  .site-header .social-links a { width: 22px; }
+  .site-header .header-action { min-height: 38px; padding: 8px 13px; font-size: 12px; }
+  .hero-carousel, .hero-carousel-track, .hero-slide {
+    height: 760px;
+    min-height: 760px;
+  }
+  .hero-slide {
+    padding: 58px 28px 112px;
+    background-position: 58% center;
+  }
+  .hero-slide--one {
+    background-image:
+      linear-gradient(180deg, rgba(249,244,250,.94) 0%, rgba(236,224,241,.82) 42%, rgba(75,53,94,.28) 100%),
+      url("/lumara-proyect/assets/img/Carrucel/carrucel1.png");
+    background-size: cover;
+    background-position: 58% center;
+  }
+  .hero-slide-content { width: 100%; margin-left: 0; }
+  .hero-slide .eyebrow { font-size: 10px; gap: 9px; margin-bottom: 22px; }
+  .hero-slide .eyebrow-line { width: 52px; }
+  .hero-slide h1 { font-size: clamp(47px, 12vw, 66px); }
+  .hero-slide .hero-intro { max-width: 520px; font-size: 14px; line-height: 1.65; margin-top: 22px; }
+  .hero-slide .hero-actions { margin-top: 26px; }
+  .hero-slide .button-primary { min-width: 0; min-height: 52px; font-size: 15px; }
+  .hero-arrow { top: auto; bottom: 17px; width: 24px; height: 58px; font-size: 48px; }
+  .hero-arrow--prev { left: 8px; }
+  .hero-arrow--next { right: 8px; }
+  .hero-indicators { bottom: 37px; gap: 9px; }
+  .hero-indicator { width: 10px; height: 10px; }
+}
