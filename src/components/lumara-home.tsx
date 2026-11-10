@@ -211,27 +211,19 @@ export default function LumaraHome({ locale }: Props) {
 
       <section className="manifesto section-wrap" id="universo" data-reveal>
         <div className="section-kicker">01 — EL UNIVERSO LUMARA</div>
-        <div className="manifesto-content manifesto-layout">
-          <div className="manifesto-portrait">
-            <img
-              src="/lumara-proyect/assets/img/metodolumara/chica-lumara.png"
-              alt="Mujer en un momento de calma y conexión interior"
-              loading="lazy"
-            />
-          </div>
-          <div className="manifesto-aside manifesto-method">
-            <span className="manifesto-eyebrow">UN CAMINO HACIA TU BIENESTAR</span>
-            <h2 className="manifesto-title">Método <em>Lumara</em></h2>
-            <h3 className="manifesto-subtitle">Conocé el verdadero proceso de sanación</h3>
-            <p>
-              El Método Lumara acompaña cada etapa de tu sanación, sin atajos ni
-              procesos salteados. Integra distintos recursos en cada paso para
-              abrir nuevos niveles emocionales y cultivar tu bienestar espiritual.
-              Una transformación que se refleja en tu día a día, con más armonía,
-              equilibrio y paz interior.
+        <div className="manifesto-content">
+          <div className="manifesto-aside manifesto-quote">
+            <p className="manifesto-lead">
+              No se trata de encontrar todas las respuestas.
+              Se trata de <em>hacer espacio</em> para escucharte.
             </p>
-            <a className="manifesto-cta" href="#experiencias">
-              Comenzá tu sanación <span aria-hidden="true">→</span>
+            <p className="manifesto-quote-copy">
+              Creemos en una espiritualidad cercana, consciente y posible.
+              Un camino que no exige certezas: invita a mirar hacia adentro,
+              abrir preguntas y construir tu propio significado.
+            </p>
+            <a className="text-link" href="#experiencias">
+              Descubrí nuestro universo <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
