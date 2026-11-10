@@ -567,3 +567,12 @@ h1 em, h2 em { color: var(--violet); font-weight: 400; }
  .social-links svg, .theme-toggle svg { width:16px; height:16px; }
  .header-action { padding:9px 13px; font-size:9px; }
 }
+
+@media (max-width:640px) {
+ .site-header { height:auto; min-height:104px; flex-wrap:wrap; align-content:center; row-gap:5px; padding-top:10px; padding-bottom:8px; }
+ .site-header .brand { order:1; }
+ .site-header .header-tools { order:2; }
+ .site-header .desktop-nav { order:3; display:flex !important; flex:0 0 100%; width:100%; justify-content:flex-start; gap:23px; overflow-x:auto; padding:8px 1px 3px; scrollbar-width:none; }
+ .site-header .desktop-nav::-webkit-scrollbar { display:none; }
+ .site-header .desktop-nav a { flex:0 0 auto; font-size:10px; }
+}
