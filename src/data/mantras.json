@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "intervalMinutes": 5,
+  "mantras": [
+    {
+      "id": "elegirte",
+      "category": "Elegirte",
+      "text": "Hoy me elijo con amor y respeto. Mi voz importa, mis deseos merecen espacio y cada decisión consciente me acerca a la vida que quiero construir."
+    },
+    {
+      "id": "amor-propio",
+      "category": "Amor propio",
+      "text": "Me trato con ternura, incluso en los días difíciles. Soy suficiente mientras crezco, y merezco un amor que también empiece por mí."
+    },
+    {
+      "id": "abundancia",
+      "category": "Abundancia",
+      "text": "Me abro a recibir la abundancia en todas sus formas. Reconozco lo que ya florece en mi vida y avanzo con confianza hacia nuevas posibilidades."
+    },
+    {
+      "id": "valentia",
+      "category": "Valentía",
+      "text": "Confío en mi capacidad para dar el próximo paso. No necesito tener todas las respuestas para avanzar con valentía y honrar mi propio camino."
+    },
+    {
+      "id": "confianza",
+      "category": "Confianza",
+      "text": "Escucho mi intuición y respeto mis tiempos. Dentro de mí encuentro claridad para elegir, fuerza para sostenerme y calma para continuar."
+    },
+    {
+      "id": "florecer",
+      "category": "Florecer",
+      "text": "Todo proceso tiene su ritmo. Me permito crecer sin compararme, soltar lo que pesa y florecer desde mi esencia."
+    },
+    {
+      "id": "paz-interior",
+      "category": "Paz interior",
+      "text": "Respiro, vuelvo al presente y suelto la urgencia. Hoy elijo la serenidad que nace de estar en armonía conmigo."
+    },
+    {
+      "id": "merecimiento",
+      "category": "Merecimiento",
+      "text": "Merezco bienestar, alegría y vínculos que me hagan bien. Recibo lo bueno sin culpa y honro el valor de quien soy."
+    },
+    {
+      "id": "nuevos-comienzos",
+      "category": "Nuevos comienzos",
+      "text": "Cada día trae una oportunidad para comenzar de nuevo. Dejo atrás lo que cumplió su ciclo y recibo el presente con esperanza."
+    },
+    {
+      "id": "gratitud",
+      "category": "Gratitud",
+      "text": "Agradezco lo que soy, lo que aprendí y todo lo que está por llegar. La gratitud ilumina mi presente y expande mi mirada."
+    },
+    {
+      "id": "limites",
+      "category": "Límites sanos",
+      "text": "Poner límites también es una forma de amor. Cuido mi energía, respeto mis necesidades y elijo relaciones donde puedo ser yo."
+    },
+    {
+      "id": "felicidad",
+      "category": "Felicidad",
+      "text": "Me doy permiso para disfrutar lo simple. La felicidad también vive en los pequeños momentos que elijo reconocer y habitar."
+    },
+    {
+      "id": "proposito",
+      "category": "Propósito",
+      "text": "Honro mi propósito con acciones pequeñas y conscientes. Cada paso alineado con mis valores construye una vida con sentido."
+    },
+    {
+      "id": "soltar",
+      "category": "Soltar",
+      "text": "Suelto con amor aquello que ya no acompaña mi crecimiento. Hago espacio para lo nuevo y confío en los ciclos de la vida."
+    },
+    {
+      "id": "equilibrio",
+      "category": "Equilibrio",
+      "text": "Encuentro equilibrio cuando escucho mi cuerpo, mis emociones y mis necesidades. Hoy avanzo con presencia, sin exigirme de más."
+    },
+    {
+      "id": "abundancia-interior",
+      "category": "Abundancia interior",
+      "text": "Mi riqueza también está en mi paz, mis talentos y mis vínculos. Reconozco mis recursos y permito que mi potencial se expanda."
+    },
+    {
+      "id": "resiliencia",
+      "category": "Resiliencia",
+      "text": "He atravesado momentos que me enseñaron mi fortaleza. Puedo volver a empezar con más sabiduría, paciencia y compasión."
+    },
+    {
+      "id": "autenticidad",
+      "category": "Autenticidad",
+      "text": "Me permito ser auténtica, sin esconder mi luz para encajar. Mi singularidad tiene valor y merece expresarse con libertad."
+    },
+    {
+      "id": "amor-y-vinculos",
+      "category": "Vínculos conscientes",
+      "text": "Construyo vínculos desde el respeto, la reciprocidad y la honestidad. Doy amor sin abandonarme y recibo sin dejar de ser yo."
+    },
+    {
+      "id": "presencia",
+      "category": "Presencia",
+      "text": "Este momento es suficiente para comenzar. Habito mi presente con atención y elijo darme el espacio que necesito."
+    }
+  ]
+}
