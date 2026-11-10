@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import HeroCarousel from "./hero-carousel";
 
 type Props = {
@@ -58,6 +58,8 @@ const learning = [
 
 export default function LumaraHome({ locale }: Props) {
   const [darkMode, setDarkMode] = useState(false);
+  const [lotusFinished, setLotusFinished] = useState(false);
+  const lotusFrameRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     document.documentElement.dataset.theme = darkMode ? "dark" : "light";
@@ -139,9 +141,37 @@ export default function LumaraHome({ locale }: Props) {
             Desde mi esencia, creo una vida plena, guiada por el amor, la abundancia y la prosperidad.
             <span className="mantra-quote" aria-hidden="true">”</span>
           </p>
-          <video className="commitment-lotus" autoPlay muted playsInline preload="auto" onEnded={(event) => event.currentTarget.pause()} aria-label="Animación de una flor de loto que simboliza transformación y florecimiento">
+          <video
+            className="commitment-lotus"
+            autoPlay
+            muted
+            playsInline
+            preload="auto"
+            hidden={lotusFinished}
+            onEnded={(event) => {
+              const video = event.currentTarget;
+              const canvas = lotusFrameRef.current;
+              if (canvas && video.videoWidth > 0 && video.videoHeight > 0) {
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                const context = canvas.getContext("2d");
+                context?.drawImage(video, 0, 0, canvas.width, canvas.height);
+                video.pause();
+                setLotusFinished(true);
+              } else {
+                video.pause();
+              }
+            }}
+            aria-label="Animación de una flor de loto que simboliza transformación y florecimiento"
+          >
             <source src="/lumara-proyect/assets/img/logo/loto.mp4" type="video/mp4" />
           </video>
+          <canvas
+            ref={lotusFrameRef}
+            className="commitment-lotus commitment-lotus-frame"
+            hidden={!lotusFinished}
+            aria-label="Flor de loto en su estado final"
+          />
         </div>
       </section>
 
