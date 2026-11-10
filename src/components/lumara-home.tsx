@@ -208,8 +208,8 @@ export default function LumaraHome({ locale }: Props) {
 
       <section className="commitment-section" id="compromiso" aria-labelledby="commitment-title" data-reveal>
         <div className="commitment-inner">
-          <span className="section-kicker commitment-kicker">UN MOMENTO PARA VOS</span>
-          <h2 id="commitment-title">Comprométete <em>contigo mismo.</em></h2>
+          <span className="section-kicker commitment-kicker">ES HOY, AQUÍ Y AHORA</span>
+          <h2 id="commitment-title">Haz un compromiso <em>contigo mismo</em></h2>
           <p className="commitment-mantra" key={mantrasData.mantras[mantraIndex].id} aria-live="polite" aria-atomic="true">
             <span className="mantra-quote" aria-hidden="true">“</span>
             {mantrasData.mantras[mantraIndex].text}
