@@ -3371,3 +3371,79 @@ a.button { min-height: 52px; padding-inline: 27px; }
   }
   .hero-slide { padding: 58px 28px 112px; }
 }
+
+
+/* Subtle carousel arrows: thin, quiet and secondary to the slide content */
+.hero-arrow {
+  width: 32px;
+  height: 112px;
+  padding: 0;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: rgba(255,255,255,.38) !important;
+  font-family: var(--sans);
+  font-size: 58px;
+  font-weight: 200;
+  line-height: .8;
+  opacity: .58;
+  box-shadow: none !important;
+  text-shadow: 0 1px 8px rgba(48,31,64,.08);
+  transition: opacity .3s ease, transform .3s ease, color .3s ease;
+}
+.hero-arrow:hover,
+.hero-arrow:focus-visible {
+  color: rgba(255,255,255,.72) !important;
+  opacity: .88;
+  background: transparent !important;
+  transform: translateY(-50%) scaleX(1.04);
+}
+.hero-arrow--prev { left: clamp(16px, 2.2vw, 34px); }
+.hero-arrow--next { right: clamp(16px, 2.2vw, 34px); }
+
+/* Editorial entrance: each text element arrives in a gentle stagger */
+.hero-slide .eyebrow,
+.hero-slide h1,
+.hero-slide .hero-intro,
+.hero-slide .hero-actions {
+  opacity: 0;
+  animation: lumara-copy-rise .78s cubic-bezier(.2,.72,.24,1) both;
+}
+.hero-slide .eyebrow { animation-delay: .06s; }
+.hero-slide h1 { animation-delay: .18s; }
+.hero-slide .hero-intro { animation-delay: .34s; }
+.hero-slide .hero-actions { animation-delay: .5s; }
+
+@keyframes lumara-copy-rise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+    filter: blur(5px);
+  }
+  65% { opacity: 1; filter: blur(0); }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+}
+@media (max-width: 640px) {
+  .hero-arrow {
+    width: 24px;
+    height: 66px;
+    font-size: 46px;
+    color: rgba(255,255,255,.42) !important;
+    opacity: .62;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide .eyebrow,
+  .hero-slide h1,
+  .hero-slide .hero-intro,
+  .hero-slide .hero-actions {
+    opacity: 1;
+    animation: none !important;
+    transform: none;
+    filter: none;
+  }
+}
