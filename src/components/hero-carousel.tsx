@@ -90,20 +90,11 @@ export default function HeroCarousel() {
       <div className="hero-carousel-track" aria-live="off">
         <div key={active} className={`hero-slide hero-slide--${slide.tone}`}>
           <div className="hero-slide-content">
-            <p className="eyebrow"><span className="eyebrow-line" /> {slide.eyebrow}</p>
+            <p className="eyebrow">{slide.eyebrow}<span className="eyebrow-line" aria-hidden="true" /></p>
             <h1>{slide.title}</h1>
-            <p className="hero-intro">{slide.body}</p>
+            <p className="hero-intro">{slide.body} {slide.note}</p>
             <div className="hero-actions">
-              <a className="button button-primary" href={slide.primaryHref}>
-                {slide.primary} <span aria-hidden="true">↗</span>
-              </a>
-              <a className="button button-secondary" href={slide.secondaryHref}>
-                {slide.secondary} <span aria-hidden="true">→</span>
-              </a>
-            </div>
-            <div className="hero-footnote">
-              <span className="tiny-star" aria-hidden="true">✳</span>
-              <span>{slide.note}</span>
+              <a className="button button-primary" href={slide.primaryHref}>{slide.primary}</a>
             </div>
           </div>
         </div>
@@ -124,7 +115,6 @@ export default function HeroCarousel() {
           />
         ))}
       </div>
-      <span className="hero-slide-count">{String(active + 1).padStart(2, "0")} / 05</span>
     </section>
   );
 }
