@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import mantrasData from "../data/mantras.json";
 import HeroCarousel from "./hero-carousel";
 import TrainingGallery from "./training-gallery";
 import LumaraResources from "./lumara-resources";
@@ -85,10 +86,9 @@ const learning = [
 
 export default function LumaraHome({ locale }: Props) {
   const [darkMode, setDarkMode] = useState(false);
-  const [lotusFinished, setLotusFinished] = useState(false);
+  const [mantraIndex, setMantraIndex] = useState(0);
   const [learningActiveIndex, setLearningActiveIndex] = useState(2);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const lotusFrameRef = useRef<HTMLCanvasElement>(null);
   const visibleLearning = [-2, -1, 0, 1, 2].map((offset) => ({
     item: learning[(learningActiveIndex + offset + learning.length) % learning.length],
     offset
@@ -97,6 +97,13 @@ export default function LumaraHome({ locale }: Props) {
   useEffect(() => {
     document.documentElement.dataset.theme = darkMode ? "dark" : "light";
   }, [darkMode]);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setMantraIndex((current) => (current + 1) % mantrasData.mantras.length);
+    }, mantrasData.intervalMinutes * 60 * 1000);
+    return () => window.clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>("[data-reveal]");
@@ -203,44 +210,23 @@ export default function LumaraHome({ locale }: Props) {
         <div className="commitment-inner">
           <span className="section-kicker commitment-kicker">UN MOMENTO PARA VOS</span>
           <h2 id="commitment-title">Comprométete <em>contigo mismo.</em></h2>
-          <p className="commitment-mantra">
+          <p className="commitment-mantra" key={mantrasData.mantras[mantraIndex].id} aria-live="polite" aria-atomic="true">
             <span className="mantra-quote" aria-hidden="true">“</span>
-            Hoy me elijo, me transformo y florezco.<br className="desktop-break" />
-            Mi cambio comienza aquí y ahora.<br className="desktop-break" />
-            Desde mi esencia, creo una vida plena, guiada por el amor, la abundancia y la prosperidad.
+            {mantrasData.mantras[mantraIndex].text}
             <span className="mantra-quote" aria-hidden="true">”</span>
           </p>
-          <video
-            className="commitment-lotus"
-            autoPlay
-            muted
-            playsInline
-            preload="auto"
-            hidden={lotusFinished}
-            onEnded={(event) => {
-              const video = event.currentTarget;
-              const canvas = lotusFrameRef.current;
-              if (canvas && video.videoWidth > 0 && video.videoHeight > 0) {
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                const context = canvas.getContext("2d");
-                context?.drawImage(video, 0, 0, canvas.width, canvas.height);
-                video.pause();
-                setLotusFinished(true);
-              } else {
-                video.pause();
-              }
-            }}
-            aria-label="Animación de una flor de loto que simboliza transformación y florecimiento"
-          >
-            <source src="/lumara-proyect/assets/img/logo/loto.mp4" type="video/mp4" />
-          </video>
-          <canvas
-            ref={lotusFrameRef}
-            className="commitment-lotus commitment-lotus-frame"
-            hidden={!lotusFinished}
-            aria-label="Flor de loto en su estado final"
-          />
+          <div className="mantra-orbit" role="img" aria-label="Loto animado rodeado por la frase Mantra diario">
+            <svg className="mantra-orbit-text" viewBox="0 0 300 300" aria-hidden="true">
+              <defs>
+                <path id="mantra-orbit-path" d="M 150,150 m -116,0 a 116,116 0 1,1 232,0 a 116,116 0 1,1 -232,0" />
+              </defs>
+              <text>
+                <textPath href="#mantra-orbit-path" startOffset="0%">MANTRA DIARIO · MANTRA DIARIO · MANTRA DIARIO · </textPath>
+              </text>
+            </svg>
+            <span className="mantra-orbit-glow" aria-hidden="true" />
+            <img className="mantra-orbit-lotus" src="/lumara-proyect/assets/img/mantras/loto-mantra.svg" alt="" />
+          </div>
         </div>
       </section>
 
