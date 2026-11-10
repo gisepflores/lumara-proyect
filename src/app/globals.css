@@ -1141,3 +1141,127 @@ html { scroll-padding-top: 102px; }
       url("/lumara-proyect/assets/img/logo/chica2-relax.jpg");
   }
 }
+
+
+/* Método Lumara: layered parent background, portrait foreground and responsive copy */
+#universo.manifesto {
+  min-height: 650px;
+  padding-top: 42px;
+  padding-bottom: 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:
+    linear-gradient(90deg, rgba(252,250,253,.10), rgba(252,250,253,.30)),
+    url("/lumara-proyect/assets/img/metodolumara/fondo-chica-lumara.png") center / cover no-repeat;
+}
+#universo.manifesto .section-kicker {
+  z-index: 1;
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(48,42,53,.45);
+}
+#universo.manifesto .manifesto-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 76px);
+  width: 100%;
+  max-width: 1440px;
+  margin: 18px auto 0;
+}
+#universo.manifesto .manifesto-portrait {
+  min-width: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  align-self: stretch;
+}
+#universo.manifesto .manifesto-portrait img {
+  display: block;
+  width: min(100%, 610px);
+  max-height: 560px;
+  height: auto;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 18px 34px rgba(48,42,53,.12));
+}
+#universo.manifesto .manifesto-method {
+  width: 100%;
+  max-width: 570px;
+  padding: clamp(24px, 3vw, 44px);
+  border: 1px solid rgba(255,255,255,.48);
+  border-radius: 24px;
+  background: rgba(252,250,253,.76);
+  box-shadow: 0 18px 55px rgba(48,42,53,.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+#universo.manifesto .manifesto-eyebrow {
+  margin-bottom: 12px;
+}
+#universo.manifesto .manifesto-title {
+  font-size: clamp(42px, 4.5vw, 64px);
+}
+#universo.manifesto .manifesto-method p {
+  font-size: 13px;
+  line-height: 1.85;
+}
+:root[data-theme="dark"] #universo.manifesto {
+  background:
+    linear-gradient(90deg, rgba(33,28,39,.24), rgba(33,28,39,.48)),
+    url("/lumara-proyect/assets/img/metodolumara/fondo-chica-lumara.png") center / cover no-repeat;
+}
+:root[data-theme="dark"] #universo.manifesto .manifesto-method {
+  background: rgba(33,28,39,.78);
+  border-color: rgba(255,255,255,.14);
+}
+@media (max-width: 900px) {
+  #universo.manifesto {
+    min-height: 0;
+    padding-top: 34px;
+    padding-bottom: 42px;
+  }
+  #universo.manifesto .manifesto-layout {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 24px;
+  }
+  #universo.manifesto .manifesto-portrait img {
+    max-height: 460px;
+  }
+  #universo.manifesto .manifesto-method {
+    padding: 26px;
+  }
+}
+@media (max-width: 640px) {
+  #universo.manifesto {
+    padding: 28px 22px 34px;
+    background-position: center;
+  }
+  #universo.manifesto .section-kicker {
+    color: var(--violet-deep);
+    text-shadow: none;
+  }
+  #universo.manifesto .manifesto-layout {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  #universo.manifesto .manifesto-portrait {
+    justify-content: center;
+    max-height: 340px;
+    overflow: hidden;
+  }
+  #universo.manifesto .manifesto-portrait img {
+    width: min(88%, 340px);
+    max-height: 340px;
+    object-position: center bottom;
+  }
+  #universo.manifesto .manifesto-method {
+    max-width: none;
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+  #universo.manifesto .manifesto-title {
+    font-size: clamp(42px, 12vw, 54px);
+  }
+}
