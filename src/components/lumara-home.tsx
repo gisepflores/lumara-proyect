@@ -65,6 +65,14 @@ const learning = [
     href: "/es/capacitaciones/formacion-de-coachs/"
   },
   {
+    title: "Mentorías",
+    subtitle: "Acompañamiento personalizado",
+    description: "Un espacio de guía y enfoque para profundizar tu proceso, superar bloqueos y expandir tu potencial.",
+    icon: "mentoring",
+    image: "/lumara-proyect/assets/img/metodolumara/chica2-relax.jpg",
+    href: "/es/capacitaciones/mentorias/"
+  },
+  {
     title: "Eventos para Empresas",
     subtitle: "Bienestar en el entorno laboral",
     description: "Experiencias y programas de bienestar, mindfulness y desarrollo humano para equipos más conscientes, motivados y equilibrados.",
@@ -77,7 +85,12 @@ const learning = [
 export default function LumaraHome({ locale }: Props) {
   const [darkMode, setDarkMode] = useState(false);
   const [lotusFinished, setLotusFinished] = useState(false);
+  const [learningActiveIndex, setLearningActiveIndex] = useState(2);
   const lotusFrameRef = useRef<HTMLCanvasElement>(null);
+  const visibleLearning = [-2, -1, 0, 1, 2].map((offset) => ({
+    item: learning[(learningActiveIndex + offset + learning.length) % learning.length],
+    offset
+  }));
 
   useEffect(() => {
     document.documentElement.dataset.theme = darkMode ? "dark" : "light";
@@ -288,23 +301,30 @@ export default function LumaraHome({ locale }: Props) {
         <div className="learning-showcase-heading">
           <span className="section-kicker">DESCUBRÍ TODO LO QUE VIVE EN LUMARA</span>
           <h2 id="learning-title">Aprender, practicar, acompañar y <em>transformar.</em></h2>
-          <p>Explorá nuestras propuestas de formación, experiencias y bienestar, diseñadas para tu crecimiento personal, profesional y para llevar la conciencia a tu entorno.</p>
+          <p>Elegí tu próximo paso para crecer, aprender y transformar tu camino.</p>
         </div>
-        <div className="learning-card-grid">
-          {learning.map((item, index) => (
-            <article className="learning-feature-card" key={item.title} style={{ "--card-index": index } as React.CSSProperties}>
-              <div className="learning-card-image" style={{ backgroundImage: `linear-gradient(180deg, rgba(50,35,62,.02) 25%, rgba(50,35,62,.2) 100%), url("${item.image}")` }} role="img" aria-label={`Imagen representativa de ${item.title}`} />
-              <div className="learning-card-icon" aria-hidden="true">
-                {item.icon === "book" ? "⌑" : item.icon === "lotus" ? "✧" : item.icon === "infinity" ? "∞" : "♧"}
-              </div>
-              <div className="learning-card-body">
-                <h3>{item.title}</h3>
-                <span className="learning-card-subtitle">{item.subtitle}</span>
-                <p>{item.description}</p>
-                <a className="learning-card-cta" href={item.href}>Saber más <span aria-hidden="true">→</span></a>
-              </div>
-            </article>
-          ))}
+        <div className="learning-carousel" aria-roledescription="carrusel" aria-label="Propuestas de aprendizaje Lumara">
+          <button className="learning-carousel-arrow learning-carousel-prev" type="button" aria-label="Ver propuesta anterior" onClick={() => setLearningActiveIndex((current) => (current - 1 + learning.length) % learning.length)}>‹</button>
+          <div className="learning-carousel-stage" aria-live="polite">
+            {visibleLearning.map(({ item, offset }) => (
+              <article className={`learning-feature-card learning-carousel-card ${offset === 0 ? "is-center" : Math.abs(offset) === 1 ? "is-near" : "is-far"}`} key={item.title}>
+                <div className="learning-card-image" style={{ backgroundImage: `linear-gradient(180deg, rgba(50,35,62,.02) 25%, rgba(50,35,62,.2) 100%), url("${item.image}")` }} role="img" aria-label={`Imagen representativa de ${item.title}`} />
+                <div className="learning-card-icon" aria-hidden="true">
+                  {item.icon === "book" ? "⌑" : item.icon === "lotus" ? "✧" : item.icon === "infinity" ? "∞" : item.icon === "mentoring" ? "♧" : "♙"}
+                </div>
+                <div className="learning-card-body">
+                  <h3>{item.title}</h3>
+                  <span className="learning-card-subtitle">{item.subtitle}</span>
+                  <p>{item.description}</p>
+                  <a className="learning-card-cta" href={item.href}>Saber más <span aria-hidden="true">→</span></a>
+                </div>
+              </article>
+            ))}
+          </div>
+          <button className="learning-carousel-arrow learning-carousel-next" type="button" aria-label="Ver propuesta siguiente" onClick={() => setLearningActiveIndex((current) => (current + 1) % learning.length)}>›</button>
+        </div>
+        <div className="learning-carousel-pagination" aria-label={`Propuesta ${learningActiveIndex + 1} de ${learning.length}`}>
+          {learning.map((item, index) => <button key={item.title} type="button" aria-label={`Mostrar ${item.title}`} aria-current={index === learningActiveIndex ? "true" : undefined} onClick={() => setLearningActiveIndex(index)} />)}
         </div>
       </section>
 
