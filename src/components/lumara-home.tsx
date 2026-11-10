@@ -63,6 +63,25 @@ export default function LumaraHome({ locale }: Props) {
     document.documentElement.dataset.theme = darkMode ? "dark" : "light";
   }, [darkMode]);
 
+  useEffect(() => {
+    const elements = document.querySelectorAll<HTMLElement>("[data-reveal]");
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((element) => element.classList.add("is-visible"));
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      }),
+      { threshold: 0.12, rootMargin: "0px 0px -48px 0px" }
+    );
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main id="inicio">
       <div className="announcement">
@@ -80,6 +99,7 @@ export default function LumaraHome({ locale }: Props) {
           <a href="#experiencias">Experiencias</a>
           <a href="#aprender">Aprendizaje</a>
           <a href="#eventos">Eventos</a>
+          <a href="#comunidad">Comunidad</a>
           <a href="#biblioteca">Recursos</a>
           <a href="#contactos">Contactos</a>
         </nav>
@@ -108,7 +128,7 @@ export default function LumaraHome({ locale }: Props) {
 
       <HeroCarousel />
 
-      <section className="manifesto section-wrap" id="universo">
+      <section className="manifesto section-wrap" id="universo" data-reveal>
         <div className="section-kicker">01 — EL UNIVERSO LUMARA</div>
         <div className="manifesto-content">
           <p className="manifesto-lead">
@@ -128,7 +148,7 @@ export default function LumaraHome({ locale }: Props) {
         </div>
       </section>
 
-      <section className="experiences-section section-wrap" id="experiencias"><span id="eventos" className="anchor-target" aria-hidden="true" />
+      <section className="experiences-section section-wrap" id="experiencias" data-reveal><span id="eventos" className="anchor-target" aria-hidden="true" />
         <div className="section-heading">
           <div>
             <div className="section-kicker">02 — EXPERIENCIAS</div>
@@ -156,7 +176,7 @@ export default function LumaraHome({ locale }: Props) {
         </div>
       </section>
 
-      <section className="learning-section section-wrap" id="aprender">
+      <section className="learning-section section-wrap" id="aprender" data-reveal>
         <div className="learning-intro">
           <div className="section-kicker">03 — APRENDER</div>
           <h2>Aprender también<br />es <em>transformar.</em></h2>
@@ -183,7 +203,7 @@ export default function LumaraHome({ locale }: Props) {
         </div>
       </section>
 
-      <section className="library-section section-wrap" id="biblioteca">
+      <section className="library-section section-wrap" id="biblioteca" data-reveal>
         <div className="library-heading">
           <div>
             <div className="section-kicker">04 — BIBLIOTECA</div>
@@ -214,7 +234,7 @@ export default function LumaraHome({ locale }: Props) {
         </div>
       </section>
 
-      <section className="closing-section" id="mi-lumara">
+      <section className="closing-section" id="mi-lumara" data-reveal><span id="comunidad" className="anchor-target" aria-hidden="true" />
         <div className="closing-orb" aria-hidden="true" />
         <div className="section-kicker">TU ESPACIO, TU RECORRIDO</div>
         <h2>Todo comienza<br />con un momento <em>para vos.</em></h2>
