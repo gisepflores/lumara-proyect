@@ -3119,11 +3119,11 @@ a.button { min-height: 52px; padding-inline: 27px; }
 .hero-carousel,
 .hero-carousel-track,
 .hero-slide {
-  height: 610px;
-  min-height: 610px;
+  height: 557px;
+  min-height: 557px;
 }
 .hero-slide {
-  padding: 72px clamp(38px, 10vw, 190px) 100px;
+  padding: 64px clamp(38px, 10vw, 190px) 92px;
 }
 .hero-slide--one {
   background-image:
