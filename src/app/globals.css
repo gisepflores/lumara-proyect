@@ -1553,3 +1553,117 @@ html { scroll-padding-top: 102px; }
     background: rgba(33,28,39,.88);
   }
 }
+
+
+/* Restore the approved single-background Método Lumara banner */
+#universo.manifesto {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: clamp(560px, 38vw, 680px);
+  padding: clamp(38px, 4vw, 58px) clamp(28px, 6vw, 92px);
+  overflow: hidden;
+  background-image:
+    linear-gradient(90deg, rgba(252,250,253,.02) 0%, rgba(252,250,253,.08) 46%, rgba(252,250,253,.48) 100%),
+    url("/lumara-proyect/assets/img/logo/chica2-relax.jpg") !important;
+  background-size: cover !important;
+  background-position: center 42% !important;
+  background-repeat: no-repeat !important;
+}
+#universo.manifesto .section-kicker {
+  position: relative;
+  z-index: 1;
+  color: rgba(85,65,104,.78);
+  text-shadow: 0 1px 12px rgba(252,250,253,.7);
+}
+#universo.manifesto .manifesto-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 1440px;
+  min-height: clamp(390px, 31vw, 510px);
+  margin: 0 auto;
+}
+#universo.manifesto .manifesto-method {
+  width: min(48%, 590px);
+  max-width: 590px;
+  padding: clamp(26px, 3vw, 42px);
+  border: 1px solid rgba(255,255,255,.42);
+  border-radius: 24px;
+  background: rgba(252,250,253,.66);
+  box-shadow: 0 18px 48px rgba(48,42,53,.09);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+#universo.manifesto .manifesto-title {
+  margin: 0;
+  font-size: clamp(42px, 4.3vw, 62px);
+}
+#universo.manifesto .manifesto-subtitle {
+  margin: 14px 0 12px;
+  font-size: clamp(16px, 1.5vw, 20px);
+}
+#universo.manifesto .manifesto-method p {
+  max-width: 490px;
+  font-size: 13px;
+  line-height: 1.9;
+}
+:root[data-theme="dark"] #universo.manifesto {
+  background-image:
+    linear-gradient(90deg, rgba(33,28,39,.10) 0%, rgba(33,28,39,.22) 46%, rgba(33,28,39,.76) 100%),
+    url("/lumara-proyect/assets/img/logo/chica2-relax.jpg") !important;
+}
+:root[data-theme="dark"] #universo.manifesto .manifesto-method {
+  background: rgba(33,28,39,.76);
+  border-color: rgba(255,255,255,.16);
+}
+@media (max-width: 900px) {
+  #universo.manifesto {
+    min-height: 590px;
+    padding: 34px 28px 42px;
+    background-position: 43% center !important;
+  }
+  #universo.manifesto .manifesto-content {
+    min-height: 430px;
+  }
+  #universo.manifesto .manifesto-method {
+    width: min(56%, 540px);
+    padding: 26px;
+  }
+}
+@media (max-width: 640px) {
+  #universo.manifesto {
+    min-height: 0;
+    padding: 28px 20px 34px;
+    background-position: 43% top !important;
+    background-image:
+      linear-gradient(180deg, rgba(252,250,253,.02) 0%, rgba(252,250,253,.22) 38%, rgba(252,250,253,.91) 100%),
+      url("/lumara-proyect/assets/img/logo/chica2-relax.jpg") !important;
+  }
+  #universo.manifesto .manifesto-content {
+    min-height: 0;
+    justify-content: center;
+    padding-top: clamp(220px, 62vw, 310px);
+  }
+  #universo.manifesto .manifesto-method {
+    width: 100%;
+    max-width: none;
+    padding: 23px 20px;
+    border-radius: 20px;
+    background: rgba(252,250,253,.86);
+  }
+  #universo.manifesto .manifesto-title {
+    font-size: clamp(40px, 10vw, 52px);
+  }
+  :root[data-theme="dark"] #universo.manifesto {
+    background-image:
+      linear-gradient(180deg, rgba(33,28,39,.06) 0%, rgba(33,28,39,.30) 38%, rgba(33,28,39,.92) 100%),
+      url("/lumara-proyect/assets/img/logo/chica2-relax.jpg") !important;
+  }
+  :root[data-theme="dark"] #universo.manifesto .manifesto-method {
+    background: rgba(33,28,39,.88);
+  }
+}
