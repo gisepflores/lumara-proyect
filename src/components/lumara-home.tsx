@@ -133,11 +133,15 @@ export default function LumaraHome({ locale }: Props) {
           <span className="section-kicker commitment-kicker">UN MOMENTO PARA VOS</span>
           <h2 id="commitment-title">Comprométete <em>contigo mismo.</em></h2>
           <p className="commitment-mantra">
+            <span className="mantra-quote" aria-hidden="true">“</span>
             Hoy me elijo, me transformo y florezco.<br className="desktop-break" />
             Mi cambio comienza aquí y ahora.<br className="desktop-break" />
             Desde mi esencia, creo una vida plena, guiada por el amor, la abundancia y la prosperidad.
+            <span className="mantra-quote" aria-hidden="true">”</span>
           </p>
-          <img className="commitment-lotus" src="/lumara-proyect/assets/img/loto.gif" alt="Flor de loto, símbolo de transformación y florecimiento" width="320" height="394" loading="lazy" />
+          <video className="commitment-lotus" autoPlay muted loop playsInline preload="metadata" aria-label="Animación de una flor de loto que simboliza transformación y florecimiento">
+            <source src="/lumara-proyect/assets/img/logo/loto.mp4" type="video/mp4" />
+          </video>
         </div>
       </section>
 
