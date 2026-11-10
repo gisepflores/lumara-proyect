@@ -87,6 +87,7 @@ export default function LumaraHome({ locale }: Props) {
   const [darkMode, setDarkMode] = useState(false);
   const [lotusFinished, setLotusFinished] = useState(false);
   const [learningActiveIndex, setLearningActiveIndex] = useState(2);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const lotusFrameRef = useRef<HTMLCanvasElement>(null);
   const visibleLearning = [-2, -1, 0, 1, 2].map((offset) => ({
     item: learning[(learningActiveIndex + offset + learning.length) % learning.length],
@@ -162,6 +163,39 @@ export default function LumaraHome({ locale }: Props) {
           <a className="header-action" href="#mi-lumara">Mi Lumara</a>
         </div>
       </header>
+
+      <div className={`mobile-menu-panel${mobileMenuOpen ? " is-open" : ""}`} id="mobile-navigation" aria-hidden={!mobileMenuOpen}>
+        <nav aria-label="Navegación mobile">
+          <a href="#universo" onClick={() => setMobileMenuOpen(false)}>Nosotros</a>
+          <a href="#experiencias" onClick={() => setMobileMenuOpen(false)}>Experiencias</a>
+          <a href="#aprender" onClick={() => setMobileMenuOpen(false)}>Aprendizaje</a>
+          <a href="#eventos" onClick={() => setMobileMenuOpen(false)}>Eventos</a>
+          <a href="#comunidad" onClick={() => setMobileMenuOpen(false)}>Comunidad</a>
+          <a href="#biblioteca" onClick={() => setMobileMenuOpen(false)}>Recursos</a>
+          <a href="#contactos" onClick={() => setMobileMenuOpen(false)}>Contactos</a>
+        </nav>
+      </div>
+      <nav className="mobile-bottom-nav" aria-label="Accesos rápidos">
+        <a className="mobile-bottom-link" href="#aprender" aria-label="Cursos">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 8.5 12 4l9.5 4.5L12 13 2.5 8.5Z"/><path d="M6 10.2v5.1c3.8 3 8.2 3 12 0v-5.1M21.5 8.5v6"/></svg>
+          <span>Cursos</span>
+        </a>
+        <a className="mobile-bottom-link" href="#aprender" aria-label="Talleres">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20C7 17 4 13 4 9c3.5 0 6.3 2.2 8 6 1.7-3.8 4.5-6 8-6 0 4-3 8-8 11Z"/><path d="M12 15V5m0 0c-2-2-4-2.5-6-2 0 3 2 5 6 6m0-4c2-2 4-2.5 6-2 0 3-2 5-6 6"/></svg>
+          <span>Talleres</span>
+        </a>
+        <a className="mobile-bottom-home" href="#mi-lumara" aria-label="Mi Lumara">
+          <img src="/lumara-proyect/assets/img/logo/isotipo-luna.webp" alt="" />
+        </a>
+        <a className="mobile-bottom-link" href="#biblioteca" aria-label="Recursos">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 4.5-9 4.5-9-4.5L12 3Z"/><path d="m3 12 9 4.5 9-4.5M3 16.5 12 21l9-4.5"/></svg>
+          <span>Recursos</span>
+        </a>
+        <button className={`mobile-bottom-link mobile-menu-trigger${mobileMenuOpen ? " is-active" : ""}`} type="button" aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={mobileMenuOpen} aria-controls="mobile-navigation" onClick={() => setMobileMenuOpen((open) => !open)}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d={mobileMenuOpen ? "m5 5 14 14M19 5 5 19" : "M3 6h18M3 12h18M3 18h18"}/></svg>
+          <span>Menú</span>
+        </button>
+      </nav>
 
       <HeroCarousel />
 
