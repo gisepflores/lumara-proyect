@@ -3923,3 +3923,27 @@ a.button { min-height: 52px; padding-inline: 27px; }
     animation:none !important;
   }
 }
+
+
+/* Lumara — escala tipográfica unificada para títulos principales */
+main section h2 {
+  font-size: clamp(44px, 4.25vw, 66px) !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.035em;
+}
+#compromiso .commitment-inner { width: min(1180px, 100%); }
+#compromiso #commitment-title {
+  max-width: 100%;
+  font-size: clamp(44px, 4.25vw, 66px) !important;
+  line-height: 1.04 !important;
+  text-wrap: balance;
+}
+@media (max-width: 600px) {
+  main section h2 {
+    font-size: clamp(36px, 9vw, 48px) !important;
+    line-height: 1.08 !important;
+  }
+  #compromiso #commitment-title {
+    font-size: clamp(35px, 8.7vw, 46px) !important;
+  }
+}
