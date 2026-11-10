@@ -2238,3 +2238,99 @@ html { scroll-padding-top: 102px; }
 :root[data-theme="dark"] .training-gallery { background: #211c27; color: #fbf8fd; }
 :root[data-theme="dark"] .training-gallery-heading h2 { color: #f5eff9; }
 :root[data-theme="dark"] .training-gallery-heading p { color: #d3c7dc; }
+
+
+/* Lumara training detail pages */
+.training-detail-page {
+  position: relative;
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  overflow: hidden;
+  padding: 110px 24px 80px;
+  background:
+    radial-gradient(circle at 80% 18%, rgba(165,141,187,.22), transparent 32%),
+    radial-gradient(circle at 12% 88%, rgba(215,227,216,.5), transparent 34%),
+    #fcfafd;
+  color: #302a35;
+}
+.training-detail-glow {
+  position: absolute;
+  width: min(72vw, 760px);
+  aspect-ratio: 1;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(128,103,159,.16);
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  box-shadow: 0 0 0 46px rgba(128,103,159,.035), 0 0 0 92px rgba(128,103,159,.025);
+  pointer-events: none;
+}
+.training-detail-brand {
+  position: absolute;
+  top: 34px;
+  left: clamp(24px, 7vw, 100px);
+  color: #554168;
+  font: 500 24px/1 var(--serif);
+  letter-spacing: .08em;
+  text-decoration: none;
+}
+.training-detail-content {
+  position: relative;
+  width: min(100%, 760px);
+  padding: clamp(34px, 6vw, 72px);
+  border: 1px solid rgba(128,103,159,.18);
+  border-radius: 28px;
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 24px 70px rgba(48,42,53,.08);
+  text-align: center;
+  backdrop-filter: blur(14px);
+}
+.training-detail-content .section-kicker {
+  color: #80679f;
+  font-size: 10px;
+  letter-spacing: .22em;
+}
+.training-detail-content h1 {
+  margin: 20px 0;
+  color: #554168;
+  font: 400 clamp(42px, 6vw, 68px)/1.04 var(--serif);
+}
+.training-detail-content > p {
+  max-width: 590px;
+  margin: 0 auto;
+  color: #665b70;
+  font-size: 17px;
+  line-height: 1.8;
+}
+.training-detail-note {
+  max-width: 520px;
+  margin: 30px auto;
+  padding: 18px 22px;
+  border-radius: 14px;
+  background: #f5f1f7;
+  color: #665b70;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.training-detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #80679f;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.training-detail-back:hover { color: #554168; }
+@media (max-width: 600px) {
+  .training-detail-content { padding: 32px 22px; border-radius: 20px; }
+  .training-detail-content > p { font-size: 15px; }
+}
+:root[data-theme="dark"] .training-detail-page { background: #211c27; color: #fbf8fd; }
+:root[data-theme="dark"] .training-detail-content { background: rgba(48,39,57,.86); border-color: rgba(255,255,255,.12); }
+:root[data-theme="dark"] .training-detail-content h1,
+:root[data-theme="dark"] .training-detail-brand { color: #f5eff9; }
+:root[data-theme="dark"] .training-detail-content > p,
+:root[data-theme="dark"] .training-detail-note { color: #ded3e5; }
+:root[data-theme="dark"] .training-detail-note { background: rgba(255,255,255,.07); }
