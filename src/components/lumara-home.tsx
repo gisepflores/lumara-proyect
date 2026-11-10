@@ -73,7 +73,7 @@ export default function LumaraHome({ locale }: Props) {
 
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Lumara, inicio">
-          <span className="brand-mark"><img className="brand-moon" src="/lumara-proyect/assets/img/logo/isotipo-luna.webp" alt="" /><span className="brand-lockup"><img className="brand-wordmark" src="/lumara-proyect/assets/img/logo/isologotipo.webp" alt="Lumara" /><span className="brand-wordmark-fallback" aria-hidden="true">LUMARA</span></span></span>
+          <span className="brand-mark"><img className="brand-moon" src="/lumara-proyect/assets/img/logo/isotipo-luna.webp" alt="" /><span className="brand-lockup"><img className="brand-wordmark" src="/lumara-proyect/assets/img/logo/lumara-web.webp" alt="Lumara" /><span className="brand-wordmark-fallback" aria-hidden="true">LUMARA</span></span></span>
         </a>
         <nav className="desktop-nav" aria-label="Navegación principal">
           <a href="#universo">Nosotros</a>
@@ -227,7 +227,7 @@ export default function LumaraHome({ locale }: Props) {
 
       <footer className="site-footer" id="contactos">
         <a className="footer-brand" href="#inicio">
-          <span className="brand-mark" aria-hidden="true"><img className="brand-moon" src="/lumara-proyect/assets/img/logo/isotipo-luna.webp" alt="" /><img className="brand-wordmark" src="/lumara-proyect/assets/img/logo/isologotipo.webp" alt="Lumara" /></span>
+          <span className="brand-mark" aria-hidden="true"><img className="brand-moon" src="/lumara-proyect/assets/img/logo/isotipo-luna.webp" alt="" /><img className="brand-wordmark" src="/lumara-proyect/assets/img/logo/lumara-web.webp" alt="Lumara" /></span>
           <span className="brand-caption">ESPIRITUALIDAD CONSCIENTE</span>
         </a>
         <p>Un espacio para volver a vos.</p>
