@@ -1897,16 +1897,17 @@ html { scroll-padding-top: 102px; }
 }
 #universo.manifesto .manifesto-columns {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2.1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
   width: 100%;
-  max-width: 1660px;
+  max-width: 1840px;
   min-height: clamp(560px, 40vw, 660px);
   margin: 0 auto;
   gap: clamp(18px, 2vw, 34px);
 }
 #universo.manifesto .manifesto-phrase {
   align-self: center;
+  width: 100%;
   max-width: 520px;
   padding: 12px 0;
 }
@@ -1931,8 +1932,9 @@ html { scroll-padding-top: 102px; }
 }
 #universo.manifesto .manifesto-method {
   width: 100%;
+  width: 100%;
   max-width: 560px;
-  justify-self: end;
+  justify-self: center;
   padding: 24px 0 24px 12px !important;
   color: var(--graphite);
   background: transparent !important;
@@ -2017,7 +2019,7 @@ html { scroll-padding-top: 102px; }
     padding-inline: 30px;
   }
   #universo.manifesto .manifesto-columns {
-    grid-template-columns: minmax(0, .95fr) minmax(0, 1.4fr) minmax(0, 1.1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     gap: 16px;
   }
   #universo.manifesto .manifesto-phrase p {
