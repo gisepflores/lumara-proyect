@@ -64,7 +64,7 @@ export default function LumaraHome({ locale }: Props) {
 
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Lumara, inicio">
-          <span className="brand-mark"><img className="brand-moon" src="/lumara-proyect/isotipo-luna.webp" alt="" /><span className="brand-lockup"><img className="brand-wordmark" src="/lumara-proyect/isologotipo.webp" alt="Lumara" /><span className="brand-caption">ESPIRITUALIDAD CONSCIENTE</span></span></span>
+          <span className="brand-mark"><img className="brand-moon" src="/lumara-proyect/isotipo-luna.webp" alt="" /><span className="brand-lockup"><img className="brand-wordmark" src="/lumara-proyect/lumara-web.webp" alt="Lumara" /></span></span>
         </a>
         <nav className="desktop-nav" aria-label="Navegación principal">
           <a href="#universo">Universo</a>
