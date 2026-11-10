@@ -42,18 +42,35 @@ const experiences = [
 const learning = [
   {
     title: "Cursos",
-    description: "Recorridos para aprender a tu ritmo y desde donde estés.",
-    label: "A tu tiempo"
+    subtitle: "Conocimiento a tu ritmo",
+    description: "Programas online y grabados para aprender, profundizar y aplicar herramientas de bienestar y espiritualidad consciente.",
+    icon: "book",
+    image: "/lumara-proyect/assets/img/logo/chica2-relax.jpg",
+    href: "/es/capacitaciones/cursos/"
   },
   {
     title: "Talleres",
-    description: "Encuentros prácticos para explorar un tema en profundidad.",
-    label: "Experiencias"
+    subtitle: "Experiencias prácticas",
+    description: "Encuentros en vivo, dinámicos y vivenciales para conectar, explorar y llevar nuevas herramientas a tu vida diaria.",
+    icon: "lotus",
+    image: "/lumara-proyect/assets/img/lumara-lotus-hero.webp",
+    href: "/es/capacitaciones/talleres/"
   },
   {
-    title: "Formaciones",
-    description: "Procesos de aprendizaje con estructura, guía y continuidad.",
-    label: "Aprendizaje"
+    title: "Formación de Coachs",
+    subtitle: "Acompañá a otros en su camino",
+    description: "Una formación integral para desarrollar habilidades, herramientas y una mirada consciente del acompañamiento.",
+    icon: "infinity",
+    image: "/lumara-proyect/assets/img/metodolumara/chica-lumara.png",
+    href: "/es/capacitaciones/formacion-de-coachs/"
+  },
+  {
+    title: "Eventos para Empresas",
+    subtitle: "Bienestar en el entorno laboral",
+    description: "Experiencias y programas de bienestar, mindfulness y desarrollo humano para equipos más conscientes, motivados y equilibrados.",
+    icon: "people",
+    image: "/lumara-proyect/assets/img/metodolumara/fondo-chica-lumara.png",
+    href: "/es/capacitaciones/eventos-para-empresas/"
   }
 ];
 
@@ -267,28 +284,25 @@ export default function LumaraHome({ locale }: Props) {
 
       <TrainingGallery />
 
-      <section className="learning-section section-wrap" id="aprender" data-reveal>
-        <div className="learning-intro">
-          <div className="section-kicker">03 — APRENDER</div>
-          <h2>Aprender también<br />es <em>transformar.</em></h2>
-          <p>
-            Conocimientos y prácticas para acompañar tus búsquedas, ampliar
-            tu mirada y descubrir herramientas que puedas llevar a tu vida.
-          </p>
-          <a className="button button-outline" href="#mi-lumara">
-            Explorar el espacio de aprendizaje <span aria-hidden="true">↗</span>
-          </a>
+      <section className="learning-section learning-showcase" id="aprender" data-reveal aria-labelledby="learning-title">
+        <div className="learning-showcase-heading">
+          <span className="section-kicker">DESCUBRÍ TODO LO QUE VIVE EN LUMARA</span>
+          <h2 id="learning-title">Aprender, practicar, acompañar y <em>transformar.</em></h2>
+          <p>Explorá nuestras propuestas de formación, experiencias y bienestar, diseñadas para tu crecimiento personal, profesional y para llevar la conciencia a tu entorno.</p>
         </div>
-        <div className="learning-list">
+        <div className="learning-card-grid">
           {learning.map((item, index) => (
-            <article className="learning-row" key={item.title}>
-              <span className="learning-index">0{index + 1}</span>
-              <div className="learning-copy">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+            <article className="learning-feature-card" key={item.title} style={{ "--card-index": index } as React.CSSProperties}>
+              <div className="learning-card-image" style={{ backgroundImage: `linear-gradient(180deg, rgba(50,35,62,.02) 25%, rgba(50,35,62,.2) 100%), url("${item.image}")` }} role="img" aria-label={`Imagen representativa de ${item.title}`} />
+              <div className="learning-card-icon" aria-hidden="true">
+                {item.icon === "book" ? "⌑" : item.icon === "lotus" ? "✧" : item.icon === "infinity" ? "∞" : "♧"}
               </div>
-              <span className="learning-label">{item.label}</span>
-              <span className="learning-arrow" aria-hidden="true">↗</span>
+              <div className="learning-card-body">
+                <h3>{item.title}</h3>
+                <span className="learning-card-subtitle">{item.subtitle}</span>
+                <p>{item.description}</p>
+                <a className="learning-card-cta" href={item.href}>Saber más <span aria-hidden="true">→</span></a>
+              </div>
             </article>
           ))}
         </div>
