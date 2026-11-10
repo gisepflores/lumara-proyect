@@ -215,7 +215,7 @@ export default function LumaraHome({ locale }: Props) {
           </p>
         </div>
         <div className="library-feature">
-          <div className="library-art">
+          <div className="library-art parallax-soft">
             <div className="library-ring" />
             <span className="library-art-word">pausa</span>
             <span className="library-art-caption">UN MOMENTO PARA VOS</span>
@@ -235,7 +235,7 @@ export default function LumaraHome({ locale }: Props) {
       </section>
 
       <section className="closing-section" id="mi-lumara" data-reveal><span id="comunidad" className="anchor-target" aria-hidden="true" />
-        <div className="closing-orb" aria-hidden="true" />
+        <div className="closing-orb parallax-soft" aria-hidden="true" />
         <div className="section-kicker">TU ESPACIO, TU RECORRIDO</div>
         <h2>Todo comienza<br />con un momento <em>para vos.</em></h2>
         <p>
