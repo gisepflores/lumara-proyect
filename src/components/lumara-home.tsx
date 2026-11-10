@@ -210,9 +210,15 @@ export default function LumaraHome({ locale }: Props) {
       </section>
 
       <section className="manifesto section-wrap" id="universo" data-reveal>
-        <div className="section-kicker">01 — EL UNIVERSO LUMARA</div>
-        <div className="manifesto-content">
-          <div className="manifesto-aside manifesto-method">
+        <div className="manifesto-columns">
+          <div className="manifesto-phrase">
+            <p>
+              No se trata de encontrar todas las respuestas. Se trata de
+              <em> hacer espacio </em> para escucharte.
+            </p>
+          </div>
+          <div className="manifesto-visual" aria-hidden="true" />
+          <div className="manifesto-method">
             <span className="manifesto-eyebrow">UN CAMINO HACIA TU BIENESTAR</span>
             <h2 className="manifesto-title">Método <em>Lumara</em></h2>
             <h3 className="manifesto-subtitle">Conocé el verdadero proceso de sanación</h3>
