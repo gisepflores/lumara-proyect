@@ -3803,3 +3803,123 @@ a.button { min-height: 52px; padding-inline: 27px; }
     overflow-wrap: anywhere;
   }
 }
+
+
+/* Mantra rotativo + medallón floral animado */
+#compromiso .commitment-inner {
+  width:min(980px,100%);
+}
+#compromiso .commitment-mantra {
+  min-height:5.2em;
+  max-width:800px;
+  display:block;
+  margin:24px auto 0;
+  color:#665c6d;
+  font:italic 500 clamp(19px,2vw,25px)/1.72 var(--serif);
+  text-wrap:balance;
+  animation:mantra-copy-in .9s cubic-bezier(.2,.7,.2,1) both;
+}
+#compromiso .mantra-quote {
+  color:#a58dbb;
+  font:700 clamp(34px,3.6vw,48px)/.5 var(--sans);
+  vertical-align:-.2em;
+  padding:0 5px;
+}
+#compromiso .mantra-orbit {
+  position:relative;
+  isolation:isolate;
+  display:grid;
+  place-items:center;
+  width:clamp(210px,21vw,270px);
+  aspect-ratio:1;
+  margin:24px auto 0;
+}
+#compromiso .mantra-orbit::before {
+  content:"";
+  position:absolute;
+  inset:20%;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(198,165,225,.24),rgba(198,165,225,0) 72%);
+  filter:blur(12px);
+  z-index:-1;
+  animation:mantra-aura 4.8s ease-in-out infinite;
+}
+#compromiso .mantra-orbit-glow {
+  position:absolute;
+  inset:24%;
+  border:1px solid rgba(190,147,221,.65);
+  border-radius:50%;
+  box-shadow:0 0 15px rgba(185,143,220,.17),inset 0 0 12px rgba(185,143,220,.12);
+  pointer-events:none;
+}
+#compromiso .mantra-orbit-text {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  animation:mantra-orbit-spin 38s linear infinite;
+  transform-origin:50% 50%;
+}
+#compromiso .mantra-orbit-text text {
+  fill:#927da5;
+  font-family:var(--sans);
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:3.3px;
+}
+#compromiso .mantra-orbit-lotus {
+  display:block;
+  width:clamp(100px,10vw,132px);
+  height:auto;
+  max-height:132px;
+  object-fit:contain;
+  animation:mantra-lotus-float 4.2s ease-in-out infinite;
+  filter:drop-shadow(0 9px 13px rgba(104,69,135,.2)) drop-shadow(0 0 12px rgba(193,151,229,.28));
+  will-change:transform;
+}
+@keyframes mantra-orbit-spin {
+  from { transform:rotate(0deg); }
+  to { transform:rotate(360deg); }
+}
+@keyframes mantra-lotus-float {
+  0%,100% { transform:translateY(0) scale(1); }
+  50% { transform:translateY(-7px) scale(1.025); }
+}
+@keyframes mantra-aura {
+  0%,100% { opacity:.55; transform:scale(.94); }
+  50% { opacity:1; transform:scale(1.08); }
+}
+@keyframes mantra-copy-in {
+  from { opacity:0; transform:translateY(9px); }
+  to { opacity:1; transform:translateY(0); }
+}
+:root[data-theme="dark"] #compromiso .commitment-mantra { color:#d5cbdc; }
+:root[data-theme="dark"] #compromiso .mantra-orbit-text text { fill:#c4acd8; }
+@media(max-width:600px) {
+  #compromiso.commitment-section { padding:52px 22px 46px; }
+  #compromiso .commitment-mantra {
+    min-height:0;
+    margin-top:19px;
+    font-size:clamp(16px,4.2vw,18px);
+    line-height:1.72;
+  }
+  #compromiso .mantra-quote { font-size:34px; padding:0 3px; }
+  #compromiso .mantra-orbit {
+    width:min(218px,66vw);
+    margin-top:22px;
+  }
+  #compromiso .mantra-orbit-text text {
+    font-size:15px;
+    letter-spacing:3.1px;
+  }
+  #compromiso .mantra-orbit-lotus { width:104px; max-height:110px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  #compromiso .commitment-mantra,
+  #compromiso .mantra-orbit-text,
+  #compromiso .mantra-orbit-lotus,
+  #compromiso .mantra-orbit::before {
+    animation:none !important;
+  }
+}
