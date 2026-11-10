@@ -965,3 +965,25 @@ html { scroll-padding-top: 102px; }
   #servicios-iniciales .service-gateway-cta { transition:none; }
   #servicios-iniciales .service-gateway-card:hover { transform:none; }
 }
+
+
+/* Lotus alignment and spacing refinement */
+#compromiso .commitment-lotus {
+  width: clamp(132px, 12vw, 160px);
+  height: auto;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center center;
+  margin: 7px auto 0;
+  transform: translateX(0);
+  display: block;
+}
+@media (max-width: 600px) {
+  #compromiso .commitment-lotus {
+    width: 124px;
+    height: auto;
+    max-height: none;
+    margin-top: 5px;
+  }
+}
