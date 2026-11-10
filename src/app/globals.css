@@ -2566,3 +2566,210 @@ html { scroll-padding-top: 102px; }
   .learning-card-cta,
   .learning-card-cta span { transition: none !important; }
 }
+
+
+/* Learning carousel: infinite manual navigation with a featured center card */
+.learning-showcase {
+  padding-top: clamp(66px, 6vw, 92px) !important;
+  padding-bottom: clamp(74px, 7vw, 104px) !important;
+}
+.learning-showcase-heading {
+  max-width: 100% !important;
+  margin-bottom: clamp(28px, 3vw, 42px) !important;
+}
+.learning-showcase-heading h2 {
+  white-space: nowrap;
+  font-size: clamp(30px, 3.35vw, 52px);
+  line-height: 1.12;
+}
+.learning-showcase-heading > p {
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(13px, 1vw, 16px);
+  line-height: 1.5;
+}
+.learning-carousel {
+  position: relative;
+  width: min(100%, 1840px);
+  margin: 0 auto;
+  padding: 0 54px;
+}
+.learning-carousel-stage {
+  position: relative;
+  height: clamp(510px, 39vw, 590px);
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+}
+.learning-carousel-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(300px, 24vw, 390px);
+  height: clamp(410px, 34vw, 480px);
+  opacity: .78;
+  transform-origin: center center;
+  transition: transform .72s cubic-bezier(.2,.72,.22,1), opacity .55s ease, box-shadow .55s ease, filter .55s ease;
+  animation: none;
+  pointer-events: none;
+}
+.learning-carousel-card.is-far {
+  opacity: .5;
+  filter: saturate(.78);
+  transform: translate(-50%, -50%) translateX(-760px) scale(.76);
+  z-index: 1;
+}
+.learning-carousel-card.is-far:nth-of-type(5) {
+  transform: translate(-50%, -50%) translateX(760px) scale(.76);
+}
+.learning-carousel-card.is-near {
+  opacity: .88;
+  transform: translate(-50%, -50%) translateX(-390px) scale(.88);
+  z-index: 2;
+}
+.learning-carousel-card.is-near:nth-of-type(4) {
+  transform: translate(-50%, -50%) translateX(390px) scale(.88);
+}
+.learning-carousel-card.is-center {
+  width: clamp(370px, 28vw, 470px);
+  height: clamp(470px, 39vw, 550px);
+  opacity: 1;
+  filter: none;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 4;
+  pointer-events: auto;
+  border-color: rgba(183,155,114,.55);
+  box-shadow: 0 22px 50px rgba(93,55,116,.2), 0 0 0 1px rgba(183,155,114,.16);
+}
+.learning-carousel-card .learning-card-image {
+  height: 43%;
+}
+.learning-carousel-card .learning-card-icon {
+  top: calc(43% - 31px);
+  width: 64px;
+  height: 64px;
+}
+.learning-carousel-card .learning-card-body {
+  padding: 40px 28px 28px;
+}
+.learning-carousel-card .learning-card-body h3 {
+  font-size: clamp(24px, 1.8vw, 31px);
+}
+.learning-carousel-card .learning-card-body p {
+  min-height: 78px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.learning-carousel-card.is-center .learning-card-image { height: 45%; }
+.learning-carousel-card.is-center .learning-card-icon { top: calc(45% - 34px); width: 70px; height: 70px; font-size: 36px; }
+.learning-carousel-card.is-center .learning-card-body { padding: 43px 32px 30px; }
+.learning-carousel-card.is-center .learning-card-body h3 { font-size: clamp(27px, 2.05vw, 35px); }
+.learning-carousel-card.is-center .learning-card-body p { min-height: 84px; font-size: 15px; }
+.learning-carousel-card.is-center .learning-card-cta { min-height: 49px; min-width: 180px; }
+.learning-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 8;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  padding: 0 0 5px;
+  border: 1px solid rgba(128,103,159,.18);
+  border-radius: 50%;
+  background: rgba(245,241,247,.96);
+  color: #554168;
+  font: 300 42px/1 var(--sans);
+  box-shadow: 0 7px 20px rgba(74,48,91,.14);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background .25s ease, color .25s ease, box-shadow .25s ease, scale .25s ease;
+}
+.learning-carousel-arrow:hover {
+  background: #68427f;
+  color: white;
+  box-shadow: 0 10px 24px rgba(85,65,104,.25);
+  scale: 1.07;
+}
+.learning-carousel-arrow:focus-visible,
+.learning-carousel-pagination button:focus-visible {
+  outline: 3px solid #b79b72;
+  outline-offset: 4px;
+}
+.learning-carousel-prev { left: 0; }
+.learning-carousel-next { right: 0; }
+.learning-carousel-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  margin-top: 13px;
+}
+.learning-carousel-pagination button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 1px solid #a58dbb;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: width .25s ease, background .25s ease, border-color .25s ease;
+}
+.learning-carousel-pagination button[aria-current="true"] {
+  width: 25px;
+  border-color: #80679f;
+  border-radius: 99px;
+  background: #80679f;
+}
+:root[data-theme="dark"] .learning-carousel-arrow { background: #342a3c; color: #eee7f2; border-color: #665475; }
+:root[data-theme="dark"] .learning-carousel-arrow:hover { background: #80679f; color: #fff; }
+@media (max-width: 1250px) {
+  .learning-carousel-card.is-far { transform: translate(-50%, -50%) translateX(-640px) scale(.7); }
+  .learning-carousel-card.is-far:nth-of-type(5) { transform: translate(-50%, -50%) translateX(640px) scale(.7); }
+  .learning-carousel-card.is-near { transform: translate(-50%, -50%) translateX(-330px) scale(.84); }
+  .learning-carousel-card.is-near:nth-of-type(4) { transform: translate(-50%, -50%) translateX(330px) scale(.84); }
+  .learning-carousel-card.is-center { width: 400px; height: 500px; }
+}
+@media (max-width: 900px) {
+  .learning-showcase-heading h2 { white-space: normal; }
+  .learning-showcase-heading > p { white-space: normal; max-width: 650px; }
+  .learning-carousel { padding: 0 38px; }
+  .learning-carousel-stage { height: 535px; }
+  .learning-carousel-card { width: 330px; height: 450px; }
+  .learning-carousel-card.is-far { opacity: 0; pointer-events: none; transform: translate(-50%, -50%) translateX(-650px) scale(.65); }
+  .learning-carousel-card.is-far:nth-of-type(5) { transform: translate(-50%, -50%) translateX(650px) scale(.65); }
+  .learning-carousel-card.is-near { transform: translate(-50%, -50%) translateX(-260px) scale(.78); }
+  .learning-carousel-card.is-near:nth-of-type(4) { transform: translate(-50%, -50%) translateX(260px) scale(.78); }
+  .learning-carousel-card.is-center { width: min(420px, 64vw); height: 490px; }
+  .learning-carousel-arrow { width: 46px; height: 46px; font-size: 36px; }
+}
+@media (max-width: 600px) {
+  .learning-showcase { padding: 64px 12px 72px !important; }
+  .learning-showcase-heading { padding: 0 8px; margin-bottom: 22px !important; }
+  .learning-showcase-heading h2 { font-size: clamp(25px, 7vw, 34px); line-height: 1.13; }
+  .learning-showcase-heading > p { font-size: 12px; line-height: 1.5; }
+  .learning-carousel { padding: 0 30px; }
+  .learning-carousel-stage { height: 510px; }
+  .learning-carousel-card { width: min(310px, 78vw); height: 440px; }
+  .learning-carousel-card.is-far { display: none; }
+  .learning-carousel-card.is-near { opacity: .22; transform: translate(-50%, -50%) translateX(-260px) scale(.72); }
+  .learning-carousel-card.is-near:nth-of-type(4) { transform: translate(-50%, -50%) translateX(260px) scale(.72); }
+  .learning-carousel-card.is-center { width: min(330px, 82vw); height: 470px; }
+  .learning-carousel-card .learning-card-image { height: 40%; }
+  .learning-carousel-card .learning-card-icon { top: calc(40% - 30px); width: 60px; height: 60px; }
+  .learning-carousel-card .learning-card-body { padding: 37px 22px 24px; }
+  .learning-carousel-card .learning-card-body h3 { font-size: 27px; }
+  .learning-carousel-card .learning-card-body p { min-height: 78px; font-size: 13px; }
+  .learning-carousel-card.is-center .learning-card-image { height: 41%; }
+  .learning-carousel-card.is-center .learning-card-icon { top: calc(41% - 31px); width: 62px; height: 62px; }
+  .learning-carousel-card.is-center .learning-card-body { padding: 38px 22px 24px; }
+  .learning-carousel-card.is-center .learning-card-body h3 { font-size: 28px; }
+  .learning-carousel-card.is-center .learning-card-body p { min-height: 78px; font-size: 13px; }
+  .learning-carousel-arrow { width: 38px; height: 38px; font-size: 29px; }
+  .learning-carousel-pagination { margin-top: 8px; gap: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .learning-carousel-card,
+  .learning-carousel-arrow,
+  .learning-carousel-pagination button { transition: none !important; }
+}
