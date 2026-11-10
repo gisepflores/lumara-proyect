@@ -455,3 +455,15 @@ h1 em, h2 em { color: var(--violet); font-weight: 400; }
  .brand-moon { width:28px; height:31px; }
  .brand-lockup { width:116px; }
 }
+
+/* Header wordmark visibility fix */
+.site-header .brand { display:flex !important; flex-direction:row !important; align-items:center !important; min-width:0 !important; }
+.site-header .brand-mark { display:flex !important; flex-direction:row !important; align-items:center !important; gap:12px !important; width:auto !important; height:auto !important; overflow:visible !important; }
+.site-header .brand-lockup { display:block !important; width:198px !important; min-width:198px !important; height:auto !important; overflow:visible !important; flex:0 0 198px !important; }
+.site-header .brand-wordmark { display:block !important; visibility:visible !important; opacity:1 !important; width:198px !important; max-width:none !important; height:auto !important; aspect-ratio:68 / 20 !important; object-fit:contain !important; object-position:left center !important; }
+.site-header .brand-wordmark-fallback { display:none; color:#554168; font-family:var(--serif); font-size:30px; font-weight:600; letter-spacing:.08em; line-height:1; white-space:nowrap; }
+@media (max-width:640px) {
+ .site-header .brand-lockup { width:140px !important; min-width:140px !important; flex-basis:140px !important; }
+ .site-header .brand-wordmark { width:140px !important; }
+ .site-header .brand-wordmark-fallback { font-size:23px; }
+}
