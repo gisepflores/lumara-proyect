@@ -3744,3 +3744,62 @@ a.button { min-height: 52px; padding-inline: 27px; }
 @media (prefers-reduced-motion: reduce) {
   .mobile-menu-panel { transition:none; }
 }
+
+
+
+/* Mobile viewport and menu edge correction */
+@media (max-width: 640px) {
+  :root { --lumara-mobile-nav-height: 78px; }
+  html, body {
+    min-height: 100%;
+    min-height: 100dvh;
+  }
+  body {
+    padding-bottom: calc(var(--lumara-mobile-nav-height) + env(safe-area-inset-bottom));
+  }
+  .mobile-bottom-nav {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: calc(var(--lumara-mobile-nav-height) + env(safe-area-inset-bottom));
+    height: calc(var(--lumara-mobile-nav-height) + env(safe-area-inset-bottom));
+    padding: 7px 8px calc(7px + env(safe-area-inset-bottom));
+    margin: 0;
+    border-radius: 24px 24px 0 0;
+    box-sizing: border-box;
+    transform: translateZ(0);
+  }
+  .mobile-bottom-link {
+    min-height: 58px;
+    align-self: center;
+  }
+  .mobile-bottom-home {
+    margin-top: -35px;
+    margin-bottom: 0;
+    align-self: start;
+  }
+  .mobile-menu-panel {
+    position: fixed;
+    left: 14px;
+    right: 14px;
+    width: auto;
+    max-width: none;
+    box-sizing: border-box;
+    bottom: calc(var(--lumara-mobile-nav-height) + env(safe-area-inset-bottom) + 12px);
+    max-height: min(54dvh, 420px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 20px;
+    transform-origin: bottom center;
+  }
+  .mobile-menu-panel nav {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .mobile-menu-panel a {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
