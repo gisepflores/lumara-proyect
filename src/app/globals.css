@@ -410,3 +410,26 @@ h1 em, h2 em { color: var(--violet); font-weight: 400; }
   .brand-wordmark { height: 26px; }
   .header-action { padding: 8px 9px; }
 }
+
+/* Final logo sizing using the newly supplied transparent brand assets */
+.brand, .footer-brand { display:flex; flex-direction:row; align-items:center; gap:9px; min-width:0; }
+.brand-mark { display:inline-flex; align-items:center; gap:9px; height:auto; white-space:nowrap; }
+.brand-moon { display:block; width:50px; height:54px; object-fit:contain; flex:0 0 auto; image-rendering:auto; }
+.brand-lockup { display:flex; flex-direction:column; align-items:stretch; justify-content:center; width:148px; gap:2px; }
+.brand-wordmark { display:block; width:148px; height:auto; aspect-ratio:68 / 20; object-fit:contain; object-position:center; }
+.brand-caption { display:block; width:148px; margin:0; text-align:center; white-space:nowrap; line-height:1.3; font-size:6.4px; letter-spacing:.19em; color:#82778a; }
+@media (max-width:640px) {
+ .site-header { height:76px; padding-left:16px; padding-right:16px; gap:10px; }
+ .brand, .footer-brand { min-width:0; gap:7px; }
+ .brand-mark { gap:7px; }
+ .brand-moon { width:32px; height:35px; }
+ .brand-lockup { width:112px; gap:0; }
+ .brand-wordmark { width:112px; height:auto; }
+ .brand-caption { display:none; }
+ .header-action { padding:9px 11px; font-size:10px; }
+}
+@media (max-width:380px) {
+ .brand-moon { width:28px; height:31px; }
+ .brand-lockup, .brand-wordmark { width:100px; }
+ .header-action { padding:8px 9px; }
+}
