@@ -629,3 +629,18 @@ html { scroll-padding-top: 102px; }
   html { scroll-padding-top: 112px; }
   .site-header { position: sticky; top: 0; }
 }
+
+
+/* Fallback visible if a logo asset is unavailable or fails to load. */
+.brand-wordmark-fallback {
+  display: none;
+  color: var(--violet-deep, #554168);
+  font-family: var(--serif, Georgia, serif);
+  font-size: 29px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  line-height: 1;
+  white-space: nowrap;
+}
+:root[data-theme="dark"] .brand-wordmark-fallback { color: #f5effa; }
+.footer-wordmark-fallback { font-size: 24px; }
