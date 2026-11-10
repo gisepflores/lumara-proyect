@@ -221,7 +221,7 @@ export default function LumaraHome({ locale }: Props) {
                 <path id="mantra-orbit-path" d="M 150,150 m -116,0 a 116,116 0 1,1 232,0 a 116,116 0 1,1 -232,0" />
               </defs>
               <text>
-                <textPath href="#mantra-orbit-path" startOffset="0%">MANTRA DIARIO · MANTRA DIARIO · MANTRA DIARIO · </textPath>
+                <textPath href="#mantra-orbit-path" startOffset="0%" textLength="710" lengthAdjust="spacing">MANTRA DIARIO · AMOR PROPIO · ABUNDANCIA · CONFIANZA · CALMA · FLORECER ·</textPath>
               </text>
             </svg>
             <span className="mantra-orbit-glow" aria-hidden="true" />
