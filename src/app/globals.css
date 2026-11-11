@@ -4525,3 +4525,24 @@ main section h2 {
   .service-gateway-card h3 { white-space:normal; }
   .service-gateway-heading > p:last-child { max-width:100% !important; }
 }
+
+
+/* Descripción del Camino Lumara: misma escala tipográfica que el resto del sitio */
+.service-gateway-heading > p:last-child {
+  color:#675C70 !important;
+  font-family:"DM Sans",Arial,sans-serif !important;
+  font-size:17px !important;
+  font-weight:400;
+  line-height:1.5 !important;
+  margin:20px 112px 0 !important;
+  max-width:none !important;
+  width:auto !important;
+  text-wrap:pretty;
+}
+@media(max-width:700px) {
+  .service-gateway-heading > p:last-child {
+    margin:16px 0 0 !important;
+    font-size:15px !important;
+    line-height:1.55 !important;
+  }
+}
