@@ -4638,3 +4638,21 @@ main section h2 {
     left: clamp(72px, 7vw, 150px);
   }
 }
+
+/* Refinamiento del bloque derecho del banner Método Lumara */
+@media (min-width: 1051px) {
+  #universo.manifesto .manifesto-method {
+    left: clamp(190px, 12vw, 260px) !important;
+    width: min(100%, 540px);
+    max-width: 540px;
+  }
+  #universo.manifesto .manifesto-title {
+    white-space: nowrap !important;
+    font-size: clamp(42px, 3.3vw, 56px) !important;
+    letter-spacing: -.035em;
+  }
+  #universo.manifesto .manifesto-eyebrow {
+    color: #554168 !important;
+    text-shadow: 0 1px 8px rgba(252,250,253,.45);
+  }
+}
