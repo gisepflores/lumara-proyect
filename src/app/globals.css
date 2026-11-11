@@ -6010,3 +6010,26 @@ main section h2 {
   .lumara-gallery-card.is-active { animation: none !important; }
   .lumara-gallery-image, .lumara-gallery-card, .lumara-gallery-dots button { transition: none !important; }
 }
+
+
+/* Tratamiento cromático por temática para mantener unidad visual entre cartas */
+.lumara-gallery-cards > .lumara-gallery-card:nth-child(3) .lumara-gallery-image {
+  filter: saturate(.78) sepia(.12) hue-rotate(205deg) brightness(1.08);
+}
+.lumara-gallery-cards > .lumara-gallery-card:nth-child(5) .lumara-gallery-image {
+  filter: saturate(.68) hue-rotate(92deg) brightness(1.12) contrast(.94);
+}
+.lumara-gallery-cards > .lumara-gallery-card:nth-child(7) .lumara-gallery-image {
+  filter: sepia(.36) hue-rotate(224deg) saturate(.78) brightness(1.12) contrast(.94);
+}
+.lumara-gallery-cards > .lumara-gallery-card:nth-child(3)::after,
+.lumara-gallery-cards > .lumara-gallery-card:nth-child(5)::after,
+.lumara-gallery-cards > .lumara-gallery-card:nth-child(7)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(155deg, rgba(226,207,242,.16), rgba(205,174,222,.06) 48%, rgba(184,151,105,.12));
+  mix-blend-mode: screen;
+}
