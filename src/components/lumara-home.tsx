@@ -17,7 +17,7 @@ const experiences = [
     description: "Explorá tu carta natal, los tránsitos y los ciclos del universo para comprender tu energía, reconocer tus talentos y mirar los desafíos de tu camino desde nuevas perspectivas.",
     highlights: ["Carta natal", "Ciclos y tránsitos", "Autoconocimiento"],
     icon: "astrology",
-    image: "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&w=900&q=85",
+    image: "https://images.unsplash.com/photo-1729335511904-9b8690184935?auto=format&fit=crop&w=900&q=85",
     alt: "Cielo nocturno estrellado"
   },
   {
@@ -26,7 +26,7 @@ const experiences = [
     description: "Un espacio de exploración simbólica para abrir preguntas, reconocer posibilidades y encontrar nuevas perspectivas que acompañen tus decisiones de manera consciente.",
     highlights: ["Lecturas simbólicas", "Oráculos", "Claridad interior"],
     icon: "tarot",
-    image: "https://images.unsplash.com/photo-1600428853876-fb5a850b444f?auto=format&fit=crop&w=900&q=85",
+    image: "https://images.unsplash.com/photo-1562701447-e0b79b331bab?auto=format&fit=crop&w=900&q=85",
     alt: "Cartas y elementos para una lectura simbólica"
   },
   {
@@ -35,7 +35,7 @@ const experiences = [
     description: "Un espacio de introspección espiritual para explorar, desde una mirada simbólica y consciente, preguntas sobre tu recorrido, reconocer aprendizajes y abrir nuevas perspectivas para tu presente.",
     highlights: ["Lectura intuitiva", "Memoria del alma", "Nuevas perspectivas"],
     icon: "akashic",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=85",
+    image: "https://images.unsplash.com/photo-1741298834466-6066d2d3a9f6?auto=format&fit=crop&w=900&q=85",
     alt: "Cristales y luz suave en un entorno contemplativo"
   },
   {
@@ -44,7 +44,7 @@ const experiences = [
     description: "A través de la escritura consciente, transformá pensamientos y emociones en palabras. Un recurso íntimo para escucharte, ordenar lo que sentís y dar lugar a nuevas comprensiones.",
     highlights: ["Diario emocional", "Escritura guiada", "Reflexión personal"],
     icon: "writing",
-    image: "https://images.unsplash.com/photo-1455390582262-044cdeb277a6?auto=format&fit=crop&w=900&q=85",
+    image: "https://images.unsplash.com/photo-1578941838877-141265f3a898?auto=format&fit=crop&w=900&q=85",
     alt: "Cuaderno abierto y escritura a mano"
   },
   {
@@ -62,7 +62,7 @@ const experiences = [
     description: "Explorá aquello que te mueve, tus talentos y lo que deseás aportar. Una búsqueda personal para conectar lo que amás, lo que sabés hacer y aquello que da sentido a tu camino.",
     highlights: ["Propósito personal", "Talentos y motivaciones", "Dirección consciente"],
     icon: "ikigai",
-    image: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85",
+    image: "https://images.unsplash.com/photo-1758799819958-6bfece84708a?auto=format&fit=crop&w=900&q=85",
     alt: "Paisaje natural iluminado por el amanecer"
   },
   {
@@ -71,7 +71,7 @@ const experiences = [
     description: "Integrá nuevas herramientas, perspectivas y hábitos para construir una vida más alineada con tus valores. Un camino para crecer con conciencia, confianza y propósito.",
     highlights: ["Creencias y hábitos", "Fortalezas personales", "Acción consciente"],
     icon: "growth",
-    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=85",
+    image: "https://images.unsplash.com/photo-1758607234692-51ac051a2a4d?auto=format&fit=crop&w=900&q=85",
     alt: "Personas compartiendo un momento de conexión"
   }
 ];
@@ -362,7 +362,6 @@ export default function LumaraHome({ locale }: Props) {
         <div className="lumara-experience-showcase">
           <div className="lumara-experience-gallery" aria-label="Elegí una experiencia Lumara">
             <div className="lumara-gallery-orbit" aria-hidden="true" />
-            <div className="lumara-gallery-moonphases" aria-hidden="true"><span>☾</span><span>◔</span><span>●</span><span>◕</span><span>☽</span></div>
             <div className="lumara-gallery-cards">
               {experiences.map((item, index) => {
                 const position = (index - experienceActiveIndex + experiences.length) % experiences.length;
