@@ -4626,3 +4626,15 @@ main section h2 {
     font-size:15px !important;
   }
 }
+
+/* Ajuste de posición óptica: cada bloque se centra en su zona libre, fuera de la figura */
+@media (min-width: 1051px) {
+  #universo.manifesto .manifesto-phrase {
+    position: relative;
+    left: calc(-1 * clamp(72px, 7vw, 150px));
+  }
+  #universo.manifesto .manifesto-method {
+    position: relative;
+    left: clamp(72px, 7vw, 150px);
+  }
+}
