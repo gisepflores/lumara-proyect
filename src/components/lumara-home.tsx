@@ -230,36 +230,38 @@ export default function LumaraHome({ locale }: Props) {
         </div>
       </section>
 
-      <section className="service-gateway section-wrap" id="servicios-iniciales" aria-label="Explorá Lumara" data-reveal>
+      <section className="service-gateway section-wrap" id="servicios-iniciales" aria-labelledby="lumara-path-title" data-reveal>
         <div className="service-gateway-heading">
-          <span className="section-kicker service-gateway-kicker">TU CAMINO COMIENZA ACÁ</span>
-          <h2>Un espacio para <em>florecer.</em></h2>
-          <p>Elegí por dónde querés empezar. Cada experiencia es una invitación a conectar con vos.</p>
+          <span className="section-kicker service-gateway-kicker">TU TRANSFORMACIÓN COMIENZA AQUÍ</span>
+          <h2 id="lumara-path-title">El camino <em>Lumara.</em></h2>
+          <p className="service-gateway-subtitle">Una nueva visión del cambio y la transformación consciente</p>
+          <p>Un camino de evolución interior que te invita a reconocerte, comprender tus emociones, reconectar con tu esencia y construir una realidad alineada con tus verdaderos anhelos. Un proceso que se integra en tu vida cotidiana y te impulsa a evolucionar desde el amor, la conciencia y la plenitud.</p>
         </div>
-        <div className="service-gateway-grid">
-          <article className="service-gateway-card" data-reveal>
-            <span className="service-gateway-icon" aria-hidden="true">✧</span>
-            <h3>Método Lumara</h3>
-            <p>Un recorrido de autoconocimiento para volver a tu esencia y construir cambios conscientes.</p>
-            <a className="service-gateway-cta" href="#universo">Conocer el método <span aria-hidden="true">↗</span></a>
+        <div className="service-gateway-grid" aria-label="Los cinco pilares del recorrido Lumara">
+          <article className="service-gateway-card">
+            <span className="service-gateway-number" aria-hidden="true">01</span>
+            <h3>Autoconocimiento</h3>
+            <p>Identificá los patrones que atraviesan tu vida, reconocé cómo influyen en tu manera de relacionarte con el presente y descubrí cuánto te acercan —o alejan— de aquello que verdaderamente anhelás.</p>
           </article>
           <article className="service-gateway-card">
-            <span className="service-gateway-icon" aria-hidden="true">❋</span>
-            <h3>Talleres</h3>
-            <p>Experiencias vivenciales para explorar, compartir y llevar nuevas herramientas a tu vida.</p>
-            <a className="service-gateway-cta" href="#eventos">Explorar talleres <span aria-hidden="true">↗</span></a>
+            <span className="service-gateway-number" aria-hidden="true">02</span>
+            <h3>Inteligencia emocional</h3>
+            <p>Aprendé a reconocer qué sentís, cómo lo experimentás y qué hacés con aquello que te sucede. Explorá las emociones que influyen en tu día a día, desarrollá recursos para gestionarlas y diferenciá lo que te pertenece de aquello que no es tuyo.</p>
           </article>
           <article className="service-gateway-card">
-            <span className="service-gateway-icon" aria-hidden="true">☾</span>
-            <h3>Astrología</h3>
-            <p>Un lenguaje simbólico para descubrir ciclos, reconocer patrones y ampliar tu mirada.</p>
-            <a className="service-gateway-cta" href="#experiencias">Descubrir astrología <span aria-hidden="true">↗</span></a>
+            <span className="service-gateway-number" aria-hidden="true">03</span>
+            <h3>Amor propio</h3>
+            <p>Reconocé tu belleza interior y la autenticidad de quien sos. Aprendé a crear tu presente desde el amor, la aceptación y la amabilidad hacia vos misma, cultivando el perdón y la gratitud como herramientas para tu evolución personal.</p>
           </article>
           <article className="service-gateway-card">
-            <span className="service-gateway-icon" aria-hidden="true">⌘</span>
-            <h3>Aprendizaje</h3>
-            <p>Cursos y formaciones para aprender a tu ritmo y transformar el conocimiento en práctica.</p>
-            <a className="service-gateway-cta" href="#aprender">Ir a aprendizaje <span aria-hidden="true">↗</span></a>
+            <span className="service-gateway-number" aria-hidden="true">04</span>
+            <h3>Expansión y propósito</h3>
+            <p>Construí una realidad alineada con tus verdaderos anhelos, desde la abundancia, la prosperidad y la libertad emocional. Conectá con tu capacidad de crear y manifestar conscientemente una vida en plenitud, impulsando tu desarrollo personal y crecimiento espiritual hacia una mayor armonía y paz interior.</p>
+          </article>
+          <article className="service-gateway-card">
+            <span className="service-gateway-number" aria-hidden="true">05</span>
+            <h3>Equilibrio</h3>
+            <p>Llevá lo aprendido a la acción. Incorporá nuevas perspectivas, hábitos y prácticas a tu vida cotidiana, construyendo una rutina consciente basada en los principios Lumara y en el compromiso con tu evolución continua.</p>
           </article>
         </div>
       </section>
