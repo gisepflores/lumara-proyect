@@ -359,41 +359,10 @@ export default function LumaraHome({ locale }: Props) {
           <p>Encuentros, terapias y herramientas que integran espiritualidad, bienestar y desarrollo personal para acompañarte en tu evolución.</p>
         </div>
 
-        <div className="lumara-experience-world">
-          <div className="lumara-moon-panel" aria-live="polite" aria-atomic="true">
-            <svg className="lumara-moon-art" viewBox="0 0 520 620" role="presentation" aria-hidden="true">
-              <defs>
-                <linearGradient id="lumaraMoonStroke" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#fff8e9" />
-                  <stop offset="48%" stopColor="#c7a5df" />
-                  <stop offset="100%" stopColor="#b99769" />
-                </linearGradient>
-                <filter id="lumaraMoonGlow" x="-40%" y="-30%" width="180%" height="160%">
-                  <feGaussianBlur stdDeviation="5" result="blur" />
-                  <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-                </filter>
-              </defs>
-              <path d="M420 24 C115 28 30 190 42 330 C53 475 175 590 420 596" fill="none" stroke="url(#lumaraMoonStroke)" strokeWidth="2.2" filter="url(#lumaraMoonGlow)" />
-              <path d="M390 52 C145 68 78 205 88 330 C99 457 194 548 390 568" fill="none" stroke="#ffffff" strokeOpacity=".55" strokeWidth="1" />
-              <g fill="#b99769" opacity=".9"><path d="m85 190 4 11 11 4-11 4-4 11-4-11-11-4 11-4z"/><path d="m145 475 3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/><circle cx="116" cy="286" r="2.5"/><circle cx="175" cy="112" r="2"/></g>
-            </svg>
-            <div className="lumara-moon-copy" key={experienceActiveIndex}>
-              <span className="lumara-experience-symbol"><ExperienceIcon name={experiences[experienceActiveIndex].icon} /></span>
-              <h3>{experiences[experienceActiveIndex].title}</h3>
-              <span className="lumara-experience-subtitle">{experiences[experienceActiveIndex].subtitle}</span>
-              <span className="lumara-moon-divider" aria-hidden="true"><i /></span>
-              <p>{experiences[experienceActiveIndex].description}</p>
-              <div className="lumara-experience-highlights">
-                {experiences[experienceActiveIndex].highlights.map((highlight) => (
-                  <span key={highlight}><i aria-hidden="true">✧</i>{highlight}</span>
-                ))}
-              </div>
-              <a className="lumara-experience-cta" href="#aprender">Conocer más</a>
-            </div>
-          </div>
-
+        <div className="lumara-experience-showcase">
           <div className="lumara-experience-gallery" aria-label="Elegí una experiencia Lumara">
             <div className="lumara-gallery-orbit" aria-hidden="true" />
+            <div className="lumara-gallery-moonphases" aria-hidden="true"><span>☾</span><span>◔</span><span>●</span><span>◕</span><span>☽</span></div>
             <div className="lumara-gallery-cards">
               {experiences.map((item, index) => {
                 const position = (index - experienceActiveIndex + experiences.length) % experiences.length;
@@ -405,10 +374,9 @@ export default function LumaraHome({ locale }: Props) {
                     onClick={() => setExperienceActiveIndex(index)}
                     aria-pressed={index === experienceActiveIndex}
                     aria-label={`Explorar ${item.title}`}
-                    tabIndex={position < 5 ? 0 : -1}
                     style={{ order: position }}
                   >
-                    <span className="lumara-gallery-image" style={{ backgroundImage: `linear-gradient(180deg, rgba(37,25,49,.02) 25%, rgba(37,25,49,.76) 100%), url("${item.image}")` }} role="img" aria-label={item.alt} />
+                    <span className="lumara-gallery-image" style={{ backgroundImage: `linear-gradient(180deg, rgba(37,25,49,.02) 25%, rgba(37,25,49,.78) 100%), url("${item.image}")` }} role="img" aria-label={item.alt} />
                     <span className="lumara-gallery-card-shine" aria-hidden="true" />
                     <span className="lumara-gallery-card-label"><i><ExperienceIcon name={item.icon} /></i><b>{item.title}</b></span>
                   </button>
@@ -423,6 +391,25 @@ export default function LumaraHome({ locale }: Props) {
               </div>
             </div>
           </div>
+
+          <article className="lumara-experience-detail" aria-live="polite" aria-atomic="true" key={experiences[experienceActiveIndex].title}>
+            <div className="lumara-detail-art">
+              <img src={experiences[experienceActiveIndex].image} alt={experiences[experienceActiveIndex].alt} />
+              <span className="lumara-detail-art-icon"><ExperienceIcon name={experiences[experienceActiveIndex].icon} /></span>
+            </div>
+            <div className="lumara-detail-copy">
+              <span className="lumara-detail-eyebrow">EXPLORÁ ESTA EXPERIENCIA</span>
+              <h3>{experiences[experienceActiveIndex].title}</h3>
+              <span className="lumara-detail-subtitle">{experiences[experienceActiveIndex].subtitle}</span>
+              <p>{experiences[experienceActiveIndex].description}</p>
+            </div>
+            <div className="lumara-detail-highlights">
+              {experiences[experienceActiveIndex].highlights.map((highlight) => (
+                <span key={highlight}><i aria-hidden="true">✧</i>{highlight}</span>
+              ))}
+            </div>
+            <a className="lumara-experience-cta" href="#aprender">Conocer más</a>
+          </article>
         </div>
       </section>
 
