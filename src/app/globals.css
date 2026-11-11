@@ -4588,3 +4588,41 @@ main section h2 {
     line-height:1.55 !important;
   }
 }
+
+
+/* Método Lumara — centrar los bloques en cada zona visual */
+@media (min-width: 761px) {
+  #universo.manifesto .manifesto-columns {
+    grid-template-columns:minmax(0,1fr) minmax(260px,1.15fr) minmax(0,1fr);
+    column-gap:clamp(28px,3.2vw,58px);
+  }
+  #universo.manifesto .manifesto-phrase {
+    justify-self:center;
+    width:min(100%,430px);
+    max-width:430px;
+    margin-inline:auto;
+  }
+  #universo.manifesto .manifesto-method {
+    justify-self:center;
+    width:min(100%,430px);
+    max-width:430px;
+    margin-inline:auto;
+    padding:24px 0 !important;
+  }
+  #universo.manifesto .manifesto-method p {
+    color:#fff !important;
+    text-shadow:0 1px 9px rgba(38,25,48,.72),0 0 18px rgba(38,25,48,.36);
+  }
+  #universo.manifesto .manifesto-cta {
+    gap:0 !important;
+    font-size:15px !important;
+    font-weight:600;
+    min-height:52px;
+    padding-inline:30px;
+  }
+}
+@media (max-width:760px) {
+  #universo.manifesto .manifesto-cta {
+    font-size:15px !important;
+  }
+}
