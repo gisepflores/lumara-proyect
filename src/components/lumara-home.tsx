@@ -124,6 +124,34 @@ export default function LumaraHome({ locale }: Props) {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const cards = Array.from(document.querySelectorAll<HTMLElement>(".service-gateway-card"));
+    const toggleCard = (card: HTMLElement) => {
+      const nextState = !card.classList.contains("is-flipped");
+      card.classList.toggle("is-flipped", nextState);
+      card.setAttribute("aria-pressed", String(nextState));
+    };
+    const cleanups = cards.map((card) => {
+      card.setAttribute("role", "button");
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("aria-pressed", "false");
+      const onClick = () => toggleCard(card);
+      const onKeyDown = (event: KeyboardEvent) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleCard(card);
+        }
+      };
+      card.addEventListener("click", onClick);
+      card.addEventListener("keydown", onKeyDown);
+      return () => {
+        card.removeEventListener("click", onClick);
+        card.removeEventListener("keydown", onKeyDown);
+      };
+    });
+    return () => cleanups.forEach((cleanup) => cleanup());
+  }, []);
+
   return (
     <main id="inicio">
       <div className="announcement">
