@@ -16,7 +16,7 @@ const experiences = [
     subtitle: "CICLOS · CARTA NATAL · PROPÓSITO",
     description: "Explorá tu carta natal, los tránsitos y los ciclos del universo para comprender tu energía, reconocer tus talentos y mirar los desafíos de tu camino desde nuevas perspectivas.",
     highlights: ["Carta natal", "Ciclos y tránsitos", "Autoconocimiento"],
-    icon: "☾",
+    icon: "astrology",
     image: "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&w=900&q=85",
     alt: "Cielo nocturno estrellado"
   },
@@ -25,7 +25,7 @@ const experiences = [
     subtitle: "SÍMBOLOS · INTUICIÓN · DECISIONES",
     description: "Un espacio de exploración simbólica para abrir preguntas, reconocer posibilidades y encontrar nuevas perspectivas que acompañen tus decisiones de manera consciente.",
     highlights: ["Lecturas simbólicas", "Oráculos", "Claridad interior"],
-    icon: "✧",
+    icon: "tarot",
     image: "https://images.unsplash.com/photo-1600428853876-fb5a850b444f?auto=format&fit=crop&w=900&q=85",
     alt: "Cartas y elementos para una lectura simbólica"
   },
@@ -34,7 +34,7 @@ const experiences = [
     subtitle: "PALABRAS · EMOCIONES · AUTOCONOCIMIENTO",
     description: "A través de la escritura consciente, transformá pensamientos y emociones en palabras. Un recurso íntimo para escucharte, ordenar lo que sentís y dar lugar a nuevas comprensiones.",
     highlights: ["Diario emocional", "Escritura guiada", "Reflexión personal"],
-    icon: "✎",
+    icon: "writing",
     image: "https://images.unsplash.com/photo-1455390582262-044cdeb277a6?auto=format&fit=crop&w=900&q=85",
     alt: "Cuaderno abierto y escritura a mano"
   },
@@ -43,7 +43,7 @@ const experiences = [
     subtitle: "PRESENCIA · CALMA · CONEXIÓN",
     description: "Pausas guiadas para volver al cuerpo, aquietar el ruido y cultivar presencia. Prácticas para conectar con tu respiración y acompañar tu bienestar cotidiano.",
     highlights: ["Atención plena", "Visualizaciones", "Respiración consciente"],
-    icon: "☯",
+    icon: "meditation",
     image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=85",
     alt: "Persona meditando en un entorno natural"
   },
@@ -52,7 +52,7 @@ const experiences = [
     subtitle: "SENTIDO · VOCACIÓN · PROPÓSITO",
     description: "Explorá aquello que te mueve, tus talentos y lo que deseás aportar. Una búsqueda personal para conectar lo que amás, lo que sabés hacer y aquello que da sentido a tu camino.",
     highlights: ["Propósito personal", "Talentos y motivaciones", "Dirección consciente"],
-    icon: "◎",
+    icon: "ikigai",
     image: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85",
     alt: "Paisaje natural iluminado por el amanecer"
   },
@@ -61,11 +61,25 @@ const experiences = [
     subtitle: "EVOLUCIÓN · HÁBITOS · EXPANSIÓN",
     description: "Integrá nuevas herramientas, perspectivas y hábitos para construir una vida más alineada con tus valores. Un camino para crecer con conciencia, confianza y propósito.",
     highlights: ["Creencias y hábitos", "Fortalezas personales", "Acción consciente"],
-    icon: "✺",
+    icon: "growth",
     image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=85",
     alt: "Personas compartiendo un momento de conexión"
   }
 ];
+
+const ExperienceIcon = ({ name }: { name: string }) => {
+  const common = { fill: "none", stroke: "currentColor", strokeWidth: 1.45, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" {...common}>
+      {name === "astrology" && <><circle cx="12" cy="12" r="7.2" /><path d="M12 1.8v3M12 19.2v3M1.8 12h3M19.2 12h3M12 8.2l1.1 2.7 2.7 1.1-2.7 1.1-1.1 2.7-1.1-2.7-2.7-1.1 2.7-1.1z" /></>}
+      {name === "tarot" && <><rect x="5" y="3" width="14" height="18" rx="2" /><path d="m12 7 1.2 2.6 2.8.4-2 2 .5 2.8-2.5-1.3-2.5 1.3.5-2.8-2-2 2.8-.4z" /></>}
+      {name === "writing" && <><path d="M4 20h4l11-11a2.1 2.1 0 0 0-4-4L4 16zM13.5 6.5l4 4M4 20l1-4" /><path d="M4 3h6" /></>}
+      {name === "meditation" && <><circle cx="12" cy="5.2" r="2.2" /><path d="M8.5 20c.2-3.5 1.3-6.4 3.5-8.2 2.2 1.8 3.3 4.7 3.5 8.2M5 20h14M4 14c1.2-1.4 2.5-2.1 4-2.4M20 14c-1.2-1.4-2.5-2.1-4-2.4" /></>}
+      {name === "ikigai" && <><circle cx="12" cy="12" r="8.5" /><circle cx="12" cy="12" r="4.2" /><path d="M12 1v3M23 12h-3M12 23v-3M1 12h3" /></>}
+      {name === "growth" && <><path d="M4 19c0-7.5 4.5-12 13-14-1 8.5-5.5 13-13 14Z" /><path d="M4 20c3-4 6.3-7.3 11-11M13 19h7M16.5 15.5v7" /></>}
+    </svg>
+  );
+};
 
 const learning = [
   {
@@ -355,7 +369,7 @@ export default function LumaraHome({ locale }: Props) {
               <g fill="#b99769" opacity=".9"><path d="m85 190 4 11 11 4-11 4-4 11-4-11-11-4 11-4z"/><path d="m145 475 3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/><circle cx="116" cy="286" r="2.5"/><circle cx="175" cy="112" r="2"/></g>
             </svg>
             <div className="lumara-moon-copy" key={experienceActiveIndex}>
-              <span className="lumara-experience-symbol" aria-hidden="true">{experiences[experienceActiveIndex].icon}</span>
+              <span className="lumara-experience-symbol"><ExperienceIcon name={experiences[experienceActiveIndex].icon} /></span>
               <h3>{experiences[experienceActiveIndex].title}</h3>
               <span className="lumara-experience-subtitle">{experiences[experienceActiveIndex].subtitle}</span>
               <span className="lumara-moon-divider" aria-hidden="true"><i /></span>
@@ -365,7 +379,7 @@ export default function LumaraHome({ locale }: Props) {
                   <span key={highlight}><i aria-hidden="true">✧</i>{highlight}</span>
                 ))}
               </div>
-              <a className="lumara-experience-cta" href="#aprender">Conocer más <span aria-hidden="true">→</span></a>
+              <a className="lumara-experience-cta" href="#aprender">Conocer más</a>
             </div>
           </div>
 
@@ -387,19 +401,17 @@ export default function LumaraHome({ locale }: Props) {
                   >
                     <span className="lumara-gallery-image" style={{ backgroundImage: `linear-gradient(180deg, rgba(37,25,49,.02) 25%, rgba(37,25,49,.76) 100%), url("${item.image}")` }} role="img" aria-label={item.alt} />
                     <span className="lumara-gallery-card-shine" aria-hidden="true" />
-                    <span className="lumara-gallery-card-label"><i aria-hidden="true">{item.icon}</i><b>{item.title}</b></span>
+                    <span className="lumara-gallery-card-label"><i><ExperienceIcon name={item.icon} /></i><b>{item.title}</b></span>
                   </button>
                 );
               })}
             </div>
             <div className="lumara-gallery-controls">
-              <button type="button" aria-label="Experiencia anterior" onClick={() => setExperienceActiveIndex((current) => (current - 1 + experiences.length) % experiences.length)}>‹</button>
               <div className="lumara-gallery-dots" aria-label="Seleccionar experiencia">
                 {experiences.map((item, index) => (
                   <button key={item.title} type="button" aria-label={item.title} aria-current={index === experienceActiveIndex ? "true" : undefined} onClick={() => setExperienceActiveIndex(index)} />
                 ))}
               </div>
-              <button type="button" aria-label="Experiencia siguiente" onClick={() => setExperienceActiveIndex((current) => (current + 1) % experiences.length)}>›</button>
             </div>
           </div>
         </div>
