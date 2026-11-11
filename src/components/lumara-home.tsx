@@ -172,8 +172,7 @@ export default function LumaraHome({ locale }: Props) {
       if (!carousel.contains(event.target as Node)) setLearningInteractionActive(false);
     };
     const handleScroll = () => {
-      const hasFocus = carousel.contains(document.activeElement);
-      if (!carousel.matches(":hover") && !hasFocus) setLearningInteractionActive(false);
+      if (!carousel.contains(document.activeElement)) setLearningInteractionActive(false);
     };
     document.addEventListener("pointerdown", handleOutsidePointer);
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -467,6 +466,7 @@ export default function LumaraHome({ locale }: Props) {
                 className={`learning-feature-card learning-carousel-card ${offset === 0 ? "is-center" : Math.abs(offset) === 1 ? "is-near" : "is-far"}`}
                 key={item.title}
                 onPointerEnter={() => { setLearningInteractionActive(true); setLearningActiveIndex(index); }}
+                onPointerLeave={() => setLearningInteractionActive(false)}
                 onClick={() => { setLearningInteractionActive(true); setLearningActiveIndex(index); }}
                 aria-label={`Seleccionar ${item.title}`}
               >
