@@ -5,6 +5,7 @@ import mantrasData from "../data/mantras.json";
 import HeroCarousel from "./hero-carousel";
 import TrainingGallery from "./training-gallery";
 import LumaraResources from "./lumara-resources";
+import LumaraNewsletter from "./lumara-newsletter";
 
 type Props = {
   locale: "es";
@@ -491,6 +492,7 @@ export default function LumaraHome({ locale }: Props) {
       </section>
 
       <LumaraResources />
+      <LumaraNewsletter />
 
       <section className="closing-section" id="mi-lumara" data-reveal><span id="comunidad" className="anchor-target" aria-hidden="true" />
         <div className="closing-orb parallax-soft" aria-hidden="true" />
