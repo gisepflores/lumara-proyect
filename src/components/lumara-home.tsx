@@ -30,6 +30,15 @@ const experiences = [
     alt: "Cartas y elementos para una lectura simbólica"
   },
   {
+    title: "Registros akáshicos",
+    subtitle: "MEMORIA DEL ALMA · CONCIENCIA · GUÍA",
+    description: "Un espacio de introspección espiritual para explorar, desde una mirada simbólica y consciente, preguntas sobre tu recorrido, reconocer aprendizajes y abrir nuevas perspectivas para tu presente.",
+    highlights: ["Lectura intuitiva", "Memoria del alma", "Nuevas perspectivas"],
+    icon: "akashic",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=85",
+    alt: "Cristales y luz suave en un entorno contemplativo"
+  },
+  {
     title: "Escritura emocional",
     subtitle: "PALABRAS · EMOCIONES · AUTOCONOCIMIENTO",
     description: "A través de la escritura consciente, transformá pensamientos y emociones en palabras. Un recurso íntimo para escucharte, ordenar lo que sentís y dar lugar a nuevas comprensiones.",
@@ -73,6 +82,7 @@ const ExperienceIcon = ({ name }: { name: string }) => {
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" {...common}>
       {name === "astrology" && <><circle cx="12" cy="12" r="7.2" /><path d="M12 1.8v3M12 19.2v3M1.8 12h3M19.2 12h3M12 8.2l1.1 2.7 2.7 1.1-2.7 1.1-1.1 2.7-1.1-2.7-2.7-1.1 2.7-1.1z" /></>}
       {name === "tarot" && <><rect x="5" y="3" width="14" height="18" rx="2" /><path d="m12 7 1.2 2.6 2.8.4-2 2 .5 2.8-2.5-1.3-2.5 1.3.5-2.8-2-2 2.8-.4z" /></>}
+      {name === "akashic" && <><path d="M4 6.5c3.1-1.5 5.8-1.2 8 1v12c-2.2-2.2-4.9-2.5-8-1zM20 6.5c-3.1-1.5-5.8-1.2-8 1v12c2.2-2.2 4.9-2.5 8-1z" /><path d="M12 7.5v12M7 10h2M15 10h2M7 13h2M15 13h2M18.5 2.5v2M17.5 3.5h2" /></>}
       {name === "writing" && <><path d="M4 20h4l11-11a2.1 2.1 0 0 0-4-4L4 16zM13.5 6.5l4 4M4 20l1-4" /><path d="M4 3h6" /></>}
       {name === "meditation" && <><circle cx="12" cy="5.2" r="2.2" /><path d="M8.5 20c.2-3.5 1.3-6.4 3.5-8.2 2.2 1.8 3.3 4.7 3.5 8.2M5 20h14M4 14c1.2-1.4 2.5-2.1 4-2.4M20 14c-1.2-1.4-2.5-2.1-4-2.4" /></>}
       {name === "ikigai" && <><circle cx="12" cy="12" r="8.5" /><circle cx="12" cy="12" r="4.2" /><path d="M12 1v3M23 12h-3M12 23v-3M1 12h3" /></>}
@@ -365,7 +375,7 @@ export default function LumaraHome({ locale }: Props) {
               </defs>
               <path d="M420 24 C115 28 30 190 42 330 C53 475 175 590 420 596" fill="none" stroke="url(#lumaraMoonStroke)" strokeWidth="2.2" filter="url(#lumaraMoonGlow)" />
               <path d="M390 52 C145 68 78 205 88 330 C99 457 194 548 390 568" fill="none" stroke="#ffffff" strokeOpacity=".55" strokeWidth="1" />
-              <path d="M414 25 C285 132 253 475 414 596" fill="none" stroke="#b99769" strokeOpacity=".45" strokeWidth="1" />
+              <path d="M392 68 C302 162 287 458 392 550" fill="none" stroke="#b99769" strokeOpacity=".24" strokeWidth="1" strokeDasharray="2 8" />
               <g fill="#b99769" opacity=".9"><path d="m85 190 4 11 11 4-11 4-4 11-4-11-11-4 11-4z"/><path d="m145 475 3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/><circle cx="116" cy="286" r="2.5"/><circle cx="175" cy="112" r="2"/></g>
             </svg>
             <div className="lumara-moon-copy" key={experienceActiveIndex}>
