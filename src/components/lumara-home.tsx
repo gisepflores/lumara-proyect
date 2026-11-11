@@ -17,8 +17,8 @@ const experiences = [
     description: "Explorá tu carta natal, los tránsitos y los ciclos del universo para comprender tu energía, reconocer tus talentos y mirar los desafíos de tu camino desde nuevas perspectivas.",
     highlights: ["Carta natal", "Ciclos y tránsitos", "Autoconocimiento"],
     icon: "astrology",
-    image: "https://images.unsplash.com/photo-1729335511904-9b8690184935?auto=format&fit=crop&w=900&q=85",
-    alt: "Rueda zodiacal histórica con los signos y símbolos astrológicos"
+    image: "https://images.unsplash.com/photo-1729335312170-b96ee0f6decd?auto=format&fit=crop&w=900&q=85",
+    alt: "Diagrama celestial violeta con esferas, constelaciones y símbolos astrológicos"
   },
   {
     title: "Tarot y oráculos",
