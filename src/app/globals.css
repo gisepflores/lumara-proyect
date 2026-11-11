@@ -4447,3 +4447,81 @@ main section h2 {
   .service-gateway-card h3 { min-height:0; }
   .service-gateway-card-copy { min-height:0; }
 }
+
+
+/* Ajuste de proporciones y legibilidad — Camino Lumara */
+.service-gateway {
+  box-sizing:border-box;
+  width:calc(100% - clamp(32px,5vw,96px)) !important;
+  max-width:1500px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  padding-top:clamp(64px,6vw,82px) !important;
+}
+.service-gateway-heading {
+  width:100%;
+  max-width:100% !important;
+}
+.service-gateway-heading > p:last-child {
+  width:100%;
+  max-width:1180px !important;
+  margin:0 auto !important;
+  font-size:13px;
+  line-height:1.8;
+  text-wrap:pretty;
+}
+.service-gateway-grid {
+  width:100%;
+  max-width:100% !important;
+  grid-template-columns:repeat(5,minmax(245px,1fr)) !important;
+  gap:clamp(12px,1.15vw,18px) !important;
+  margin-top:clamp(30px,3vw,40px) !important;
+}
+.service-gateway-card {
+  min-width:245px;
+  min-height:460px !important;
+  height:100% !important;
+  max-height:none !important;
+  padding:25px 20px 23px !important;
+}
+.service-gateway-card h3 {
+  white-space:nowrap;
+  overflow:visible;
+  min-height:1.2em;
+  font-size:clamp(21px,1.45vw,24px) !important;
+  line-height:1.2;
+  margin-bottom:18px !important;
+  hyphens:none;
+}
+.service-gateway-card-copy p {
+  font-size:12px;
+  line-height:1.75;
+  overflow-wrap:normal;
+  word-break:normal;
+}
+@media(min-width:1101px) {
+  .service-gateway-grid {
+    grid-template-columns:repeat(5,minmax(245px,1fr)) !important;
+  }
+}
+@media(max-width:1350px) and (min-width:1101px) {
+  .service-gateway { width:calc(100% - 48px) !important; }
+  .service-gateway-grid { grid-template-columns:repeat(5,minmax(220px,1fr)) !important; }
+  .service-gateway-card { min-width:220px; padding-left:15px !important; padding-right:15px !important; }
+  .service-gateway-card h3 { font-size:21px !important; }
+}
+@media(max-width:1100px) and (min-width:701px) {
+  .service-gateway { width:calc(100% - 48px) !important; }
+  .service-gateway-grid { grid-template-columns:repeat(3,minmax(0,1fr)) !important; }
+  .service-gateway-card { min-width:0; min-height:390px !important; }
+  .service-gateway-card h3 { white-space:normal; }
+}
+@media(max-width:700px) {
+  .service-gateway { width:calc(100% - 36px) !important; }
+  .service-gateway-grid { grid-template-columns:1fr !important; }
+  .service-gateway-card { min-width:0; min-height:0 !important; height:auto !important; }
+  .service-gateway-card h3 { white-space:normal; }
+  .service-gateway-heading > p:last-child { max-width:100% !important; }
+}
