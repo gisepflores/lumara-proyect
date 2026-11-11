@@ -383,6 +383,7 @@ export default function LumaraHome({ locale }: Props) {
                     aria-pressed={index === experienceActiveIndex}
                     aria-label={`Explorar ${item.title}`}
                     tabIndex={position < 5 ? 0 : -1}
+                    style={{ order: position }}
                   >
                     <span className="lumara-gallery-image" style={{ backgroundImage: `linear-gradient(180deg, rgba(37,25,49,.02) 25%, rgba(37,25,49,.76) 100%), url("${item.image}")` }} role="img" aria-label={item.alt} />
                     <span className="lumara-gallery-card-shine" aria-hidden="true" />
