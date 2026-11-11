@@ -17,7 +17,7 @@ const experiences = [
     description: "Explorá tu carta natal, los tránsitos y los ciclos del universo para comprender tu energía, reconocer tus talentos y mirar los desafíos de tu camino desde nuevas perspectivas.",
     highlights: ["Carta natal", "Ciclos y tránsitos", "Autoconocimiento"],
     icon: "astrology",
-    image: "https://images.unsplash.com/photo-1729335312170-b96ee0f6decd?auto=format&fit=crop&w=900&q=85",
+    image: "/lumara-proyect/assets/img/lumara-cartas/astrologia.webp",
     alt: "Diagrama celestial violeta con esferas, constelaciones y símbolos astrológicos"
   },
   {
@@ -26,7 +26,7 @@ const experiences = [
     description: "Un espacio de exploración simbólica para abrir preguntas, reconocer posibilidades y encontrar nuevas perspectivas que acompañen tus decisiones de manera consciente.",
     highlights: ["Lecturas simbólicas", "Oráculos", "Claridad interior"],
     icon: "tarot",
-    image: "https://images.unsplash.com/photo-1772710333229-97bb734d5d5e?auto=format&fit=crop&w=900&q=85",
+    image: "/lumara-proyect/assets/img/lumara-cartas/tarot-oraculos.webp",
     alt: "Cartas de tarot y oráculo con cristales y velas sobre una mesa clara"
   },
   {
@@ -35,7 +35,7 @@ const experiences = [
     description: "Un espacio de introspección espiritual para explorar, desde una mirada simbólica y consciente, preguntas sobre tu recorrido, reconocer aprendizajes y abrir nuevas perspectivas para tu presente.",
     highlights: ["Lectura intuitiva", "Memoria del alma", "Nuevas perspectivas"],
     icon: "akashic",
-    image: "https://images.unsplash.com/photo-1775112862856-81db1555b7f6?auto=format&fit=crop&w=900&q=85",
+    image: "/lumara-proyect/assets/img/lumara-cartas/registros-akashicos.webp",
     alt: "Portal celestial dorado en una atmósfera violeta y luminosa"
   },
   {
@@ -44,7 +44,7 @@ const experiences = [
     description: "A través de la escritura consciente, transformá pensamientos y emociones en palabras. Un recurso íntimo para escucharte, ordenar lo que sentís y dar lugar a nuevas comprensiones.",
     highlights: ["Diario emocional", "Escritura guiada", "Reflexión personal"],
     icon: "writing",
-    image: "https://images.unsplash.com/photo-1578941838877-141265f3a898?auto=format&fit=crop&w=900&q=85",
+    image: "/lumara-proyect/assets/img/lumara-cartas/escritura-emocional.webp",
     alt: "Cuaderno abierto y escritura a mano"
   },
   {
@@ -53,7 +53,7 @@ const experiences = [
     description: "Pausas guiadas para volver al cuerpo, aquietar el ruido y cultivar presencia. Prácticas para conectar con tu respiración y acompañar tu bienestar cotidiano.",
     highlights: ["Atención plena", "Visualizaciones", "Respiración consciente"],
     icon: "meditation",
-    image: "https://images.unsplash.com/photo-1523177417564-d13c2cd1b309?auto=format&fit=crop&w=900&q=85",
+    image: "/lumara-proyect/assets/img/lumara-cartas/meditaciones.webp",
     alt: "Mujer sentada de espaldas en un campo natural en actitud contemplativa"
   },
   {
@@ -62,7 +62,7 @@ const experiences = [
     description: "Explorá aquello que te mueve, tus talentos y lo que deseás aportar. Una búsqueda personal para conectar lo que amás, lo que sabés hacer y aquello que da sentido a tu camino.",
     highlights: ["Propósito personal", "Talentos y motivaciones", "Dirección consciente"],
     icon: "ikigai",
-    image: "https://images.unsplash.com/photo-1758799819958-6bfece84708a?auto=format&fit=crop&w=900&q=85",
+    image: "/lumara-proyect/assets/img/lumara-cartas/ikigai.webp",
     alt: "Paisaje natural iluminado por el amanecer"
   },
   {
@@ -71,7 +71,7 @@ const experiences = [
     description: "Integrá nuevas herramientas, perspectivas y hábitos para construir una vida más alineada con tus valores. Un camino para crecer con conciencia, confianza y propósito.",
     highlights: ["Creencias y hábitos", "Fortalezas personales", "Acción consciente"],
     icon: "growth",
-    image: "https://images.unsplash.com/photo-1753900249951-289f866cc210?auto=format&fit=crop&w=900&q=85",
+    image: "/lumara-proyect/assets/img/lumara-cartas/desarrollo-personal.webp",
     alt: "Mujer con los brazos abiertos al atardecer, símbolo de confianza y expansión"
   }
 ];
