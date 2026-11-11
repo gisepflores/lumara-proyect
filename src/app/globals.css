@@ -5514,3 +5514,117 @@ main section h2 {
 @media (prefers-reduced-motion: reduce) {
   .lumara-gallery-card.is-active { animation: none !important; }
 }
+
+
+/* Siete caminos Lumara: abanico equilibrado y experiencia mobile integrada */
+.lumara-experience-gallery { --card-step: clamp(78px, 5.9vw, 112px); }
+.lumara-gallery-card-pos-5 {
+  z-index: 6;
+  opacity: .98;
+  filter: none;
+  transform: translate(calc(-50% - var(--card-step) * 2), -47%) rotateY(15deg) rotateZ(-10deg) scale(.88);
+}
+.lumara-gallery-card-pos-6 {
+  z-index: 4;
+  opacity: .96;
+  filter: none;
+  transform: translate(calc(-50% - var(--card-step) * 3), -45%) rotateY(19deg) rotateZ(-14deg) scale(.82);
+}
+.lumara-gallery-card-pos-6 .lumara-gallery-card-shine { opacity: .35; }
+
+/* La luna conserva una única curva interior tenue: el texto queda limpio */
+.lumara-moon-art path:nth-of-type(3) { opacity: .18; }
+
+/* En móvil, primero la información y luego una galería en grilla: sin tarjetas cortadas */
+@media (max-width: 560px) {
+  .lumara-experience-world { gap: 8px; }
+  .lumara-moon-panel {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 24px 0 18px;
+  }
+  .lumara-moon-art {
+    width: 108%;
+    left: -4%;
+    height: 100%;
+    opacity: .36;
+  }
+  .lumara-moon-copy {
+    width: 92%;
+    max-width: 390px;
+    padding: 25px 12px 27px;
+    margin: 0 auto;
+  }
+  .lumara-experience-symbol { margin-bottom: 10px; }
+  .lumara-moon-copy h3 { margin-bottom: 7px; }
+  .lumara-moon-divider { margin: 14px auto 13px; }
+  .lumara-moon-copy > p { font-size: 12px; line-height: 1.65; }
+  .lumara-experience-highlights {
+    margin: 17px auto 19px;
+    gap: 6px;
+  }
+  .lumara-experience-highlights span { font-size: 8px; }
+  .lumara-experience-gallery {
+    height: auto;
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 8px 0 28px;
+    overflow: visible;
+    perspective: none;
+  }
+  .lumara-gallery-orbit { display: none; }
+  .lumara-gallery-cards {
+    position: relative;
+    inset: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    overflow: visible;
+    padding: 8px 2px 12px;
+  }
+  .lumara-gallery-card,
+  .lumara-gallery-card-pos-0,
+  .lumara-gallery-card-pos-1,
+  .lumara-gallery-card-pos-2,
+  .lumara-gallery-card-pos-3,
+  .lumara-gallery-card-pos-4,
+  .lumara-gallery-card-pos-5,
+  .lumara-gallery-card-pos-6 {
+    position: relative;
+    inset: auto;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: clamp(190px, 54vw, 230px);
+    min-width: 0;
+    opacity: 1;
+    filter: none;
+    transform: none;
+    order: initial;
+    animation: none;
+    scroll-snap-align: unset;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(57,39,73,.13);
+  }
+  .lumara-gallery-card-pos-0 {
+    transform: translateY(-3px);
+    box-shadow: 0 0 0 2px rgba(187,112,221,.8), 0 0 20px rgba(187,112,221,.28), 0 12px 28px rgba(115,76,143,.2);
+  }
+  .lumara-gallery-card-pos-6 { grid-column: 1 / -1; width: min(50%, 190px); justify-self: center; }
+  .lumara-gallery-card-label { bottom: 12px; }
+  .lumara-gallery-card-label i { width: 34px; height: 34px; }
+  .lumara-gallery-card-label i svg { width: 19px; height: 19px; }
+  .lumara-gallery-card-label b { font-size: 14px; }
+  .lumara-gallery-controls { position: static; transform: none; margin: 10px auto 0; }
+}
+@media (min-width: 561px) and (max-width: 1320px) {
+  .lumara-experience-gallery { --card-step: clamp(82px, 10vw, 112px); }
+  .lumara-gallery-card-pos-6 {
+    transform: translate(calc(-50% - var(--card-step) * 3), -45%) rotateY(19deg) rotateZ(-14deg) scale(.82);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lumara-gallery-card.is-active { animation: none !important; }
+}
