@@ -140,10 +140,11 @@ export default function LumaraHome({ locale }: Props) {
   const [learningActiveIndex, setLearningActiveIndex] = useState(2);
   const [experienceActiveIndex, setExperienceActiveIndex] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const visibleLearning = [-2, -1, 0, 1, 2].map((offset) => ({
-    item: learning[(learningActiveIndex + offset + learning.length) % learning.length],
-    offset
-  }));
+  const [learningInteractionActive, setLearningInteractionActive] = useState(false);
+  const visibleLearning = [-2, -1, 0, 1, 2].map((offset) => {
+    const index = (learningActiveIndex + offset + learning.length) % learning.length;
+    return { item: learning[index], offset, index };
+  });
 
   useEffect(() => {
     document.documentElement.dataset.theme = darkMode ? "dark" : "light";
@@ -154,6 +155,32 @@ export default function LumaraHome({ locale }: Props) {
       setMantraIndex((current) => (current + 1) % mantrasData.mantras.length);
     }, mantrasData.intervalMinutes * 60 * 1000);
     return () => window.clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (learningInteractionActive) return;
+    const interval = window.setInterval(() => {
+      setLearningActiveIndex((current) => (current + 1) % learning.length);
+    }, 4800);
+    return () => window.clearInterval(interval);
+  }, [learningInteractionActive]);
+
+  useEffect(() => {
+    const carousel = document.querySelector<HTMLElement>(".learning-carousel");
+    if (!carousel) return;
+    const handleOutsidePointer = (event: PointerEvent) => {
+      if (!carousel.contains(event.target as Node)) setLearningInteractionActive(false);
+    };
+    const handleScroll = () => {
+      const hasFocus = carousel.contains(document.activeElement);
+      if (!carousel.matches(":hover") && !hasFocus) setLearningInteractionActive(false);
+    };
+    document.addEventListener("pointerdown", handleOutsidePointer);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      document.removeEventListener("pointerdown", handleOutsidePointer);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -420,11 +447,29 @@ export default function LumaraHome({ locale }: Props) {
           <h2 id="learning-title">Aprender, practicar, acompañar y <em>transformar.</em></h2>
           <p>Elegí tu próximo paso para crecer, aprender y transformar tu camino.</p>
         </div>
-        <div className="learning-carousel" aria-roledescription="carrusel" aria-label="Propuestas de aprendizaje Lumara">
-          <button className="learning-carousel-arrow learning-carousel-prev" type="button" aria-label="Ver propuesta anterior" onClick={() => setLearningActiveIndex((current) => (current - 1 + learning.length) % learning.length)}>‹</button>
+        <div
+          className={`learning-carousel ${learningInteractionActive ? "is-interacting" : "is-autoplay"}`}
+          aria-roledescription="carrusel"
+          aria-label="Propuestas de aprendizaje Lumara"
+          onPointerEnter={() => setLearningInteractionActive(true)}
+          onPointerLeave={() => setLearningInteractionActive(false)}
+          onFocusCapture={() => setLearningInteractionActive(true)}
+          onBlurCapture={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+              setLearningInteractionActive(false);
+            }
+          }}
+        >
+          <button className="learning-carousel-arrow learning-carousel-prev" type="button" aria-label="Ver propuesta anterior" onClick={() => { setLearningInteractionActive(true); setLearningActiveIndex((current) => (current - 1 + learning.length) % learning.length); }}>‹</button>
           <div className="learning-carousel-stage" aria-live="polite">
-            {visibleLearning.map(({ item, offset }) => (
-              <article className={`learning-feature-card learning-carousel-card ${offset === 0 ? "is-center" : Math.abs(offset) === 1 ? "is-near" : "is-far"}`} key={item.title}>
+            {visibleLearning.map(({ item, offset, index }) => (
+              <article
+                className={`learning-feature-card learning-carousel-card ${offset === 0 ? "is-center" : Math.abs(offset) === 1 ? "is-near" : "is-far"}`}
+                key={item.title}
+                onPointerEnter={() => { setLearningInteractionActive(true); setLearningActiveIndex(index); }}
+                onClick={() => { setLearningInteractionActive(true); setLearningActiveIndex(index); }}
+                aria-label={`Seleccionar ${item.title}`}
+              >
                 <div className="learning-card-image" style={{ backgroundImage: `linear-gradient(180deg, rgba(50,35,62,.02) 25%, rgba(50,35,62,.2) 100%), url("${item.image}")` }} role="img" aria-label={`Imagen representativa de ${item.title}`} />
                 <div className="learning-card-icon" aria-hidden="true">
                   {item.icon === "book" ? "⌑" : item.icon === "lotus" ? "✧" : item.icon === "infinity" ? "∞" : item.icon === "mentoring" ? "♧" : "♙"}
@@ -438,10 +483,10 @@ export default function LumaraHome({ locale }: Props) {
               </article>
             ))}
           </div>
-          <button className="learning-carousel-arrow learning-carousel-next" type="button" aria-label="Ver propuesta siguiente" onClick={() => setLearningActiveIndex((current) => (current + 1) % learning.length)}>›</button>
+          <button className="learning-carousel-arrow learning-carousel-next" type="button" aria-label="Ver propuesta siguiente" onClick={() => { setLearningInteractionActive(true); setLearningActiveIndex((current) => (current + 1) % learning.length); }}>›</button>
         </div>
         <div className="learning-carousel-pagination" aria-label={`Propuesta ${learningActiveIndex + 1} de ${learning.length}`}>
-          {learning.map((item, index) => <button key={item.title} type="button" aria-label={`Mostrar ${item.title}`} aria-current={index === learningActiveIndex ? "true" : undefined} onClick={() => setLearningActiveIndex(index)} />)}
+          {learning.map((item, index) => <button key={item.title} type="button" aria-label={`Mostrar ${item.title}`} aria-current={index === learningActiveIndex ? "true" : undefined} onClick={() => { setLearningInteractionActive(true); setLearningActiveIndex(index); }} />)}
         </div>
       </section>
 
