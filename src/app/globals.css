@@ -4062,3 +4062,139 @@ main section h2 {
   .service-gateway-number { margin-bottom:14px; }
   .service-gateway-card h3 { font-size:25px; }
 }
+
+
+/* Camino Lumara — cinco cards verticales en una única línea */
+.service-gateway-grid {
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:14px;
+  margin-top:clamp(32px,4vw,48px);
+  align-items:stretch;
+}
+.service-gateway-card {
+  grid-column:auto !important;
+  min-width:0;
+  min-height:clamp(310px,25vw,370px);
+  padding:25px 19px 22px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  border:1px solid rgba(128,103,159,.17);
+  border-radius:16px;
+  background:linear-gradient(155deg,#fff 0%,#faf7fc 100%);
+  box-shadow:0 12px 30px rgba(85,65,104,.055);
+  transition:transform .32s ease,box-shadow .32s ease,border-color .32s ease;
+  position:relative;
+  overflow:hidden;
+}
+.service-gateway-card::after {
+  content:"";
+  position:absolute;
+  width:100px;
+  height:100px;
+  top:-55px;
+  right:-55px;
+  border:1px solid rgba(165,141,187,.15);
+  border-radius:50%;
+  box-shadow:0 0 0 10px rgba(165,141,187,.035),0 0 0 20px rgba(165,141,187,.025);
+  pointer-events:none;
+}
+.service-gateway-card:hover,
+.service-gateway-card:focus-within {
+  transform:translateY(-7px);
+  border-color:rgba(128,103,159,.34);
+  box-shadow:0 18px 38px rgba(85,65,104,.12);
+}
+.service-gateway-card .service-gateway-icon {
+  width:48px;
+  height:48px;
+  margin:0 0 22px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#f0e9f5;
+  color:#80679f;
+}
+.service-gateway-card .service-gateway-icon svg {
+  width:27px;
+  height:27px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.45;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.service-gateway-card h3 {
+  margin:0 0 13px;
+  color:#554168;
+  font:500 clamp(20px,1.55vw,24px)/1.12 var(--serif);
+  letter-spacing:-.015em;
+}
+.service-gateway-card p {
+  margin:0;
+  color:#766e7b;
+  font-size:11.5px;
+  line-height:1.75;
+  text-wrap:pretty;
+}
+.service-gateway-prompt {
+  display:block;
+  margin-top:auto;
+  padding-top:22px;
+  color:#a58dbb;
+  font:italic 600 17px/1.1 var(--serif);
+  letter-spacing:.015em;
+  opacity:0;
+  transform:translateY(7px);
+  transition:opacity .28s ease,transform .28s ease;
+}
+.service-gateway-card:hover .service-gateway-prompt,
+.service-gateway-card:focus-within .service-gateway-prompt {
+  opacity:1;
+  transform:translateY(0);
+}
+.service-gateway-card[data-reveal] {
+  opacity:0;
+  transform:translate3d(0,24px,0);
+  transition:opacity .72s ease,transform .8s cubic-bezier(.2,.65,.25,1),box-shadow .32s ease,border-color .32s ease;
+}
+.service-gateway-card[data-reveal].is-visible {
+  opacity:1;
+  transform:translate3d(0,0,0);
+}
+.service-gateway-card[data-reveal]:nth-child(2) { transition-delay:.08s; }
+.service-gateway-card[data-reveal]:nth-child(3) { transition-delay:.16s; }
+.service-gateway-card[data-reveal]:nth-child(4) { transition-delay:.24s; }
+.service-gateway-card[data-reveal]:nth-child(5) { transition-delay:.32s; }
+.service-gateway-card[data-reveal].is-visible:hover { transform:translateY(-7px); }
+:root[data-theme="dark"] .service-gateway-card { background:linear-gradient(155deg,#342a3c 0%,#29232f 100%); }
+:root[data-theme="dark"] .service-gateway-card h3 { color:#eee7f2; }
+:root[data-theme="dark"] .service-gateway-card p { color:#d0c6d7; }
+:root[data-theme="dark"] .service-gateway-card .service-gateway-icon { background:#493a55; color:#d8c4e8; }
+@media(max-width:1100px) {
+  .service-gateway-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .service-gateway-card { min-height:320px; }
+}
+@media(max-width:760px) {
+  .service-gateway-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px; }
+  .service-gateway-card { min-height:300px; padding:23px 18px 20px; }
+}
+@media(max-width:520px) {
+  .service-gateway-grid { grid-template-columns:1fr; gap:12px; }
+  .service-gateway-card { min-height:0; padding:22px 22px 20px; }
+  .service-gateway-card p { font-size:12px; }
+  .service-gateway-prompt { opacity:1; transform:none; padding-top:18px; }
+}
+@media(hover:none) {
+  .service-gateway-prompt { opacity:1; transform:none; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .service-gateway-card,
+  .service-gateway-card[data-reveal] {
+    transition:none !important;
+    opacity:1;
+    transform:none;
+  }
+  .service-gateway-prompt { transition:none; }
+}
