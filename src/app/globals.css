@@ -6050,3 +6050,26 @@ main section h2 {
   background: linear-gradient(150deg, rgba(235,218,244,.2), rgba(222,195,224,.06) 55%, rgba(207,171,116,.15));
   mix-blend-mode: screen;
 }
+
+
+/* Lumara: cards compactas, ajustadas al contenido */
+#servicios-iniciales .service-gateway-grid {
+  grid-auto-rows: auto !important;
+  align-items: start !important;
+}
+#servicios-iniciales .service-gateway-card {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  align-self: start !important;
+}
+#servicios-iniciales .service-gateway-card h3 {
+  min-height: 0 !important;
+}
+#servicios-iniciales .service-gateway-card-copy {
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+}
+#servicios-iniciales .service-gateway-card-copy p {
+  margin: 0 !important;
+}
