@@ -375,7 +375,6 @@ export default function LumaraHome({ locale }: Props) {
               </defs>
               <path d="M420 24 C115 28 30 190 42 330 C53 475 175 590 420 596" fill="none" stroke="url(#lumaraMoonStroke)" strokeWidth="2.2" filter="url(#lumaraMoonGlow)" />
               <path d="M390 52 C145 68 78 205 88 330 C99 457 194 548 390 568" fill="none" stroke="#ffffff" strokeOpacity=".55" strokeWidth="1" />
-              <path d="M392 68 C302 162 287 458 392 550" fill="none" stroke="#b99769" strokeOpacity=".24" strokeWidth="1" strokeDasharray="2 8" />
               <g fill="#b99769" opacity=".9"><path d="m85 190 4 11 11 4-11 4-4 11-4-11-11-4 11-4z"/><path d="m145 475 3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/><circle cx="116" cy="286" r="2.5"/><circle cx="175" cy="112" r="2"/></g>
             </svg>
             <div className="lumara-moon-copy" key={experienceActiveIndex}>
