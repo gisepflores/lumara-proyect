@@ -4299,3 +4299,48 @@ main section h2 {
   .service-gateway-card-copy p,
   .service-gateway-card-copy .service-gateway-prompt { transition:none !important; }
 }
+
+
+/* Corrección solicitada: cinco pilares en una fila de escritorio */
+.service-gateway {
+  padding-top:clamp(104px,9vw,138px) !important;
+}
+.service-gateway-heading .service-gateway-kicker {
+  margin-bottom:clamp(28px,3vw,42px) !important;
+}
+.service-gateway-heading {
+  width:100%;
+  max-width:1400px !important;
+}
+.service-gateway-heading > p:last-child {
+  width:100%;
+  max-width:1280px !important;
+  margin:14px auto 0 !important;
+  font-size:13px;
+  line-height:1.8;
+  text-wrap:balance;
+}
+.service-gateway-grid {
+  display:grid !important;
+  grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  grid-auto-rows:1fr;
+  width:100%;
+  gap:clamp(10px,1.1vw,18px) !important;
+  align-items:stretch;
+}
+.service-gateway-card {
+  width:100%;
+  min-width:0;
+  height:370px !important;
+  min-height:370px !important;
+  max-height:370px !important;
+}
+@media(max-width:760px) {
+  .service-gateway { padding-top:64px !important; }
+  .service-gateway-grid { grid-template-columns:1fr !important; grid-auto-rows:auto; }
+  .service-gateway-card {
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+  }
+}
