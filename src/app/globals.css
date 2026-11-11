@@ -6033,3 +6033,20 @@ main section h2 {
   background: linear-gradient(155deg, rgba(226,207,242,.16), rgba(205,174,222,.06) 48%, rgba(184,151,105,.12));
   mix-blend-mode: screen;
 }
+
+.lumara-gallery-cards > .lumara-gallery-card:nth-child(1) .lumara-gallery-image {
+  filter: sepia(.42) hue-rotate(226deg) saturate(.82) brightness(1.1) contrast(.94);
+}
+.lumara-gallery-cards > .lumara-gallery-card:nth-child(7) .lumara-gallery-image {
+  filter: sepia(.22) hue-rotate(292deg) saturate(.72) brightness(1.1) contrast(.96);
+}
+.lumara-gallery-cards > .lumara-gallery-card:nth-child(1)::after,
+.lumara-gallery-cards > .lumara-gallery-card:nth-child(7)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(150deg, rgba(235,218,244,.2), rgba(222,195,224,.06) 55%, rgba(207,171,116,.15));
+  mix-blend-mode: screen;
+}
