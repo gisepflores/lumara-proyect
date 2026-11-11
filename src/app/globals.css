@@ -5923,3 +5923,90 @@ main section h2 {
   .lumara-experience-detail { animation: none; }
   .lumara-gallery-card { transition: none !important; }
 }
+
+
+/* Refinamiento visual Lumara: transición delicada, filetes champagne y ritmo vertical */
+.lumara-experiences {
+  padding-top: clamp(54px, 6vw, 78px);
+  padding-bottom: clamp(28px, 3vw, 42px);
+}
+.lumara-experience-showcase { gap: 25px; }
+.lumara-gallery-moonphases { display: none !important; }
+.lumara-experience-gallery { height: 438px; }
+.lumara-gallery-cards { inset: 24px 0 54px; }
+.lumara-gallery-controls { bottom: 2px; }
+.lumara-gallery-dots { gap: 12px; }
+.lumara-gallery-dots button { width: 7px; height: 7px; transition: transform .3s ease, background .3s ease; }
+.lumara-gallery-dots button[aria-current="true"] { transform: scale(1.18); }
+
+/* Filete champagne fino en todas las cartas, con luz adicional solo en la activa */
+.lumara-gallery-card {
+  border: 1.5px solid rgba(202,169,112,.88);
+  box-shadow: 0 14px 32px rgba(58,39,70,.16), inset 0 0 0 1px rgba(255,255,255,.32);
+  transition:
+    transform .78s cubic-bezier(.2,.72,.18,1),
+    opacity .55s ease,
+    filter .55s ease,
+    box-shadow .65s ease,
+    border-color .55s ease;
+}
+.lumara-gallery-image {
+  filter: saturate(.84) sepia(.09) hue-rotate(5deg) contrast(.97);
+  transition: transform 1s cubic-bezier(.2,.7,.2,1), filter .7s ease;
+}
+.lumara-gallery-card:hover .lumara-gallery-image { filter: saturate(.98) sepia(.04) hue-rotate(3deg) contrast(1); }
+.lumara-gallery-card-pos-0 {
+  border-color: #e7c98f;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.9),
+    0 0 0 3px rgba(201,169,112,.48),
+    0 0 26px 5px rgba(180,132,199,.34),
+    0 22px 44px rgba(57,39,73,.24),
+    inset 0 0 0 1px rgba(255,255,255,.55);
+}
+.lumara-gallery-card.is-active { animation: lumaraCardSoftFocus .78s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes lumaraCardSoftFocus {
+  0% { filter: brightness(.96) saturate(.9); }
+  42% { filter: brightness(1.09) saturate(1.08); }
+  100% { filter: brightness(1) saturate(1.02); }
+}
+.lumara-gallery-card-shine {
+  background: linear-gradient(112deg, transparent 38%, rgba(255,245,220,.48) 50%, transparent 62%);
+}
+.lumara-gallery-card-pos-0 .lumara-gallery-card-shine { opacity: .72; transform: translateX(22%); }
+
+/* La ficha respira respecto de los indicadores de la galería */
+.lumara-experience-detail { margin-top: 0; border-color: rgba(196,163,111,.58); }
+.lumara-detail-art { outline: 1px solid rgba(198,164,111,.56); outline-offset: 3px; }
+
+/* Menos espacio vacío antes del siguiente bloque de capacitaciones */
+.training-gallery {
+  padding-top: clamp(42px, 4.5vw, 62px);
+}
+.training-gallery-heading { margin-bottom: clamp(30px, 3.6vw, 48px); }
+
+@media (max-width: 1000px) {
+  .lumara-experiences { padding-bottom: 28px; }
+  .lumara-experience-showcase { gap: 22px; }
+  .lumara-experience-gallery { height: auto; }
+  .lumara-gallery-cards { inset: auto; padding-top: 18px; }
+  .lumara-gallery-card { border-width: 1.5px; }
+  .lumara-gallery-controls { margin-top: 8px; }
+  .lumara-experience-detail { margin-top: 0; }
+  .training-gallery { padding-top: 42px; }
+}
+@media (max-width: 560px) {
+  .lumara-experiences { padding-top: 48px; padding-bottom: 22px; }
+  .lumara-experience-showcase { gap: 20px; }
+  .lumara-experience-gallery { padding-top: 4px; padding-bottom: 24px; }
+  .lumara-gallery-cards { padding-top: 14px; padding-bottom: 16px; }
+  .lumara-gallery-controls { margin-top: 8px; }
+  .lumara-gallery-card { border-radius: 20px; }
+  .lumara-experience-detail { border-color: rgba(196,163,111,.6); }
+  .training-gallery { padding-top: 34px; }
+  .training-gallery-heading { margin-bottom: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lumara-gallery-card.is-active { animation: none !important; }
+  .lumara-gallery-image, .lumara-gallery-card, .lumara-gallery-dots button { transition: none !important; }
+}
