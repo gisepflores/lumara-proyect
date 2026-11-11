@@ -234,7 +234,7 @@ export default function LumaraHome({ locale }: Props) {
         <div className="service-gateway-heading">
           <span className="section-kicker service-gateway-kicker">TU TRANSFORMACIÓN COMIENZA AQUÍ</span>
           <h2 id="lumara-path-title">El camino <em>Lumara</em></h2>
-          <p className="service-gateway-subtitle">Una nueva visión del cambio y la transformación consciente</p>
+          <p className="service-gateway-subtitle">Una nueva visión del cambio y la transformación consciente.</p>
           <p>Un camino de evolución interior que te invita a reconocerte, comprender tus emociones, reconectar con tu esencia y construir una realidad alineada con tus verdaderos anhelos. Un proceso que se integra en tu vida cotidiana y te impulsa a evolucionar desde el amor, la conciencia y la plenitud.</p>
         </div>
         <div className="service-gateway-grid" aria-label="Los cinco pilares del recorrido Lumara">
