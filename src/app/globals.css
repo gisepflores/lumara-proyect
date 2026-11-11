@@ -6075,13 +6075,13 @@ main section h2 {
     0 42px 64px -54px rgba(77, 54, 91, .17);
 }
 .learning-carousel-card.is-far {
-  transform: translate(-50%, -50%) translateX(-535px) scale(.76);
+  transform: translate(-50%, -50%) translateX(clamp(-535px, calc(180px - 48vw), -400px)) scale(.76);
   opacity: .58;
   filter: none;
   pointer-events: auto;
 }
 .learning-carousel-card.is-far:nth-of-type(5) {
-  transform: translate(-50%, -50%) translateX(535px) scale(.76);
+  transform: translate(-50%, -50%) translateX(clamp(400px, calc(48vw - 180px), 535px)) scale(.76);
 }
 .learning-carousel-card.is-near {
   transform: translate(-50%, -50%) translateX(-345px) scale(.88);
@@ -6103,10 +6103,10 @@ main section h2 {
 }
 @media (max-width: 1250px) and (min-width: 901px) {
   .learning-carousel-card.is-far {
-    transform: translate(-50%, -50%) translateX(-475px) scale(.72);
+    transform: translate(-50%, -50%) translateX(-420px) scale(.72);
   }
   .learning-carousel-card.is-far:nth-of-type(5) {
-    transform: translate(-50%, -50%) translateX(475px) scale(.72);
+    transform: translate(-50%, -50%) translateX(420px) scale(.72);
   }
   .learning-carousel-card.is-near {
     transform: translate(-50%, -50%) translateX(-300px) scale(.84);
