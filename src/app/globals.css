@@ -6012,45 +6012,29 @@ main section h2 {
 }
 
 
-/* Tratamiento cromático por temática para mantener unidad visual entre cartas */
-.lumara-gallery-cards > .lumara-gallery-card:nth-child(3) .lumara-gallery-image {
-  filter: saturate(.78) sepia(.12) hue-rotate(205deg) brightness(1.08);
+/* Tratamiento uniforme de las siete cartas: conservar el color original de cada imagen
+   y sumar únicamente un velo translúcido común en la paleta Lumara. */
+.lumara-gallery-cards > .lumara-gallery-card .lumara-gallery-image {
+  filter: none !important;
 }
-.lumara-gallery-cards > .lumara-gallery-card:nth-child(5) .lumara-gallery-image {
-  filter: saturate(.68) hue-rotate(92deg) brightness(1.12) contrast(.94);
-}
-.lumara-gallery-cards > .lumara-gallery-card:nth-child(7) .lumara-gallery-image {
-  filter: sepia(.36) hue-rotate(224deg) saturate(.78) brightness(1.12) contrast(.94);
-}
-.lumara-gallery-cards > .lumara-gallery-card:nth-child(3)::after,
-.lumara-gallery-cards > .lumara-gallery-card:nth-child(5)::after,
-.lumara-gallery-cards > .lumara-gallery-card:nth-child(7)::after {
+.lumara-gallery-cards > .lumara-gallery-card::after {
   content: "";
   position: absolute;
+  z-index: 1;
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  background: linear-gradient(155deg, rgba(226,207,242,.16), rgba(205,174,222,.06) 48%, rgba(184,151,105,.12));
-  mix-blend-mode: screen;
+  background: linear-gradient(
+    155deg,
+    rgba(255,255,255,.17) 0%,
+    rgba(244,237,250,.09) 48%,
+    rgba(226,211,239,.16) 100%
+  );
+  mix-blend-mode: normal;
 }
-
-.lumara-gallery-cards > .lumara-gallery-card:nth-child(1) .lumara-gallery-image {
-  filter: sepia(.42) hue-rotate(226deg) saturate(.82) brightness(1.1) contrast(.94);
-}
-.lumara-gallery-cards > .lumara-gallery-card:nth-child(7) .lumara-gallery-image {
-  filter: sepia(.22) hue-rotate(292deg) saturate(.72) brightness(1.1) contrast(.96);
-}
-.lumara-gallery-cards > .lumara-gallery-card:nth-child(1)::after,
-.lumara-gallery-cards > .lumara-gallery-card:nth-child(7)::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background: linear-gradient(150deg, rgba(235,218,244,.2), rgba(222,195,224,.06) 55%, rgba(207,171,116,.15));
-  mix-blend-mode: screen;
-}
-
+.lumara-gallery-card-label { z-index: 2; }
+.lumara-gallery-card-shine { z-index: 3; }
+.lumara-gallery-card.is-active { animation: none !important; }
 
 /* Lumara: cards compactas, ajustadas al contenido */
 #servicios-iniciales .service-gateway-grid {
