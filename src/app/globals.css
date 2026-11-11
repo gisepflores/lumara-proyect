@@ -4546,3 +4546,45 @@ main section h2 {
     line-height:1.55 !important;
   }
 }
+
+
+/* Armonización del fondo y ajuste final del Camino Lumara */
+.service-gateway {
+  background:var(--moon) !important;
+}
+.service-gateway-card {
+  min-height:410px !important;
+  height:410px !important;
+  max-height:410px !important;
+  padding-bottom:18px !important;
+}
+.service-gateway-heading > p:last-child {
+  width:100% !important;
+  max-width:920px !important;
+  margin:0 auto !important;
+  padding:0 !important;
+  text-align:center !important;
+  text-wrap:pretty;
+  font-family:"DM Sans",Arial,sans-serif !important;
+  font-size:17px !important;
+  font-weight:400 !important;
+  line-height:1.5 !important;
+}
+@media(max-width:1100px) and (min-width:701px) {
+  .service-gateway-card {
+    height:auto !important;
+    min-height:390px !important;
+    max-height:none !important;
+  }
+}
+@media(max-width:700px) {
+  .service-gateway-card {
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+  }
+  .service-gateway-heading > p:last-child {
+    font-size:15px !important;
+    line-height:1.55 !important;
+  }
+}
