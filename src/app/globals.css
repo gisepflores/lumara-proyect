@@ -6173,3 +6173,45 @@ main section h2 {
 @media (prefers-reduced-motion: reduce) {
   .learning-carousel-card { transition: none !important; }
 }
+
+
+/* Ajustes finales de la galería de aprendizaje */
+.learning-showcase {
+  padding-top: clamp(34px, 3.2vw, 50px) !important;
+}
+.learning-showcase-heading {
+  margin-bottom: clamp(22px, 2.2vw, 32px) !important;
+}
+.learning-carousel-prev { left: max(8px, calc(50% - 455px)); }
+.learning-carousel-next { right: max(8px, calc(50% - 455px)); }
+
+/* Sombra inferior con caída radial, sin borde recto */
+.learning-carousel-card,
+.learning-carousel-card.is-center {
+  box-shadow: none !important;
+  filter: drop-shadow(0 18px 17px rgba(70, 48, 86, .13));
+}
+.learning-carousel-card.is-far,
+.learning-carousel-card.is-near {
+  filter: drop-shadow(0 15px 14px rgba(70, 48, 86, .10));
+}
+.learning-carousel-card.is-center {
+  filter: drop-shadow(0 22px 22px rgba(70, 48, 86, .14));
+}
+.learning-card-cta span { display: none !important; }
+.learning-card-cta { gap: 0 !important; }
+
+@media (max-width: 900px) {
+  .learning-showcase { padding-top: 42px !important; }
+  .learning-carousel-prev { left: 2px; }
+  .learning-carousel-next { right: 2px; }
+}
+@media (max-width: 600px) {
+  .learning-showcase { padding-top: 36px !important; }
+  .learning-showcase-heading { margin-bottom: 22px !important; }
+  .learning-carousel-prev { left: -7px; }
+  .learning-carousel-next { right: -7px; }
+  .learning-carousel-card.is-center {
+    filter: drop-shadow(0 18px 18px rgba(70, 48, 86, .13));
+  }
+}
