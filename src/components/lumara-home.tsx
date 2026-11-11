@@ -266,7 +266,7 @@ export default function LumaraHome({ locale }: Props) {
               equilibrio y paz interior.
             </p>
             <a className="manifesto-cta" href="#experiencias">
-              Comenzá tu sanación <span aria-hidden="true">→</span>
+              Comienza tu evolución
             </a>
           </div>
         </div>
