@@ -43,9 +43,9 @@ export default function LumaraResources() {
       onTouchStart={() => setRevealed(true)}
     >
       <header className={styles.heading}>
-        <span className={styles.kicker}><i /> RECURSOS GRATUITOS <i /></span>
+        <span className={styles.kicker}><i /> RECURSOS EXCLUSIVOS <i /></span>
         <h2 id="resources-title">Recursos para tu bienestar y <em>vida consciente</em></h2>
-        <p>Herramientas, prácticas y materiales de libre acceso para acompañarte en tu camino.</p>
+        <p>Herramientas, prácticas y materiales especiales para acompañarte en tu camino.</p>
       </header>
 
       <div className={styles.stage}>
@@ -74,23 +74,21 @@ export default function LumaraResources() {
               >
                 <span className={styles.front}>
                   <span className={styles.cardIcon}>{item.icon}</span>
-                  <span className={styles.cardEyebrow}>LUMARA · RECURSO GRATUITO</span>
+                  <span className={styles.cardEyebrow}>LUMARA · {item.title}</span>
                   <strong>{item.title}</strong>
-                  <span className={styles.cardHint}>Descubrí este recurso <b>↗</b></span>
                 </span>
                 <span className={styles.back}>
                   <span className={styles.backIcon}>{item.icon}</span>
                   <strong>{item.title}</strong>
                   <span className={styles.subtitle}>{item.subtitle}</span>
                   <span className={styles.detail}>{item.detail}</span>
-                  <span className={styles.backCta}>Conocer más <b>→</b></span>
                 </span>
               </button>
-              <a className={styles.access} href={item.href}>Acceder al recurso <span>→</span></a>
+              <a className={styles.access} href={item.href}>Acceder</a>
             </article>
           ))}
         </div>
-        <p className={styles.hint}>{revealed ? "Elegí una carta para descubrir lo que preparamos para vos" : "Desplazate hasta aquí o acercá el cursor para revelar los recursos"}</p>
+        <a className={styles.exclusiveCta} href="/es/recursos/">Recursos exclusivos</a>
       </div>
     </section>
   );
