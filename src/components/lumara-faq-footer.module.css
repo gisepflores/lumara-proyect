@@ -174,3 +174,31 @@
 .socialIcon:hover { background: rgba(229,216,237,.12); border-color: rgba(229,216,237,.7); transform: translateY(-2px); }
 .newsletterLink { display: inline-flex; align-items: center; gap: 8px; color: #f0e6f5 !important; font-weight: 600 !important; }
 @media (prefers-reduced-motion: reduce) { .socialIcon { transition: none; } }
+
+
+/* Adaptación de las secciones nuevas al tema oscuro del sitio */
+:global(:root[data-theme="dark"]) .faq {
+  background: #211c27;
+  color: #eee7f2;
+}
+:global(:root[data-theme="dark"]) .faqHeading h2 { color: #eee7f2; }
+:global(:root[data-theme="dark"]) .faqHeading h2 em { color: #c5addb; }
+:global(:root[data-theme="dark"]) .faqHeading p { color: #c4b9cb; }
+:global(:root[data-theme="dark"]) .questions,
+:global(:root[data-theme="dark"]) .question { border-color: #4a3d53; }
+:global(:root[data-theme="dark"]) .question summary { color: #eee7f2; }
+:global(:root[data-theme="dark"]) .questionNumber { color: #d2b78e; }
+:global(:root[data-theme="dark"]) .question summary i {
+  color: #d8c5e6;
+  border-color: rgba(197,173,219,.42);
+  background: rgba(255,255,255,.035);
+}
+:global(:root[data-theme="dark"]) .question[open] summary i { background: #493a55; }
+:global(:root[data-theme="dark"]) .question > p { color: #c4b9cb; }
+:global(:root[data-theme="dark"]) .footer {
+  background: #17131c;
+  color: #f0ebf3;
+}
+:global(:root[data-theme="dark"]) .footer .legal { border-top-color: #44384e; }
+:global(:root[data-theme="dark"]) .footerColumn a:hover,
+:global(:root[data-theme="dark"]) .legal a:hover { color: #fff; }
