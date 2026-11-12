@@ -6246,7 +6246,7 @@ main section h2 {
 }
 
 
-/* CTA final Lumara: mismo violeta/lila de los botones principales del sitio */
+/* CTA final Lumara: interacción visual contenida, sin alterar el layout de la sección */
 .closing-section .closing-cta {
   background: linear-gradient(105deg, #8b62a7 0%, #58316f 100%);
   border: 1px solid rgba(232, 214, 242, .34);
@@ -6259,30 +6259,31 @@ main section h2 {
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(91,57,113,.3), 0 0 18px rgba(211,184,229,.2);
 }
+
+/* Los anillos reciben luz sin modificar dimensiones ni posición del bloque */
 .closing-orb {
-  transform: scale(1);
+  transform: translateZ(0);
   transform-origin: center;
-  transition: border-color .7s ease, box-shadow .8s ease, transform 1s cubic-bezier(.2,.7,.2,1), filter .8s ease;
+  transition: border-color .65s ease, box-shadow .75s ease, filter .75s ease;
 }
 .closing-section:has(.closing-cta:hover) .closing-orb,
 .closing-section:has(.closing-cta:focus-visible) .closing-orb {
-  border-color: rgba(235,218,249,.28);
-  transform: scale(1.045);
-  filter: drop-shadow(0 0 16px rgba(201,169,226,.16));
+  border-color: rgba(245,231,255,.42);
+  filter: drop-shadow(0 0 14px rgba(201,169,226,.16));
   box-shadow:
-    0 0 0 42px rgba(222,199,240,.055),
-    0 0 0 84px rgba(222,199,240,.038),
-    0 0 44px rgba(207,176,232,.16);
-  animation: closingOrbBreath 2.8s ease-in-out infinite;
+    0 0 0 36px rgba(222,199,240,.045),
+    0 0 0 72px rgba(222,199,240,.03),
+    0 0 34px rgba(207,176,232,.13);
+  animation: closingOrbBreath 3.4s ease-in-out infinite;
 }
 @keyframes closingOrbBreath {
   0%, 100% {
-    border-color: rgba(235,218,249,.2);
-    box-shadow: 0 0 0 42px rgba(222,199,240,.045), 0 0 0 84px rgba(222,199,240,.03), 0 0 30px rgba(207,176,232,.1);
+    border-color: rgba(235,218,249,.18);
+    box-shadow: 0 0 0 36px rgba(222,199,240,.035), 0 0 0 72px rgba(222,199,240,.025), 0 0 24px rgba(207,176,232,.08);
   }
   50% {
-    border-color: rgba(245,231,255,.42);
-    box-shadow: 0 0 0 48px rgba(222,199,240,.075), 0 0 0 94px rgba(222,199,240,.05), 0 0 52px rgba(207,176,232,.2);
+    border-color: rgba(245,231,255,.38);
+    box-shadow: 0 0 0 42px rgba(222,199,240,.06), 0 0 0 82px rgba(222,199,240,.04), 0 0 40px rgba(207,176,232,.16);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -6290,20 +6291,4 @@ main section h2 {
   .closing-section .closing-cta { transition: none !important; }
   .closing-section:has(.closing-cta:hover) .closing-orb,
   .closing-section:has(.closing-cta:focus-visible) .closing-orb { animation: none !important; }
-}
-
-
-/* Activación explícita desde el botón: garantiza el halo de los anillos */
-.closing-section.closing-cta-active .closing-orb {
-  border-color: rgba(245,231,255,.48) !important;
-  transform: scale(1.055) !important;
-  filter: drop-shadow(0 0 20px rgba(201,169,226,.22)) !important;
-  box-shadow:
-    0 0 0 46px rgba(222,199,240,.075),
-    0 0 0 92px rgba(222,199,240,.055),
-    0 0 42px rgba(207,176,232,.2) !important;
-  animation: closingOrbBreath 2.8s ease-in-out infinite !important;
-}
-@media (prefers-reduced-motion: reduce) {
-  .closing-section.closing-cta-active .closing-orb { animation: none !important; }
 }
