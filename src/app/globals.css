@@ -6291,3 +6291,19 @@ main section h2 {
   .closing-section:has(.closing-cta:hover) .closing-orb,
   .closing-section:has(.closing-cta:focus-visible) .closing-orb { animation: none !important; }
 }
+
+
+/* Activación explícita desde el botón: garantiza el halo de los anillos */
+.closing-section.closing-cta-active .closing-orb {
+  border-color: rgba(245,231,255,.48) !important;
+  transform: scale(1.055) !important;
+  filter: drop-shadow(0 0 20px rgba(201,169,226,.22)) !important;
+  box-shadow:
+    0 0 0 46px rgba(222,199,240,.075),
+    0 0 0 92px rgba(222,199,240,.055),
+    0 0 42px rgba(207,176,232,.2) !important;
+  animation: closingOrbBreath 2.8s ease-in-out infinite !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .closing-section.closing-cta-active .closing-orb { animation: none !important; }
+}
