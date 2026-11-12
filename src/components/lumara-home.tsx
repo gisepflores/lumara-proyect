@@ -443,7 +443,7 @@ export default function LumaraHome({ locale }: Props) {
 
       <section className="learning-section learning-showcase" id="aprender" data-reveal aria-labelledby="learning-title">
         <div className="learning-showcase-heading">
-          <span className="section-kicker">DESCUBRÍ TODO LO QUE VIVE EN LUMARA</span>
+          <span className="section-kicker">DESCUBRÍ LAS FORMACIONES QUE HAY EN LUMARA</span>
           <h2 id="learning-title">Aprender, practicar, acompañar y <em>transformar</em></h2>
           <p>Elegí tu próximo paso para crecer, aprender y transformar tu camino.</p>
         </div>
