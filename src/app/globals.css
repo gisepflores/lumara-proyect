@@ -6292,3 +6292,59 @@ main section h2 {
   .closing-section:has(.closing-cta:hover) .closing-orb,
   .closing-section:has(.closing-cta:focus-visible) .closing-orb { animation: none !important; }
 }
+
+
+/* Ajuste de composición: sección de aprendizaje centrada y sombras sin cortes */
+.learning-showcase {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: clamp(54px, 6vh, 82px) !important;
+  padding-bottom: clamp(54px, 6vh, 82px) !important;
+}
+.learning-showcase-heading {
+  margin-bottom: clamp(24px, 2.8vh, 34px) !important;
+}
+.learning-carousel-stage {
+  overflow: visible !important;
+  isolation: isolate;
+}
+.learning-carousel-card,
+.learning-carousel-card.is-far,
+.learning-carousel-card.is-near,
+.learning-carousel-card.is-center {
+  box-shadow: none !important;
+}
+.learning-carousel-card.is-center {
+  filter:
+    drop-shadow(0 10px 12px rgba(70,48,86,.075))
+    drop-shadow(0 24px 24px rgba(70,48,86,.055))
+    drop-shadow(0 42px 30px rgba(70,48,86,.025)) !important;
+}
+.learning-carousel-card.is-near,
+.learning-carousel-card.is-far {
+  filter:
+    drop-shadow(0 10px 12px rgba(70,48,86,.055))
+    drop-shadow(0 22px 22px rgba(70,48,86,.035)) !important;
+}
+@media (max-width: 900px) {
+  .learning-showcase {
+    padding-top: 54px !important;
+    padding-bottom: 58px !important;
+  }
+  .learning-carousel-stage {
+    overflow: hidden !important;
+  }
+}
+@media (max-width: 600px) {
+  .learning-showcase {
+    padding-top: 42px !important;
+    padding-bottom: 48px !important;
+  }
+  .learning-carousel-stage {
+    overflow: visible !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .learning-carousel-card { filter: none !important; }
+}
