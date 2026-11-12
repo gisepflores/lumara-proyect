@@ -187,3 +187,56 @@
 @media (prefers-reduced-motion: reduce) {
   .form input,.form button { transition: none; }
 }
+
+
+/* Newsletter: adaptación completa al tema oscuro */
+:global(:root[data-theme="dark"]) .section {
+  color: #f0ebf3;
+  background: linear-gradient(135deg, #211c27 0%, #29232f 54%, #211c27 100%);
+}
+:global(:root[data-theme="dark"]) .section::before,
+:global(:root[data-theme="dark"]) .section::after {
+  border-color: rgba(208,183,142,.13);
+  box-shadow: 0 0 0 22px rgba(197,173,219,.035), 0 0 0 48px rgba(197,173,219,.025);
+}
+:global(:root[data-theme="dark"]) .kicker,
+:global(:root[data-theme="dark"]) .formKicker { color: #c5addb; }
+:global(:root[data-theme="dark"]) .copy h2,
+:global(:root[data-theme="dark"]) .formPanel h3 { color: #f0ebf3; }
+:global(:root[data-theme="dark"]) .copy h2 em { color: #c5addb; }
+:global(:root[data-theme="dark"]) .intro,
+:global(:root[data-theme="dark"]) .benefits li,
+:global(:root[data-theme="dark"]) .formPanel > p { color: #cfc4d7; }
+:global(:root[data-theme="dark"]) .benefits li > span:first-child {
+  color: #d2b78e;
+  border-color: rgba(208,183,142,.45);
+  background: rgba(255,255,255,.035);
+}
+:global(:root[data-theme="dark"]) .formPanel {
+  border-color: rgba(208,183,142,.45);
+  background: linear-gradient(145deg, rgba(57,46,68,.98), rgba(43,35,53,.98));
+  box-shadow: 0 22px 55px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.07);
+}
+:global(:root[data-theme="dark"]) .form label { color: #e3d9e9; }
+:global(:root[data-theme="dark"]) .form input {
+  color: #f0ebf3;
+  border-color: rgba(197,173,219,.32);
+  background: rgba(27,22,34,.72);
+}
+:global(:root[data-theme="dark"]) .form input::placeholder { color: #a99ab5; }
+:global(:root[data-theme="dark"]) .form input:focus {
+  border-color: #b99bd0;
+  box-shadow: 0 0 0 3px rgba(197,173,219,.16);
+}
+:global(:root[data-theme="dark"]) .form button {
+  color: #fff;
+  background: linear-gradient(105deg, #9876b0, #684783);
+  box-shadow: 0 9px 22px rgba(0,0,0,.28);
+}
+:global(:root[data-theme="dark"]) .form small { color: #b9adbf; }
+:global(:root[data-theme="dark"]) .notice {
+  color: #e5d9ec;
+  border-color: rgba(208,183,142,.3);
+  background: rgba(255,255,255,.06);
+}
+:global(:root[data-theme="dark"]) .formFoot { color: #c5addb; }
