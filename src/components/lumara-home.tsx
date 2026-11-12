@@ -6,6 +6,7 @@ import HeroCarousel from "./hero-carousel";
 import TrainingGallery from "./training-gallery";
 import LumaraResources from "./lumara-resources";
 import LumaraNewsletter from "./lumara-newsletter";
+import LumaraFaqFooter from "./lumara-faq-footer";
 
 type Props = {
   locale: "es";
@@ -502,18 +503,7 @@ export default function LumaraHome({ locale }: Props) {
         <span className="closing-note">ESPIRITUALIDAD CONSCIENTE</span>
       </section>
 
-      <footer className="site-footer" id="contactos">
-        <a className="footer-brand" href="#inicio">
-          <span className="brand-mark" aria-hidden="true"><img className="brand-moon" src="/lumara-proyect/assets/img/logo/isotipo-luna.webp" alt="" /><img className="brand-wordmark" src="/lumara-proyect/assets/img/logo/lumara-web.webp" alt="Lumara" onError={(event) => { event.currentTarget.style.display = "none"; const fallback = event.currentTarget.nextElementSibling as HTMLElement | null; if (fallback) fallback.style.display = "inline-block"; }} /><span className="brand-wordmark-fallback footer-wordmark-fallback" aria-hidden="true">LUMARA</span></span>
-          <span className="brand-caption">ESPIRITUALIDAD CONSCIENTE</span>
-        </a>
-        <p>Un espacio para volver a vos.</p>
-        <div className="footer-meta">
-          <span>© {new Date().getFullYear()} Lumara</span>
-          <span>Hecho con intención.</span>
-          <span>Versión de preview · {locale.toUpperCase()}</span>
-        </div>
-      </footer>
+      <LumaraFaqFooter />
     </main>
   );
 }
