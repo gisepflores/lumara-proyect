@@ -6383,3 +6383,11 @@ main section h2 {
 :root[data-theme="dark"] .lumara-experience-cta:hover {
   background: linear-gradient(105deg, #ad8bc4, #80609a);
 }
+
+
+/* Flechas del carrusel de formaciones: por fuera de las cards laterales,
+   alineadas con las tarjetas cercanas al centro y sin superponerse. */
+@media (min-width: 901px) {
+  .learning-carousel-prev { left: clamp(-34px, -2vw, -20px); }
+  .learning-carousel-next { right: clamp(-34px, -2vw, -20px); }
+}
