@@ -499,7 +499,7 @@ export default function LumaraHome({ locale }: Props) {
         <div className="section-kicker">TU ESPACIO, TU RECORRIDO</div>
         <h2>Es momento de elegirte,<br />inicia el camino <em>Lumara</em></h2>
         <a className="manifesto-cta closing-cta" href="#newsletter">Inscribite</a>
-        <span className="closing-note">LUMARA · ESPIRITUALIDAD CONSCIENTE</span>
+        <span className="closing-note">ESPIRITUALIDAD CONSCIENTE</span>
       </section>
 
       <footer className="site-footer" id="contactos">
