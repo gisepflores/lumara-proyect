@@ -6211,8 +6211,8 @@ main section h2 {
 .learning-showcase-heading {
   margin-bottom: clamp(22px, 2.2vw, 32px) !important;
 }
-.learning-carousel-prev { left: max(8px, calc(50% - 455px)); }
-.learning-carousel-next { right: max(8px, calc(50% - 455px)); }
+.learning-carousel-prev { left: max(8px, calc(50% - 560px)); }
+.learning-carousel-next { right: max(8px, calc(50% - 560px)); }
 
 /* Sombra inferior con caída radial, sin borde recto */
 .learning-carousel-card,
