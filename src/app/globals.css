@@ -6348,3 +6348,38 @@ main section h2 {
 @media (prefers-reduced-motion: reduce) {
   .learning-carousel-card { filter: none !important; }
 }
+
+
+/* Tema oscuro para el detalle de experiencias y sus contenidos */
+:root[data-theme="dark"] .lumara-experiences {
+  background: linear-gradient(180deg, #211c27 0%, #29232f 58%, #211c27 100%);
+}
+:root[data-theme="dark"] .lumara-experiences-heading .section-kicker { color: #c5addb; }
+:root[data-theme="dark"] .lumara-experiences-heading h2 { color: #f0ebf3; }
+:root[data-theme="dark"] .lumara-experiences-heading h2 em { color: #c5addb; }
+:root[data-theme="dark"] .lumara-experiences-heading p { color: #c4b9cb; }
+:root[data-theme="dark"] .lumara-experience-detail {
+  color: #f0ebf3;
+  border-color: rgba(208,183,142,.5);
+  background: linear-gradient(112deg, rgba(55,45,65,.97), rgba(43,35,52,.98) 52%, rgba(55,45,65,.96));
+  box-shadow: 0 18px 48px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.07);
+}
+:root[data-theme="dark"] .lumara-detail-copy h3 { color: #f0ebf3; }
+:root[data-theme="dark"] .lumara-detail-subtitle { color: #c5addb; }
+:root[data-theme="dark"] .lumara-detail-copy p { color: #d0c6d7; }
+:root[data-theme="dark"] .lumara-detail-highlights {
+  border-left-color: rgba(197,173,219,.24);
+  border-right-color: rgba(197,173,219,.24);
+}
+:root[data-theme="dark"] .lumara-detail-highlights span { color: #e2d9e9; }
+:root[data-theme="dark"] .lumara-detail-highlights span + span { border-left-color: rgba(197,173,219,.2); }
+:root[data-theme="dark"] .lumara-detail-highlights i { color: #c5addb; }
+:root[data-theme="dark"] .lumara-detail-art { box-shadow: 0 10px 25px rgba(0,0,0,.32); }
+:root[data-theme="dark"] .lumara-experience-cta {
+  color: #fff;
+  background: linear-gradient(105deg, #9876b0, #684783);
+  box-shadow: 0 9px 22px rgba(0,0,0,.3);
+}
+:root[data-theme="dark"] .lumara-experience-cta:hover {
+  background: linear-gradient(105deg, #ad8bc4, #80609a);
+}
