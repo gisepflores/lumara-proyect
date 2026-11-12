@@ -152,3 +152,19 @@
 @media (prefers-reduced-motion: reduce) {
   .question summary i, .footerColumn a { transition: none; }
 }
+
+.socialRow { display: flex; align-items: center; gap: 10px; margin: 1px 0 4px; }
+.socialIcon {
+  display: inline-grid !important;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(229,216,237,.28);
+  border-radius: 50%;
+  color: #e8dced !important;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.socialIcon svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.socialIcon:hover { background: rgba(229,216,237,.12); border-color: rgba(229,216,237,.7); transform: translateY(-2px); }
+.newsletterLink { display: inline-flex; align-items: center; gap: 8px; color: #f0e6f5 !important; font-weight: 600 !important; }
+@media (prefers-reduced-motion: reduce) { .socialIcon { transition: none; } }
