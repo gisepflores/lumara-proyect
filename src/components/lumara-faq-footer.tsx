@@ -82,7 +82,7 @@ export default function LumaraFaqFooter() {
             <a href="/es/capacitaciones/cursos/">Cursos</a>
             <a href="/es/capacitaciones/talleres/">Talleres</a>
             <a href="/es/capacitaciones/mentorias/">Mentorías</a>
-            <a href="/es/capacitaciones/empresas/">Empresas</a>
+            <a href="/es/capacitaciones/eventos-para-empresas/">Empresas</a>
           </div>
 
           <div className={styles.footerColumn}>
