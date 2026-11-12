@@ -155,7 +155,8 @@
   background:transparent;
   cursor:pointer;
   transform-style:preserve-3d;
-  transition:transform .8s cubic-bezier(.2,.72,.18,1);
+  transition:transform .46s cubic-bezier(.2,.72,.18,1);
+  will-change:transform;
 }
 .flipped .cardButton { transform:rotateY(180deg); }
 .front,.back {
@@ -229,21 +230,34 @@
   position:absolute;
   z-index:3;
   left:50%;
-  bottom:12px;
-  display:none;
+  top:326px;
+  bottom:auto;
+  display:flex;
   align-items:center;
+  justify-content:center;
+  min-width:116px;
   gap:8px;
-  padding:10px 25px;
+  padding:10px 24px;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .22s ease, transform .22s ease, visibility 0s linear .22s;
+  transform:translate(-50%,8px);
   border-radius:30px;
   color:#fff;
   background:#63377d;
   font:700 11px/1 var(--sans,Arial,sans-serif);
   text-decoration:none;
   white-space:nowrap;
-  transform:translateX(-50%);
   box-shadow:0 5px 18px rgba(35,18,48,.25);
 }
-.flipped .access { display:flex; }
+.flipped .access {
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translate(-50%,0);
+  transition-delay: .18s, .18s, 0s;
+}
 .featured {
   z-index:5;
   width:clamp(220px,19vw,270px);
@@ -280,6 +294,7 @@
   .card { width:clamp(175px,18vw,215px); height:310px; }
   .card { --spread:calc((var(--index) - 2) * 19vw); }
   .featured { width:230px;height:350px; }
+  .access { top:270px; }
   .stage { height:520px; }
 }
 @media (max-width:760px) {
@@ -299,12 +314,13 @@
   }
   .revealed .card { opacity:1;transform:translateY(0) scale(1); }
   .featured { width:min(100%,390px);height:270px; }
+  .access { top:205px; }
   .hint { bottom:0;width:100%;text-align:center;white-space:normal; }
 }
 @media (prefers-reduced-motion:reduce) {
   .lotus img { animation:none; }
   .lotusGlow { animation:none; }
-  .card,.cardButton,.orbit,.lotus { transition:none !important; }
+  .card,.cardButton,.orbit,.lotus,.access { transition:none !important; }
   .revealed .card { transition-delay:0ms; }
 }
 :global(:root[data-theme="dark"]) .section {
