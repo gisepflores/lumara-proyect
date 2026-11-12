@@ -154,7 +154,6 @@
   border-radius:22px;
   background:transparent;
   cursor:pointer;
-  transform-style:preserve-3d;
   transform:none;
   transition:none;
 }
@@ -217,7 +216,7 @@
 }
 .cardHint { margin-top:10px; color:#ead7ee; font:400 10px/1.4 var(--sans,Arial,sans-serif); letter-spacing:.03em; }
 .cardHint b { color:#f1c58f; margin-left:6px; }
- .back {
+  .back {
   gap:11px;
   padding:24px 18px 64px;
   opacity:0;
