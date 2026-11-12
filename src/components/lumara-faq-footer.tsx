@@ -43,7 +43,7 @@ export default function LumaraFaqFooter() {
           <header className={styles.faqHeading}>
             <span className={styles.eyebrow}>ESTAMOS PARA ACOMPAÑARTE</span>
             <h2 id="faq-title">Preguntas <em>frecuentes</em></h2>
-            <p>Un espacio para resolver tus dudas y elegir tu próximo paso con claridad.</p>
+            <p>Encontrá respuestas a las preguntas más frecuentes y descubrí cómo empezar tu camino en Lumara.</p>
           </header>
           <div className={styles.questions}>
             {questions.map((item, index) => (
