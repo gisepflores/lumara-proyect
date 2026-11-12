@@ -82,11 +82,6 @@
   color: #a789b9;
   font-size: 16px;
 }
-.promise {
-  margin: 26px 0 0;
-  color: #967da4;
-  font: italic 13px/1.6 var(--serif, Georgia, serif);
-}
 .formPanel {
   position: relative;
   padding: clamp(28px, 3.5vw, 46px);
@@ -147,14 +142,13 @@
   border: 0;
   border-radius: 999px;
   color: #fff;
-  background: linear-gradient(105deg, #8b62a7, #58316f);
+  background: #80679f;
   box-shadow: 0 9px 22px rgba(91,57,113,.2);
   cursor: pointer;
   font: 600 13px/1 var(--sans, Arial, sans-serif);
   transition: transform .25s ease, box-shadow .25s ease;
 }
 .form button:hover { transform: translateY(-2px); box-shadow: 0 13px 27px rgba(91,57,113,.26); }
-.form button span { color: #f0d7ae; font-size: 17px; }
 .form small {
   margin-top: 4px;
   color: #97899e;
