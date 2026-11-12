@@ -95,14 +95,19 @@ export default function LumaraFaqFooter() {
               <a className={styles.socialIcon} href="https://www.instagram.com/espacio.lumara/" target="_blank" rel="noreferrer" aria-label="Instagram" title="Instagram">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.7" r="1"/></svg>
               </a>
+              <a className={styles.socialIcon} href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook" title="Facebook">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 21v-8h2.7l.4-3.2h-3.1V7.7c0-.9.3-1.5 1.6-1.5h1.7V3.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H8v3.2h2.8v8z"/></svg>
+              </a>
+              <a className={styles.socialIcon} href="https://www.tiktok.com/" target="_blank" rel="noreferrer" aria-label="TikTok" title="TikTok">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.1a3.2 3.2 0 1 1-2.7-3.1V8.2a6.2 6.2 0 1 0 5.8 6.2V9.1c1.3 1 2.8 1.5 4.4 1.6V7.4c-3-.2-5.2-2-5.6-4.4z"/></svg>
+              </a>
+              <a className={styles.socialIcon} href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.7H2.4V21h2.8zM3.8 3a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM21.6 13.9c0-3.7-2-5.4-4.7-5.4a4.1 4.1 0 0 0-3.7 2v-1.7h-2.8V21h2.8v-6.1c0-1.6.3-3.2 2.3-3.2s2 1.9 2 3.3V21h2.8z"/></svg>
+              </a>
             </div>
             <a className={styles.newsletterLink} href="#newsletter">Suscribite al newsletter <span aria-hidden="true">↗</span></a>
             <h4>Correo electrónico</h4>
-            <p>Próximamente, nuestro canal directo de contacto.</p>
-            <h4>Horarios de atención</h4>
-            <p>Atención online. Consultas y coordinación de horarios a través de nuestros canales de contacto.</p>
-            <h4>Asistente virtual Luna</h4>
-            <p>Muy pronto vas a poder comunicarte con Luna por WhatsApp.</p>
+            <a href="mailto:consultas@lumara.com">consultas@lumara.com</a>
           </div>
         </div>
 
