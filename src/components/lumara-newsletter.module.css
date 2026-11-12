@@ -19,13 +19,16 @@
   box-shadow: 0 0 0 22px rgba(165,141,187,.025), 0 0 0 48px rgba(165,141,187,.02);
 }
 .section::after {
-  content: "✧";
+  content: "";
   position: absolute;
   z-index: -1;
-  right: 8%;
-  bottom: 12%;
-  color: rgba(183,155,114,.28);
-  font: 36px/1 var(--serif, Georgia, serif);
+  width: min(58vw, 760px);
+  aspect-ratio: 1;
+  right: -20%;
+  bottom: -65%;
+  border: 1px solid rgba(183,155,114,.16);
+  border-radius: 50%;
+  box-shadow: 0 0 0 22px rgba(165,141,187,.025), 0 0 0 48px rgba(165,141,187,.02);
 }
 .inner {
   display: grid;
@@ -89,13 +92,6 @@
   border-radius: 28px;
   background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(249,245,251,.96));
   box-shadow: 0 22px 55px rgba(76,53,91,.075), inset 0 1px 0 #fff;
-}
-.formOrnament {
-  position: absolute;
-  top: 22px;
-  right: 27px;
-  color: #c2a16f;
-  font: 24px/1 var(--serif, Georgia, serif);
 }
 .formKicker { margin-bottom: 11px; }
 .formPanel h3 {
@@ -173,7 +169,6 @@
   font: 600 8px/1.4 var(--sans, Arial, sans-serif);
   letter-spacing: .2em;
 }
-.formFoot span { width: 22px; height: 1px; background: #c7ad83; }
 @media (max-width: 820px) {
   .section { padding: 54px 22px; }
   .inner { grid-template-columns: 1fr; gap: 32px; max-width: 620px; }
