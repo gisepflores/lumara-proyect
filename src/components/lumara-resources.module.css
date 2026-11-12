@@ -457,3 +457,21 @@
   .back { padding: 34px 18px 54px !important; }
   .access { top: 188px !important; }
 }
+
+
+/* La carta seleccionada siempre queda por encima del resto del mazo */
+.card.flipped {
+  z-index: 30 !important;
+  transform: translate(calc(-50% + var(--spread)), -14px) scale(1.045) !important;
+  filter: drop-shadow(0 18px 34px rgba(20,10,32,.34)) drop-shadow(0 0 24px rgba(240,174,236,.38));
+}
+.card.flipped .cardButton {
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 760px) {
+  .card.flipped {
+    z-index: 30 !important;
+    transform: translateY(-8px) scale(1.02) !important;
+  }
+}
