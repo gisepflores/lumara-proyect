@@ -497,7 +497,7 @@ export default function LumaraHome({ locale }: Props) {
       <section className="closing-section" id="mi-lumara" data-reveal><span id="comunidad" className="anchor-target" aria-hidden="true" />
         <div className="closing-orb parallax-soft" aria-hidden="true" />
         <div className="section-kicker">TU ESPACIO, TU RECORRIDO</div>
-        <h2>Todo comienza<br />con un momento <em>para vos.</em></h2>
+        <h2>Es momento de elegirte,<br />inicia el camino <em>Lumara</em></h2>
         <a className="manifesto-cta closing-cta" href="#newsletter">Inscribite</a>
         <span className="closing-note">LUMARA · ESPIRITUALIDAD CONSCIENTE</span>
       </section>
