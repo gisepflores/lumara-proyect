@@ -53,7 +53,7 @@ export default function LumaraResources() {
         <div className={styles.lotus} aria-hidden="true">
           <div className={styles.lotusGlow} />
           <img src="/lumara-proyect/assets/img/logo/loto-recursos.png" alt="" />
-          <span>UN MOMENTO PARA VOS</span>
+          <a className={styles.lotusCta} href="/es/recursos/">Más recursos</a>
         </div>
         <div className={styles.deck}>
           {resources.map((item, index) => (
@@ -88,7 +88,6 @@ export default function LumaraResources() {
             </article>
           ))}
         </div>
-        <a className={styles.exclusiveCta} href="/es/recursos/">Recursos exclusivos</a>
       </div>
     </section>
   );
