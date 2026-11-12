@@ -368,12 +368,6 @@
   box-shadow: 0 10px 28px rgba(20,10,32,.32),0 0 28px rgba(239,188,245,.28);
   transform: translateX(-50%) translateY(-2px);
 }
-.access {
-  bottom: 12px;
-  min-width: 116px;
-  justify-content: center;
-  padding: 10px 24px;
-}
 @media (max-width:1200px) {
   .stage { height: 650px; }
   .lotus { bottom: 82px; }
