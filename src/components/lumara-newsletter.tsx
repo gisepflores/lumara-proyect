@@ -30,7 +30,6 @@ export default function LumaraNewsletter() {
         </div>
 
         <div className={styles.formPanel}>
-          <span className={styles.formOrnament} aria-hidden="true">✧</span>
           <span className={styles.formKicker}>TU MOMENTO LUMARA</span>
           <h3>Sumate y creá un espacio para lo que te hace bien.</h3>
           <p>Dejanos tu correo y pronto vas a poder recibir nuestras novedades.</p>
@@ -50,7 +49,7 @@ export default function LumaraNewsletter() {
             <small>Al suscribirte, aceptás recibir comunicaciones de Lumara. Podés darte de baja cuando quieras.</small>
             {notice && <p className={styles.notice} role="status">{notice}</p>}
           </form>
-          <div className={styles.formFoot}><span /> LUMARA · ESPIRITUALIDAD CONSCIENTE <span /></div>
+          <div className={styles.formFoot}>ESPIRITUALIDAD CONSCIENTE</div>
         </div>
       </div>
     </section>
