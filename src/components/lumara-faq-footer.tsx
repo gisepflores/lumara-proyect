@@ -42,7 +42,7 @@ export default function LumaraFaqFooter() {
         <div className={styles.faqInner}>
           <header className={styles.faqHeading}>
             <span className={styles.eyebrow}>ESTAMOS PARA ACOMPAÑARTE</span>
-            <h2 id="faq-title">Todo lo que necesitás saber para comenzar</h2>
+            <h2 id="faq-title">Todo lo que necesitás saber para <em>comenzar</em></h2>
             <p>Encontrá respuestas a las preguntas más frecuentes y descubrí cómo empezar tu camino en Lumara.</p>
           </header>
           <div className={styles.questions}>
