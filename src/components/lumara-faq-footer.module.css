@@ -13,10 +13,11 @@
 .faqHeading h2 {
   margin: 13px 0 10px;
   color: #554168;
-  font: 400 clamp(38px, 4.2vw, 58px)/1.05 var(--serif, Georgia, serif);
+  font: 400 clamp(28px, 3.15vw, 44px)/1.12 var(--serif, Georgia, serif);
   letter-spacing: -.035em;
+  white-space: nowrap;
 }
-.faqHeading h2 em { color: #9275ad; font-weight: 400; }
+.faqHeading h2 em { color: #9275ad; font-weight: 400; font-style: italic; }
 .faqHeading p {
   margin: 0;
   color: #766e7b;
@@ -139,6 +140,7 @@
 @media (max-width: 600px) {
   .faq { padding: 62px 19px 70px; }
   .faqHeading { margin-bottom: 28px; }
+  .faqHeading h2 { white-space: normal; font-size: clamp(30px, 6vw, 38px); }
   .faqHeading p { font-size: 13px; }
   .question summary { grid-template-columns: 27px 1fr 26px; gap: 10px; padding: 18px 0; font-size: 16px; }
   .question > p { margin: -2px 28px 19px 37px; font-size: 12px; }
