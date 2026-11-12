@@ -19,7 +19,7 @@ export default function LumaraNewsletter() {
       <div className={styles.inner}>
         <div className={styles.copy}>
           <span className={styles.kicker}>NOVEDADES Y EXPERIENCIAS LUMARA</span>
-          <h2 id="newsletter-title">Sumate a Lumara y recibí novedades para tu camino.</h2>
+          <h2 id="newsletter-title">Seguir a <em>Lumara</em> tiene sus beneficios</h2>
           <p className={styles.intro}>Suscribite y recibí información exclusiva para acompañar tu camino de bienestar, conciencia y transformación.</p>
           <ul className={styles.benefits}>
             <li><span aria-hidden="true">✧</span><span>Reflexiones y herramientas para tu bienestar emocional y espiritual.</span></li>
