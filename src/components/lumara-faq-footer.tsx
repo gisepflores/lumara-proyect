@@ -68,29 +68,41 @@ export default function LumaraFaqFooter() {
             <p>Un espacio para volver a vos, conectar con tu esencia y abrir nuevos caminos.</p>
           </div>
 
-          <nav className={styles.footerColumn} aria-label="Navegación del pie de página">
-            <h3>Explorá Lumara</h3>
-            <a href="#inicio">Inicio</a>
+          <nav className={styles.footerColumn} aria-label="Navegación principal del pie de página">
+            <h3>Navegación</h3>
+            <a href="#universo">Nosotros</a>
             <a href="#experiencias">Experiencias</a>
-            <a href="#aprender">Formaciones</a>
-            <a href="#newsletter">Novedades</a>
-            <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
+            <a href="#aprender">Aprendizaje</a>
+            <a href="#eventos">Eventos</a>
+            <a href="#comunidad">Comunidad</a>
+            <a href="#biblioteca">Recursos</a>
+            <a href="#contactos">Contacto</a>
+          </nav>
+
+          <nav className={styles.footerColumn} aria-label="Espacios Lumara">
+            <h3>Espacios Lumara</h3>
+            <a href="#inicio">Lumara</a>
+            <a href="/es/capacitaciones/cursos/">Cursos</a>
+            <a href="/es/capacitaciones/talleres/">Talleres</a>
+            <a href="/es/capacitaciones/formacion-de-coachs/">Formación de Coachs</a>
+            <a href="/es/capacitaciones/mentorias/">Mentorías</a>
+            <a href="/es/capacitaciones/eventos-para-empresas/">Eventos para Empresas</a>
           </nav>
 
           <div className={styles.footerColumn}>
-            <h3>Espacios</h3>
-            <a href="/es/capacitaciones/cursos/">Cursos</a>
-            <a href="/es/capacitaciones/talleres/">Talleres</a>
-            <a href="/es/capacitaciones/mentorias/">Mentorías</a>
-            <a href="/es/capacitaciones/eventos-para-empresas/">Empresas</a>
-          </div>
-
-          <div className={styles.footerColumn}>
             <h3>Contacto y comunidad</h3>
-            <a href="https://www.instagram.com/espacio.lumara/" target="_blank" rel="noreferrer">Instagram · @espacio.lumara ↗</a>
-            <a href="#newsletter">Recibir novedades</a>
+            <div className={styles.socialRow} aria-label="Redes sociales de Lumara">
+              <a className={styles.socialIcon} href="https://www.instagram.com/espacio.lumara/" target="_blank" rel="noreferrer" aria-label="Instagram" title="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.7" r="1"/></svg>
+              </a>
+            </div>
+            <a className={styles.newsletterLink} href="#newsletter">Suscribite al newsletter <span aria-hidden="true">↗</span></a>
+            <h4>Correo electrónico</h4>
+            <p>Próximamente, nuestro canal directo de contacto.</p>
             <h4>Horarios de atención</h4>
-            <p>Atención online. Consultas y coordinación de horarios a través de Instagram.</p>
+            <p>Atención online. Consultas y coordinación de horarios a través de nuestros canales de contacto.</p>
+            <h4>Asistente virtual Luna</h4>
+            <p>Muy pronto vas a poder comunicarte con Luna por WhatsApp.</p>
           </div>
         </div>
 
