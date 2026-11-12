@@ -18,21 +18,21 @@ export default function LumaraNewsletter() {
     <section className={styles.section} aria-labelledby="newsletter-title" id="newsletter">
       <div className={styles.inner}>
         <div className={styles.copy}>
-          <span className={styles.kicker}>UNA CARTA DE LUMARA PARA VOS</span>
-          <h2 id="newsletter-title">Un espacio para <em>inspirarte</em>, estés donde estés.</h2>
-          <p className={styles.intro}>Suscribite y recibí inspiración para acompañar tu camino de bienestar, conciencia y transformación.</p>
+          <span className={styles.kicker}>NOVEDADES Y EXPERIENCIAS LUMARA</span>
+          <h2 id="newsletter-title">Suscribite y seguí inspirando tu camino consciente.</h2>
+          <p className={styles.intro}>Suscribite y recibí información exclusiva para acompañar tu camino de bienestar, conciencia y transformación.</p>
           <ul className={styles.benefits}>
             <li><span aria-hidden="true">✧</span><span>Reflexiones y herramientas para tu bienestar emocional y espiritual.</span></li>
             <li><span aria-hidden="true">☾</span><span>Prácticas, meditaciones y rituales para conectar con tus ciclos.</span></li>
-            <li><span aria-hidden="true">✦</span><span>Novedades, recursos gratuitos y experiencias especiales de Lumara.</span></li>
+            <li><span aria-hidden="true">✦</span><span>Recursos y beneficios exclusivos para nuestra comunidad.</span></li>
+            <li><span aria-hidden="true">✧</span><span>Capacitaciones y experiencias exclusivas de Lumara.</span></li>
           </ul>
-          <p className={styles.promise}>Un mensaje cuidado, contenido con sentido y siempre a tu ritmo.</p>
         </div>
 
         <div className={styles.formPanel}>
           <span className={styles.formOrnament} aria-hidden="true">✧</span>
           <span className={styles.formKicker}>TU MOMENTO LUMARA</span>
-          <h3>Hagamos espacio para lo que te hace bien.</h3>
+          <h3>Sumate y creá un espacio para lo que te hace bien.</h3>
           <p>Dejanos tu correo y pronto vas a poder recibir nuestras novedades.</p>
           <form className={styles.form} onSubmit={handleSubmit}>
             <label htmlFor="lumara-newsletter-email">Tu correo electrónico</label>
@@ -46,7 +46,7 @@ export default function LumaraNewsletter() {
               onChange={(event) => { setEmail(event.target.value); setNotice(""); }}
               required
             />
-            <button type="submit">Quiero recibir novedades <span aria-hidden="true">✧</span></button>
+            <button type="submit">Quiero recibir novedades</button>
             <small>Al suscribirte, aceptás recibir comunicaciones de Lumara. Podés darte de baja cuando quieras.</small>
             {notice && <p className={styles.notice} role="status">{notice}</p>}
           </form>
