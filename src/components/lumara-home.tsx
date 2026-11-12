@@ -498,10 +498,7 @@ export default function LumaraHome({ locale }: Props) {
         <div className="closing-orb parallax-soft" aria-hidden="true" />
         <div className="section-kicker">TU ESPACIO, TU RECORRIDO</div>
         <h2>Todo comienza<br />con un momento <em>para vos.</em></h2>
-        <p>
-          Lumara está tomando forma. Muy pronto vas a poder explorar
-          experiencias, aprender y reunir tus recorridos en un mismo lugar.
-        </p>
+        <a className="manifesto-cta closing-cta" href="#newsletter">Inscribite</a>
         <span className="closing-note">LUMARA · ESPIRITUALIDAD CONSCIENTE</span>
       </section>
 
